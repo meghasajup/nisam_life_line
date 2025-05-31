@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
         element: <RootLayout />,
         children: [
             {
-                path: "",
+                path: "/",
                 element: <HomePage />
             },
 //keshu
