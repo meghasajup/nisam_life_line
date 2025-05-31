@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const UIDesignService = () => {
   // State for FAQ section
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
-  
+
   // Toggle FAQ items
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -258,21 +258,21 @@ const UIDesignService = () => {
               animate="visible"
               variants={containerVariants}
             >
-              <motion.h1 
+              <motion.h1
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
                 variants={slideUp}
               >
                 Transform Your Digital Experience
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="text-xl text-indigo-200 mb-8 max-w-2xl"
                 variants={slideUp}
               >
                 We create intuitive, beautiful, and user-centered interfaces that drive engagement and conversions
               </motion.p>
-              
+
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -287,7 +287,7 @@ const UIDesignService = () => {
                   </div>
                   <div className="p-6">
                     <div className="bg-gradient-to-br from-purple-100 to-indigo-100 border-2 border-dashed border-purple-300 rounded-xl w-full h-64 mb-4 flex flex-col items-center justify-center text-gray-500">
-                     <img src="https://img.freepik.com/free-photo/top-view-nutritional-counter-app-concept_23-2149880602.jpg?semt=ais_hybrid&w=740" alt="" />
+                      <img src="https://img.freepik.com/free-photo/top-view-nutritional-counter-app-concept_23-2149880602.jpg?semt=ais_hybrid&w=740" alt="" />
                       <p className="text-sm">UI Design Mockup</p>
                     </div>
                     <p className="text-gray-700 mb-4">Transforming ideas into powerful user experiences</p>
@@ -309,26 +309,26 @@ const UIDesignService = () => {
               variants={containerVariants}
               viewport={{ once: true }}
             >
-              <motion.h2 
+              <motion.h2
                 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
                 variants={slideUp}
               >
                 Leading UI/UX Design Agency
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-lg text-gray-600 mb-8"
                 variants={slideUp}
               >
                 At our core, we strive to create digital experiences that are not only visually stunning but also intuitive and user-friendly. We combine creativity with strategic thinking to design interfaces that users love and businesses benefit from.
               </motion.p>
-              <motion.p 
+              <motion.p
                 className="text-lg text-gray-600"
                 variants={slideUp}
               >
                 Our human-centered approach ensures that every design decision is backed by research and focused on solving real user problems while achieving business objectives.
               </motion.p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -337,15 +337,15 @@ const UIDesignService = () => {
               className="grid grid-cols-2 gap-4"
             >
               <div className="bg-gradient-to-br from-purple-50 to-indigo-50 border-2 border-dashed border-purple-200 rounded-xl h-64 flex flex-col items-center justify-center text-gray-500 p-4">
-               <img src="https://cdn.dribbble.com/userupload/16734509/file/original-5a0621b7a943fc636554615a823aa49d.png?resize=400x0" alt="" />
+                <img src="https://cdn.dribbble.com/userupload/16734509/file/original-5a0621b7a943fc636554615a823aa49d.png?resize=400x0" alt="" />
                 <p className="mt-4 text-sm">Mobile UI Design</p>
               </div>
               <div className="bg-gradient-to-br from-purple-50 to-indigo-50 border-2 border-dashed border-purple-200 rounded-xl h-64 mt-8 flex flex-col items-center justify-center text-gray-500 p-4">
-               <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/84abf4184403667.6551a930b3b2b.jpg" alt="" />
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/84abf4184403667.6551a930b3b2b.jpg" alt="" />
                 <p className="mt-4 text-sm">Dashboard Design</p>
               </div>
               <div className="bg-gradient-to-br from-purple-50 to-indigo-50 border-2 border-dashed border-purple-200 rounded-xl h-64 flex flex-col items-center justify-center text-gray-500 p-4">
-               <img src="https://versacreative.com/wp-content/uploads/VC_March_3_Blog_Banner-1200x900.png" alt="" />
+                <img src="https://versacreative.com/wp-content/uploads/VC_March_3_Blog_Banner-1200x900.png" alt="" />
                 <p className="mt-4 text-sm">Web Components</p>
               </div>
               <div className="bg-gradient-to-br from-purple-50 to-indigo-50 border-2 border-dashed border-purple-200 rounded-xl h-64 mt-8 flex flex-col items-center justify-center text-gray-500 p-4">
@@ -361,7 +361,7 @@ const UIDesignService = () => {
       <div className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -370,14 +370,14 @@ const UIDesignService = () => {
             >
               Our UI/UX Design Services
             </motion.h2>
-            <motion.div 
+            <motion.div
               className="w-24 h-1 bg-gradient-to-r from-purple-600 to-indigo-500 mx-auto rounded-full mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: "6rem" }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             />
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -388,7 +388,7 @@ const UIDesignService = () => {
             </motion.p>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -396,7 +396,7 @@ const UIDesignService = () => {
             viewport={{ once: true }}
           >
             {services.map((service, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 variants={itemVariants}
                 className="group"
@@ -425,10 +425,10 @@ const UIDesignService = () => {
               viewport={{ once: true }}
             >
               <div className="bg-gradient-to-br from-purple-100 to-indigo-100 border-2 border-dashed border-purple-300 rounded-xl w-full h-96 flex items-center justify-center text-gray-500">
-               <img src="https://blog.robosoftin.com/wp-content/uploads/2025/01/UI-UX-article-for-publishing-02.jpg" alt="" />
+                <img src="https://blog.robosoftin.com/wp-content/uploads/2025/01/UI-UX-article-for-publishing-02.jpg" alt="" />
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -450,7 +450,7 @@ const UIDesignService = () => {
                   </li>
                 ))}
               </ul>
-              
+
               <div className="bg-purple-50 rounded-xl p-6 border border-purple-100">
                 <div className="flex items-start">
                   <div className="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
@@ -471,7 +471,7 @@ const UIDesignService = () => {
       {/* Expertise */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -480,8 +480,8 @@ const UIDesignService = () => {
           >
             Our Design Expertise
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -508,7 +508,7 @@ const UIDesignService = () => {
       {/* Design Process */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -517,11 +517,11 @@ const UIDesignService = () => {
           >
             Our Design Process
           </motion.h2>
-          
+
           <div className="relative">
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-purple-600 to-indigo-500 transform -translate-y-1/2 hidden lg:block"></div>
-            
-            <motion.div 
+
+            <motion.div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative"
               initial="hidden"
               whileInView="visible"
@@ -550,7 +550,7 @@ const UIDesignService = () => {
       {/* Portfolio */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -559,8 +559,8 @@ const UIDesignService = () => {
           >
             Design Portfolio
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -609,7 +609,7 @@ const UIDesignService = () => {
       {/* Testimonials */}
       <div className="py-16 bg-gradient-to-r from-purple-900 to-indigo-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -618,8 +618,8 @@ const UIDesignService = () => {
           >
             Client Testimonials
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -658,7 +658,7 @@ const UIDesignService = () => {
       {/* FAQ */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -667,8 +667,8 @@ const UIDesignService = () => {
           >
             Frequently Asked Questions
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="space-y-4"
             initial="hidden"
             whileInView="visible"
@@ -686,16 +686,16 @@ const UIDesignService = () => {
                   onClick={() => toggleFaq(index)}
                 >
                   <span className="text-lg font-medium text-gray-900">{faq.question}</span>
-                  <svg 
-                    className={`w-6 h-6 text-purple-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
+                  <svg
+                    className={`w-6 h-6 text-purple-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
-                
+
                 {openFaqIndex === index && (
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
@@ -718,9 +718,9 @@ const UIDesignService = () => {
           <div className="bg-gradient-to-r from-purple-700 to-indigo-700 rounded-3xl p-12 text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500 rounded-full -m-24 opacity-20"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500 rounded-full -m-32 opacity-20"></div>
-            
+
             <div className="relative z-10">
-              <motion.h2 
+              <motion.h2
                 className="text-3xl md:text-4xl font-bold text-white mb-6"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -729,7 +729,7 @@ const UIDesignService = () => {
               >
                 Ready to Transform Your User Experience?
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-xl text-purple-200 max-w-2xl mx-auto mb-8"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -738,7 +738,7 @@ const UIDesignService = () => {
               >
                 Let's collaborate to create intuitive, beautiful interfaces that your users will love
               </motion.p>
-              <motion.div 
+              <motion.div
                 className="flex flex-col sm:flex-row justify-center gap-4"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

@@ -12,21 +12,21 @@ export const HomePage = () => {
   return (
     <div className="px-4 bg-white">
       <div className="flex flex-col md:flex-row items-center min-h-[70vh]" style={{ backgroundImage: `url(${img1})` }}>
-        
-          <CarouselComponent/>
-        
-       
+
+        <CarouselComponent />
+
+
       </div>
 
-       {/* Main Content Sections */}
+      {/* Main Content Sections */}
       <div className="mt-2 mb-6 space-y-6">
         {/* Ensure each section has spacing */}
         <div>
-            <Intro/>
+          <Intro />
         </div>
-       <div >
+        <div >
           <HelpYouGetStarted />
-        </div> 
+        </div>
         <div >
           <CardPage />
         </div>

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const TestingQualityAnalysis = () => {
   // State for FAQ section
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
-  
+
   // Toggle FAQ items
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -242,13 +242,13 @@ const TestingQualityAnalysis = () => {
               animate="visible"
               variants={containerVariants}
             >
-              <motion.h1 
+              <motion.h1
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
                 variants={slideUp}
               >
                 Professional Testing & Quality Analysis
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="text-xl text-blue-100 mb-8 max-w-2xl"
                 variants={slideUp}
               >
@@ -263,7 +263,7 @@ const TestingQualityAnalysis = () => {
                 </button>
               </motion.div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -308,26 +308,26 @@ const TestingQualityAnalysis = () => {
               variants={containerVariants}
               viewport={{ once: true }}
             >
-              <motion.h2 
+              <motion.h2
                 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
                 variants={slideUp}
               >
                 World-Class Quality Assurance Services
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-lg text-gray-600 mb-8"
                 variants={slideUp}
               >
                 At QualityGuard, we specialize in delivering comprehensive testing solutions that go beyond simple bug detection. Our approach combines industry best practices with innovative techniques to ensure your software meets the highest standards of quality, security, and performance.
               </motion.p>
-              <motion.p 
+              <motion.p
                 className="text-lg text-gray-600"
                 variants={slideUp}
               >
                 With over a decade of experience across diverse industries, our team of certified QA engineers provides the expertise needed to identify critical issues before they impact your users and your business.
               </motion.p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -364,7 +364,7 @@ const TestingQualityAnalysis = () => {
       <div className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -373,14 +373,14 @@ const TestingQualityAnalysis = () => {
             >
               Our Comprehensive Testing Approach
             </motion.h2>
-            <motion.div 
+            <motion.div
               className="w-24 h-1 bg-gradient-to-r from-blue-600 to-teal-500 mx-auto rounded-full mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: "6rem" }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             />
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -391,7 +391,7 @@ const TestingQualityAnalysis = () => {
             </motion.p>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -399,7 +399,7 @@ const TestingQualityAnalysis = () => {
             viewport={{ once: true }}
           >
             {features.map((feature, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 variants={itemVariants}
                 className="group"
@@ -461,7 +461,7 @@ const TestingQualityAnalysis = () => {
                 </div>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -484,7 +484,7 @@ const TestingQualityAnalysis = () => {
                   </li>
                 ))}
               </ul>
-              
+
               <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
                 <div className="flex items-start">
                   <div className="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
@@ -508,7 +508,7 @@ const TestingQualityAnalysis = () => {
       {/* Expertise */}
       <div className="py-16 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -517,7 +517,7 @@ const TestingQualityAnalysis = () => {
           >
             Our Testing Expertise
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -526,8 +526,8 @@ const TestingQualityAnalysis = () => {
           >
             Comprehensive testing solutions tailored to your specific needs
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -555,7 +555,7 @@ const TestingQualityAnalysis = () => {
       <div className="py-16 bg-gradient-to-r from-blue-900 to-teal-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-bold mb-6"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -564,14 +564,14 @@ const TestingQualityAnalysis = () => {
             >
               Industry-Leading Testing Tools
             </motion.h2>
-            <motion.div 
+            <motion.div
               className="w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-300 mx-auto rounded-full mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: "6rem" }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             />
-            <motion.p 
+            <motion.p
               className="text-xl text-blue-100 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -582,7 +582,7 @@ const TestingQualityAnalysis = () => {
             </motion.p>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-2 md:grid-cols-4 gap-6"
             initial="hidden"
             whileInView="visible"
@@ -606,7 +606,7 @@ const TestingQualityAnalysis = () => {
       {/* Cost Section */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -615,7 +615,7 @@ const TestingQualityAnalysis = () => {
           >
             Transparent Testing Pricing
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -624,8 +624,8 @@ const TestingQualityAnalysis = () => {
           >
             Flexible engagement models tailored to your budget and requirements
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
             initial="hidden"
             whileInView="visible"
@@ -647,8 +647,8 @@ const TestingQualityAnalysis = () => {
               </motion.div>
             ))}
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="mt-16 bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl shadow-xl p-8 text-white text-center"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -669,7 +669,7 @@ const TestingQualityAnalysis = () => {
       {/* Industries */}
       <div className="py-16 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -678,7 +678,7 @@ const TestingQualityAnalysis = () => {
           >
             Industries We Serve
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -687,8 +687,8 @@ const TestingQualityAnalysis = () => {
           >
             Specialized testing solutions for diverse industry requirements
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -715,7 +715,7 @@ const TestingQualityAnalysis = () => {
       {/* Testing Process */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -724,11 +724,11 @@ const TestingQualityAnalysis = () => {
           >
             Our Quality Assurance Process
           </motion.h2>
-          
+
           <div className="relative">
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-teal-500 transform -translate-y-1/2 hidden lg:block"></div>
-            
-            <motion.div 
+
+            <motion.div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative"
               initial="hidden"
               whileInView="visible"
@@ -757,7 +757,7 @@ const TestingQualityAnalysis = () => {
       {/* FAQ */}
       <div className="py-16 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -766,8 +766,8 @@ const TestingQualityAnalysis = () => {
           >
             Frequently Asked Questions
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="space-y-4"
             initial="hidden"
             whileInView="visible"
@@ -785,16 +785,16 @@ const TestingQualityAnalysis = () => {
                   onClick={() => toggleFaq(index)}
                 >
                   <span className="text-lg font-medium text-gray-900">{faq.question}</span>
-                  <svg 
-                    className={`w-6 h-6 text-blue-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
+                  <svg
+                    className={`w-6 h-6 text-blue-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
-                
+
                 {openFaqIndex === index && (
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
@@ -814,7 +814,7 @@ const TestingQualityAnalysis = () => {
       {/* CTA */}
       <div className="py-16 bg-gradient-to-r from-blue-700 to-teal-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -823,7 +823,7 @@ const TestingQualityAnalysis = () => {
           >
             Ready to Enhance Your Software Quality?
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-blue-100 max-w-3xl mx-auto mb-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -832,7 +832,7 @@ const TestingQualityAnalysis = () => {
           >
             Partner with our expert QA team to deliver flawless software experiences to your users.
           </motion.p>
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

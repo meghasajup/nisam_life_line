@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const WebDevelopmentService = () => {
   // State for FAQ section
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
-  
+
   // Toggle FAQ items
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -230,21 +230,21 @@ const WebDevelopmentService = () => {
               animate="visible"
               variants={containerVariants}
             >
-              <motion.h1 
+              <motion.h1
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
                 variants={slideUp}
               >
                 Professional Web Development Services in Kochi
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="text-xl text-violet-200 mb-8 max-w-2xl"
                 variants={slideUp}
               >
                 We craft stunning, high-performance websites that drive business growth and engage your audience.
               </motion.p>
-              
+
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -259,7 +259,7 @@ const WebDevelopmentService = () => {
                   </div>
                   <div className="p-6">
                     <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 mb-4 flex items-center justify-center text-gray-500">
-                     <img src="https://i.pinimg.com/736x/f7/a2/e9/f7a2e9feda69ff0767250527649c3324.jpg" alt="" />
+                      <img src="https://i.pinimg.com/736x/f7/a2/e9/f7a2e9feda69ff0767250527649c3324.jpg" alt="" />
                     </div>
                     <p className="text-gray-700 mb-4">Transforming ideas into powerful digital experiences</p>
                     <div className="flex space-x-2">
@@ -291,26 +291,26 @@ const WebDevelopmentService = () => {
               variants={containerVariants}
               viewport={{ once: true }}
             >
-              <motion.h2 
+              <motion.h2
                 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
                 variants={slideUp}
               >
                 Leading Web Development Company in Kerala
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-lg text-gray-600 mb-8"
                 variants={slideUp}
               >
                 At our core, we strive to be a leading website development company in Kerala. We take pride in crafting websites that are both visually stunning and technically advanced, utilizing only the most powerful and innovative technologies available on the market.
               </motion.p>
-              <motion.p 
+              <motion.p
                 className="text-lg text-gray-600"
                 variants={slideUp}
               >
                 Our team of expert developers creates custom solutions that drive business growth, enhance user engagement, and deliver measurable results.
               </motion.p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -322,13 +322,13 @@ const WebDevelopmentService = () => {
                 <img src="https://admin.12grids.com/uploads/blogs/original_cover_images/future-of-responsive-web-design-12grids.jpg" alt="" />
               </div>
               <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 mt-8 flex items-center justify-center text-gray-500">
-               <img src="https://blog.powr.io/hs-fs/hubfs/ecommerce-website-example-github.webp?width=801&height=450&name=ecommerce-website-example-github.webp" alt="" />
+                <img src="https://blog.powr.io/hs-fs/hubfs/ecommerce-website-example-github.webp?width=801&height=450&name=ecommerce-website-example-github.webp" alt="" />
               </div>
               <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 flex items-center justify-center text-gray-500">
                 <img src="https://www.cloudways.com/blog/wp-content/uploads/CMS-Platforms.jpg" alt="" />
               </div>
               <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 mt-8 flex items-center justify-center text-gray-500">
-               <img src="https://cdn-proxy.slickplan.com/wp-content/uploads/2022/06/ux-portfolio-example-1.jpg" alt="" />
+                <img src="https://cdn-proxy.slickplan.com/wp-content/uploads/2022/06/ux-portfolio-example-1.jpg" alt="" />
               </div>
             </motion.div>
           </div>
@@ -339,7 +339,7 @@ const WebDevelopmentService = () => {
       <div className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -348,14 +348,14 @@ const WebDevelopmentService = () => {
             >
               Features of an Exceptional Website
             </motion.h2>
-            <motion.div 
+            <motion.div
               className="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-500 mx-auto rounded-full mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: "6rem" }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             />
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -366,7 +366,7 @@ const WebDevelopmentService = () => {
             </motion.p>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -374,7 +374,7 @@ const WebDevelopmentService = () => {
             viewport={{ once: true }}
           >
             {features.map((feature, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 variants={itemVariants}
                 className="group"
@@ -406,7 +406,7 @@ const WebDevelopmentService = () => {
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYVdW0fc-FqPszgE_rb3REkWfAbJ26pxgURg&s" alt="" />
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -428,7 +428,7 @@ const WebDevelopmentService = () => {
                   </li>
                 ))}
               </ul>
-              
+
               <div className="bg-indigo-50 rounded-xl p-6 border border-indigo-100">
                 <div className="flex items-start">
                   <div className="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
@@ -449,7 +449,7 @@ const WebDevelopmentService = () => {
       {/* Expertise */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -458,8 +458,8 @@ const WebDevelopmentService = () => {
           >
             Our Web Development Expertise
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -486,7 +486,7 @@ const WebDevelopmentService = () => {
       {/* Cost Section */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -495,12 +495,12 @@ const WebDevelopmentService = () => {
           >
             Transparent Pricing
           </motion.h2>
-          
+
           <p className="text-gray-700 text-center max-w-3xl mx-auto mb-10">
             We believe in transparent pricing tailored to your unique business needs. Below are the key factors that influence the cost of your website development project.
           </p>
-          
-          <motion.div 
+
+          <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
             initial="hidden"
             whileInView="visible"
@@ -522,8 +522,8 @@ const WebDevelopmentService = () => {
               </motion.div>
             ))}
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="mt-16 bg-gradient-to-r from-indigo-600 to-purple-500 rounded-2xl shadow-xl p-8 text-white text-center"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -544,7 +544,7 @@ const WebDevelopmentService = () => {
       {/* Industries */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -553,8 +553,8 @@ const WebDevelopmentService = () => {
           >
             Industries We Serve
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -581,7 +581,7 @@ const WebDevelopmentService = () => {
       {/* Development Process */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -590,11 +590,11 @@ const WebDevelopmentService = () => {
           >
             Our Development Process
           </motion.h2>
-          
+
           <div className="relative">
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-indigo-600 to-purple-500 transform -translate-y-1/2 hidden lg:block"></div>
-            
-            <motion.div 
+
+            <motion.div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative"
               initial="hidden"
               whileInView="visible"
@@ -623,7 +623,7 @@ const WebDevelopmentService = () => {
       {/* FAQ */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -632,8 +632,8 @@ const WebDevelopmentService = () => {
           >
             Frequently Asked Questions
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="space-y-4"
             initial="hidden"
             whileInView="visible"
@@ -651,16 +651,16 @@ const WebDevelopmentService = () => {
                   onClick={() => toggleFaq(index)}
                 >
                   <span className="text-lg font-medium text-gray-900">{faq.question}</span>
-                  <svg 
-                    className={`w-6 h-6 text-indigo-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
+                  <svg
+                    className={`w-6 h-6 text-indigo-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
-                
+
                 {openFaqIndex === index && (
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
@@ -680,7 +680,7 @@ const WebDevelopmentService = () => {
       {/* CTA */}
       <div className="py-16 bg-gradient-to-r from-indigo-700 to-purple-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -689,7 +689,7 @@ const WebDevelopmentService = () => {
           >
             Ready to Transform Your Online Presence?
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-indigo-200 max-w-3xl mx-auto mb-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -698,7 +698,7 @@ const WebDevelopmentService = () => {
           >
             Partner with Kochi's leading web development company to create a stunning, high-performing website for your business.
           </motion.p>
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

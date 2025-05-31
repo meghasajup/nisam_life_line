@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const MaintenanceSupport = () => {
   // State for FAQ section
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
-  
+
   // Toggle FAQ items
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -265,13 +265,13 @@ const MaintenanceSupport = () => {
               animate="visible"
               variants={containerVariants}
             >
-              <motion.h1 
+              <motion.h1
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
                 variants={slideUp}
               >
                 Professional IT Maintenance & Support
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="text-xl text-blue-100 mb-8 max-w-2xl"
                 variants={slideUp}
               >
@@ -286,7 +286,7 @@ const MaintenanceSupport = () => {
                 </button>
               </motion.div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -328,7 +328,7 @@ const MaintenanceSupport = () => {
       <div className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <motion.div 
+            <motion.div
               className="text-center p-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -338,7 +338,7 @@ const MaintenanceSupport = () => {
               <div className="text-4xl font-bold text-blue-600 mb-2">99.9%</div>
               <p className="text-gray-600">System Uptime</p>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="text-center p-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -348,7 +348,7 @@ const MaintenanceSupport = () => {
               <div className="text-4xl font-bold text-blue-600 mb-2">24/7</div>
               <p className="text-gray-600">Support Coverage</p>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="text-center p-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -358,7 +358,7 @@ const MaintenanceSupport = () => {
               <div className="text-4xl font-bold text-blue-600 mb-2">15 min</div>
               <p className="text-gray-600">Avg. Response Time</p>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="text-center p-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -382,19 +382,19 @@ const MaintenanceSupport = () => {
               variants={containerVariants}
               viewport={{ once: true }}
             >
-              <motion.h2 
+              <motion.h2
                 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
                 variants={slideUp}
               >
                 Comprehensive Maintenance & Support Solutions
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-lg text-gray-600 mb-8"
                 variants={slideUp}
               >
                 At SupportGuard, we provide more than just break-fix support. Our proactive maintenance approach focuses on preventing issues before they disrupt your business operations.
               </motion.p>
-              <motion.p 
+              <motion.p
                 className="text-lg text-gray-600 mb-8"
                 variants={slideUp}
               >
@@ -406,7 +406,7 @@ const MaintenanceSupport = () => {
                 </button>
               </motion.div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -443,7 +443,7 @@ const MaintenanceSupport = () => {
       <div className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -452,14 +452,14 @@ const MaintenanceSupport = () => {
             >
               Our Maintenance & Support Features
             </motion.h2>
-            <motion.div 
+            <motion.div
               className="w-24 h-1 bg-gradient-to-r from-blue-600 to-teal-500 mx-auto rounded-full mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: "6rem" }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             />
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -470,7 +470,7 @@ const MaintenanceSupport = () => {
             </motion.p>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -478,7 +478,7 @@ const MaintenanceSupport = () => {
             viewport={{ once: true }}
           >
             {features.map((feature, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 variants={itemVariants}
                 className="group"
@@ -540,7 +540,7 @@ const MaintenanceSupport = () => {
                 </div>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -563,7 +563,7 @@ const MaintenanceSupport = () => {
                   </li>
                 ))}
               </ul>
-              
+
               <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
                 <div className="flex items-start">
                   <div className="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
@@ -587,7 +587,7 @@ const MaintenanceSupport = () => {
       {/* Services Offered */}
       <div className="py-16 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -596,7 +596,7 @@ const MaintenanceSupport = () => {
           >
             Our Maintenance Services
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -605,8 +605,8 @@ const MaintenanceSupport = () => {
           >
             Comprehensive support solutions for all your IT infrastructure needs
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -633,7 +633,7 @@ const MaintenanceSupport = () => {
       {/* Pricing Tiers */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -642,7 +642,7 @@ const MaintenanceSupport = () => {
           >
             Flexible Support Plans
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -651,8 +651,8 @@ const MaintenanceSupport = () => {
           >
             Choose the support level that matches your business requirements
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -663,11 +663,10 @@ const MaintenanceSupport = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className={`relative rounded-2xl overflow-hidden shadow-lg ${
-                  tier.recommended 
-                    ? "ring-2 ring-blue-600 transform -translate-y-2" 
+                className={`relative rounded-2xl overflow-hidden shadow-lg ${tier.recommended
+                    ? "ring-2 ring-blue-600 transform -translate-y-2"
                     : "border border-gray-200"
-                }`}
+                  }`}
               >
                 {tier.recommended && (
                   <div className="absolute top-0 left-0 right-0 bg-blue-600 text-white text-center py-2 font-bold">
@@ -690,12 +689,11 @@ const MaintenanceSupport = () => {
                       </li>
                     ))}
                   </ul>
-                  <button 
-                    className={`w-full py-3 px-4 rounded-lg font-medium ${
-                      tier.recommended 
-                        ? "bg-blue-600 text-white hover:bg-blue-700" 
+                  <button
+                    className={`w-full py-3 px-4 rounded-lg font-medium ${tier.recommended
+                        ? "bg-blue-600 text-white hover:bg-blue-700"
                         : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-                    }`}
+                      }`}
                   >
                     Select Plan
                   </button>
@@ -703,8 +701,8 @@ const MaintenanceSupport = () => {
               </motion.div>
             ))}
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="mt-16 bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl shadow-xl p-8 text-white text-center"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -725,7 +723,7 @@ const MaintenanceSupport = () => {
       {/* Industries */}
       <div className="py-16 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -734,7 +732,7 @@ const MaintenanceSupport = () => {
           >
             Industries We Serve
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -743,8 +741,8 @@ const MaintenanceSupport = () => {
           >
             Specialized maintenance solutions for diverse industry requirements
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -771,7 +769,7 @@ const MaintenanceSupport = () => {
       {/* Support Process */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -780,11 +778,11 @@ const MaintenanceSupport = () => {
           >
             Our Support Process
           </motion.h2>
-          
+
           <div className="relative">
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-teal-500 transform -translate-y-1/2 hidden lg:block"></div>
-            
-            <motion.div 
+
+            <motion.div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative"
               initial="hidden"
               whileInView="visible"
@@ -813,7 +811,7 @@ const MaintenanceSupport = () => {
       {/* FAQ */}
       <div className="py-16 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -822,8 +820,8 @@ const MaintenanceSupport = () => {
           >
             Frequently Asked Questions
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="space-y-4"
             initial="hidden"
             whileInView="visible"
@@ -841,16 +839,16 @@ const MaintenanceSupport = () => {
                   onClick={() => toggleFaq(index)}
                 >
                   <span className="text-lg font-medium text-gray-900">{faq.question}</span>
-                  <svg 
-                    className={`w-6 h-6 text-blue-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
+                  <svg
+                    className={`w-6 h-6 text-blue-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
-                
+
                 {openFaqIndex === index && (
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
@@ -870,7 +868,7 @@ const MaintenanceSupport = () => {
       {/* CTA */}
       <div className="py-16 bg-gradient-to-r from-blue-700 to-teal-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -879,7 +877,7 @@ const MaintenanceSupport = () => {
           >
             Ready for Stress-Free IT Maintenance?
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-blue-100 max-w-3xl mx-auto mb-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -888,7 +886,7 @@ const MaintenanceSupport = () => {
           >
             Focus on your business while we ensure your IT infrastructure runs flawlessly 24/7.
           </motion.p>
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

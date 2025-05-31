@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const CMSDevelopment = () => {
   // State for FAQ section
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
-  
+
   // Toggle FAQ items
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -232,7 +232,7 @@ const CMSDevelopment = () => {
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E")`
         }}></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -240,21 +240,21 @@ const CMSDevelopment = () => {
               animate="visible"
               variants={containerVariants}
             >
-              <motion.h1 
+              <motion.h1
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
                 variants={slideUp}
               >
                 Powerful Content Management Solutions
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="text-xl text-blue-200 mb-8 max-w-2xl"
                 variants={slideUp}
               >
                 We build custom CMS platforms that empower teams to create, manage, and deliver exceptional content experiences.
               </motion.p>
-             
+
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -297,26 +297,26 @@ const CMSDevelopment = () => {
               variants={containerVariants}
               viewport={{ once: true }}
             >
-              <motion.h2 
+              <motion.h2
                 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
                 variants={slideUp}
               >
                 Expert CMS Development Services
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-lg text-gray-600 mb-8"
                 variants={slideUp}
               >
                 We specialize in creating custom content management solutions that empower your team to manage digital content efficiently. Whether you need a simple blog platform or a complex enterprise content ecosystem, we deliver CMS solutions tailored to your specific requirements.
               </motion.p>
-              <motion.p 
+              <motion.p
                 className="text-lg text-gray-600"
                 variants={slideUp}
               >
                 Our CMS implementations focus on usability, scalability, and security, ensuring your content platform grows with your business while maintaining optimal performance.
               </motion.p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -328,10 +328,10 @@ const CMSDevelopment = () => {
                 <img src="https://kinsta.com/wp-content/uploads/2018/03/wp-what-is-a-content-management-system-1024x512.jpg" alt="" />
               </div>
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-dashed border-blue-200 rounded-xl h-64 mt-8 flex flex-col items-center justify-center text-gray-500 p-4">
-    <img src="https://www.cflowapps.com/wp-content/uploads/2021/02/workflow-efficiency.jpg" alt="" />
+                <img src="https://www.cflowapps.com/wp-content/uploads/2021/02/workflow-efficiency.jpg" alt="" />
               </div>
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-dashed border-blue-200 rounded-xl h-64 flex flex-col items-center justify-center text-gray-500 p-4">
-              <img src="https://www.1000grad.de/wp-content/uploads/2023/07/Headless-CMS-1-scaled.jpg" alt="" />
+                <img src="https://www.1000grad.de/wp-content/uploads/2023/07/Headless-CMS-1-scaled.jpg" alt="" />
               </div>
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-dashed border-blue-200 rounded-xl h-64 mt-8 flex flex-col items-center justify-center text-gray-500 p-4">
                 <img src="https://themesnap.com/wp-content/uploads/2024/08/optimizing_cms_user_access.jpg" alt="" />
@@ -345,7 +345,7 @@ const CMSDevelopment = () => {
       <div className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -354,14 +354,14 @@ const CMSDevelopment = () => {
             >
               Our CMS Development Services
             </motion.h2>
-            <motion.div 
+            <motion.div
               className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: "6rem" }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             />
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -372,7 +372,7 @@ const CMSDevelopment = () => {
             </motion.p>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -380,7 +380,7 @@ const CMSDevelopment = () => {
             viewport={{ once: true }}
           >
             {services.map((service, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 variants={itemVariants}
                 className="group"
@@ -416,7 +416,7 @@ const CMSDevelopment = () => {
                 </div>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -438,7 +438,7 @@ const CMSDevelopment = () => {
                   </li>
                 ))}
               </ul>
-              
+
               <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
                 <div className="flex items-start">
                   <div className="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
@@ -460,7 +460,7 @@ const CMSDevelopment = () => {
       <div className="py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -469,14 +469,14 @@ const CMSDevelopment = () => {
             >
               Essential CMS Features
             </motion.h2>
-            <motion.div 
+            <motion.div
               className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: "6rem" }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             />
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -487,7 +487,7 @@ const CMSDevelopment = () => {
             </motion.p>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -515,7 +515,7 @@ const CMSDevelopment = () => {
       <div className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -524,14 +524,14 @@ const CMSDevelopment = () => {
             >
               CMS Platforms We Specialize In
             </motion.h2>
-            <motion.div 
+            <motion.div
               className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: "6rem" }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             />
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -542,7 +542,7 @@ const CMSDevelopment = () => {
             </motion.p>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6"
             initial="hidden"
             whileInView="visible"
@@ -568,7 +568,7 @@ const CMSDevelopment = () => {
       <div className="py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -577,7 +577,7 @@ const CMSDevelopment = () => {
             >
               Our CMS Development Process
             </motion.h2>
-            <motion.div 
+            <motion.div
               className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: "6rem" }}
@@ -588,8 +588,8 @@ const CMSDevelopment = () => {
 
           <div className="relative">
             <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 transform -translate-y-1/2"></div>
-            
-            <motion.div 
+
+            <motion.div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 relative"
               initial="hidden"
               whileInView="visible"
@@ -618,7 +618,7 @@ const CMSDevelopment = () => {
       <div className="py-16 bg-gradient-to-r from-blue-800 to-indigo-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-bold mb-4"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -627,14 +627,14 @@ const CMSDevelopment = () => {
             >
               Client Success Stories
             </motion.h2>
-            <motion.div 
+            <motion.div
               className="w-24 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto rounded-full mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: "6rem" }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             />
-            <motion.p 
+            <motion.p
               className="text-xl text-blue-200 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -645,7 +645,7 @@ const CMSDevelopment = () => {
             </motion.p>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -695,7 +695,7 @@ const CMSDevelopment = () => {
       <div className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -704,7 +704,7 @@ const CMSDevelopment = () => {
             >
               Frequently Asked Questions
             </motion.h2>
-            <motion.div 
+            <motion.div
               className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: "6rem" }}
@@ -713,7 +713,7 @@ const CMSDevelopment = () => {
             />
           </div>
 
-          <motion.div 
+          <motion.div
             className="space-y-4"
             initial="hidden"
             whileInView="visible"
@@ -731,16 +731,16 @@ const CMSDevelopment = () => {
                   onClick={() => toggleFaq(index)}
                 >
                   <span className="text-lg font-medium text-gray-900">{faq.question}</span>
-                  <svg 
-                    className={`w-6 h-6 text-blue-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
+                  <svg
+                    className={`w-6 h-6 text-blue-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
-                
+
                 {openFaqIndex === index && (
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
@@ -763,9 +763,9 @@ const CMSDevelopment = () => {
           <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500 rounded-full -m-24 opacity-20"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500 rounded-full -m-32 opacity-20"></div>
-            
+
             <div className="relative z-10">
-              <motion.h2 
+              <motion.h2
                 className="text-3xl md:text-4xl font-bold text-white mb-6"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -774,7 +774,7 @@ const CMSDevelopment = () => {
               >
                 Ready to Transform Your Content Management?
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-xl text-blue-200 max-w-2xl mx-auto mb-8"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -783,7 +783,7 @@ const CMSDevelopment = () => {
               >
                 Let's build a CMS solution that empowers your team and engages your audience
               </motion.p>
-              <motion.div 
+              <motion.div
                 className="flex flex-col sm:flex-row justify-center gap-4"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

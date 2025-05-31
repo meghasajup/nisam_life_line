@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const MobileDevelopment = () => {
   // State for FAQ section
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
-  
+
   // Toggle FAQ items
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -250,21 +250,21 @@ const MobileDevelopment = () => {
               animate="visible"
               variants={containerVariants}
             >
-              <motion.h1 
+              <motion.h1
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
                 variants={slideUp}
               >
                 Transform Your Business With Powerful Mobile Apps
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="text-xl text-violet-200 mb-8 max-w-2xl"
                 variants={slideUp}
               >
                 As a leading mobile app development company, we deliver custom, high-performance applications that drive growth and engage users.
               </motion.p>
-             
+
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -311,26 +311,26 @@ const MobileDevelopment = () => {
               variants={containerVariants}
               viewport={{ once: true }}
             >
-              <motion.h2 
+              <motion.h2
                 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
                 variants={slideUp}
               >
                 Our Mobile App Development Services
               </motion.h2>
-              <motion.p 
+              <motion.p
                 className="text-lg text-gray-600 mb-8"
                 variants={slideUp}
               >
                 In today's mobile-first world, applications have become essential touchpoints between businesses and users. For over a decade, iROID has established itself as a premier mobile app development company, crafting solutions across diverse industries.
               </motion.p>
-              <motion.p 
+              <motion.p
                 className="text-lg text-gray-600"
                 variants={slideUp}
               >
                 We specialize in creating native and hybrid applications for iOS and Android, transforming your vision into intuitive, high-performance mobile experiences.
               </motion.p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -359,7 +359,7 @@ const MobileDevelopment = () => {
       <div className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.h2 
+            <motion.h2
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -368,14 +368,14 @@ const MobileDevelopment = () => {
             >
               Comprehensive Mobile Development Services
             </motion.h2>
-            <motion.div 
+            <motion.div
               className="w-24 h-1 bg-gradient-to-r from-violet-600 to-purple-500 mx-auto rounded-full mb-6"
               initial={{ width: 0 }}
               whileInView={{ width: "6rem" }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             />
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -386,7 +386,7 @@ const MobileDevelopment = () => {
             </motion.p>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -394,7 +394,7 @@ const MobileDevelopment = () => {
             viewport={{ once: true }}
           >
             {services.map((service, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 variants={itemVariants}
                 className="group"
@@ -418,7 +418,7 @@ const MobileDevelopment = () => {
             ))}
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="mt-16 bg-gradient-to-r from-violet-600 to-purple-500 rounded-2xl shadow-xl p-8 text-white text-center"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -455,7 +455,7 @@ const MobileDevelopment = () => {
                 <img src="https://www.softwaresuggest.com/blog/wp-content/uploads/2024/03/14-best-free-and-open-source-mobile-app-development-software-1.jpg" alt="" />
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -477,7 +477,7 @@ const MobileDevelopment = () => {
                   </li>
                 ))}
               </ul>
-              
+
               <div className="bg-violet-50 rounded-xl p-6 border border-violet-100">
                 <div className="flex items-start">
                   <div className="bg-violet-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
@@ -498,7 +498,7 @@ const MobileDevelopment = () => {
       {/* Expertise */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -507,8 +507,8 @@ const MobileDevelopment = () => {
           >
             Our Mobile Development Expertise
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -539,7 +539,7 @@ const MobileDevelopment = () => {
       {/* Development Process */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -548,11 +548,11 @@ const MobileDevelopment = () => {
           >
             Our Development Process
           </motion.h2>
-          
+
           <div className="relative">
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-violet-600 to-purple-500 transform -translate-y-1/2 hidden lg:block"></div>
-            
-            <motion.div 
+
+            <motion.div
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 relative"
               initial="hidden"
               whileInView="visible"
@@ -580,7 +580,7 @@ const MobileDevelopment = () => {
       {/* Industries */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -589,8 +589,8 @@ const MobileDevelopment = () => {
           >
             Industries We Serve
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -621,7 +621,7 @@ const MobileDevelopment = () => {
       {/* Case Studies */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -630,8 +630,8 @@ const MobileDevelopment = () => {
           >
             Success Stories
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             initial="hidden"
             whileInView="visible"
@@ -667,7 +667,7 @@ const MobileDevelopment = () => {
       {/* FAQ */}
       <div className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -676,8 +676,8 @@ const MobileDevelopment = () => {
           >
             Frequently Asked Questions
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="space-y-4"
             initial="hidden"
             whileInView="visible"
@@ -695,16 +695,16 @@ const MobileDevelopment = () => {
                   onClick={() => toggleFaq(index)}
                 >
                   <span className="text-lg font-medium text-gray-900">{faq.question}</span>
-                  <svg 
-                    className={`w-6 h-6 text-violet-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
+                  <svg
+                    className={`w-6 h-6 text-violet-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
-                
+
                 {openFaqIndex === index && (
                   <motion.div
                     initial={{ opacity: 0, height: 0 }}
@@ -724,7 +724,7 @@ const MobileDevelopment = () => {
       {/* CTA */}
       <div className="py-16 bg-gradient-to-r from-violet-700 to-purple-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -733,7 +733,7 @@ const MobileDevelopment = () => {
           >
             Ready to Transform Your Business with a Mobile App?
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-violet-200 max-w-3xl mx-auto mb-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -742,7 +742,7 @@ const MobileDevelopment = () => {
           >
             Let's discuss your project and create a custom mobile solution that exceeds your expectations.
           </motion.p>
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
