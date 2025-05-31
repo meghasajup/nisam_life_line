@@ -42,15 +42,16 @@ export const Footer = () => {
           <div className="space-y-4">
             <div>
               <h4 className="font-semibold text-blue-300">Email</h4>
-              <p className="hover:text-blue-400 transition-colors duration-200">contact@techista.com</p>
+              <p className="hover:text-blue-400 transition-colors duration-200">techistasolutions@gmail.com</p>
             </div>
             <div>
               <h4 className="font-semibold text-blue-300">Phone</h4>
-              <p className="hover:text-blue-400 transition-colors duration-200">+1 (123) 456-7890</p>
+              <p className="hover:text-blue-400 transition-colors duration-200">+91 9400440686</p>
+              <p className="hover:text-blue-400 transition-colors duration-200">+91 8921703086</p>
             </div>
             <div>
               <h4 className="font-semibold text-blue-300">Address</h4>
-              <p className="hover:text-blue-400 transition-colors duration-200">123 Tech Street, Kochi, India</p>
+              <p className="hover:text-blue-400 transition-colors duration-200">  Office No-131A, Sector-52, Madyamarg, Chandgrah-160019</p>
             </div>
           </div>
         </div>
@@ -80,7 +81,7 @@ export const Footer = () => {
             <a href="#" className="text-white hover:text-blue-600 transition-colors duration-300 text-2xl">
               <FaLinkedin />
             </a>
-            <a href="#" className="text-white hover:text-pink-500 transition-colors duration-300 text-2xl">
+            <a href="https://www.instagram.com/techista_solutions?utm_source=qr&igsh=MXB4Z2NucG9zZHE5MQ%3D%3D" className="text-white hover:text-pink-500 transition-colors duration-300 text-2xl">
               <FaInstagram />
             </a>
             <a href="#" className="text-white hover:text-gray-400 transition-colors duration-300 text-2xl">
