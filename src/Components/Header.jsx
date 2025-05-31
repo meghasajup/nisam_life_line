@@ -46,7 +46,7 @@ export const Header = () => {
             <a href="/" className="flex items-center h-16">
               <img
                 src={Logo}
-                className="h-20 w-auto"
+                className="h-12 w-auto"
                 alt="Techista Logo"
               />
             </a>

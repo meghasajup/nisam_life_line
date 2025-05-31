@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-
+ import { FiShoppingCart, FiHeart, FiBookOpen, FiCreditCard, FiMap, FiUsers } from "react-icons/fi";
 const MobileDevelopment = () => {
   // State for FAQ section
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
@@ -87,32 +87,41 @@ const MobileDevelopment = () => {
   ];
 
   // Industries served
-  const industries = [
-    {
-      title: "E-commerce",
-      description: "Mobile shopping experiences with seamless checkout."
-    },
-    {
-      title: "Healthcare",
-      description: "Telemedicine, appointment booking, and health tracking."
-    },
-    {
-      title: "Education",
-      description: "E-learning platforms and educational tools."
-    },
-    {
-      title: "Fintech",
-      description: "Banking, payments, and financial management apps."
-    },
-    {
-      title: "Travel & Hospitality",
-      description: "Booking systems and travel planning tools."
-    },
-    {
-      title: "Social Networking",
-      description: "Community building and social engagement platforms."
-    }
-  ];
+ 
+
+const industries = [
+  {
+    title: "E-commerce",
+    description: "Mobile shopping experiences with seamless checkout.",
+    icon: <FiShoppingCart className="w-6 h-6" />
+  },
+  {
+    title: "Healthcare",
+    description: "Telemedicine, appointment booking, and health tracking.",
+    icon: <FiHeart className="w-6 h-6" />
+  },
+  {
+    title: "Education",
+    description: "E-learning platforms and educational tools.",
+    icon: <FiBookOpen className="w-6 h-6" />
+  },
+  {
+    title: "Fintech",
+    description: "Banking, payments, and financial management apps.",
+    icon: <FiCreditCard className="w-6 h-6" />
+  },
+  {
+    title: "Travel & Hospitality",
+    description: "Booking systems and travel planning tools.",
+    icon: <FiMap className="w-6 h-6" />
+  },
+  {
+    title: "Social Networking",
+    description: "Community building and social engagement platforms.",
+    icon: <FiUsers className="w-6 h-6" />
+  }
+];
+
 
   // Development process
   const developmentProcess = [
@@ -271,31 +280,48 @@ const MobileDevelopment = () => {
               transition={{ duration: 0.8 }}
               className="flex justify-center"
             >
-              <div className="relative">
-                <div className="absolute -top-6 -left-6 w-full h-full bg-violet-600 rounded-2xl"></div>
-                <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl w-full max-w-sm">
-                  <div className="bg-gradient-to-r from-violet-600 to-purple-500 p-6">
-                    <h3 className="text-white text-xl font-bold">Techitsa Mobile Solutions</h3>
-                  </div>
-                  <div className="p-6">
-                    <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 mb-4">
-                      <img src="https://www.mindinventory.com/blog/wp-content/uploads/2018/12/benefits-of-mobile-app-for-business.webp" alt="" />
-                    </div>
-                    <p className="text-gray-700 mb-4">Transforming ideas into powerful mobile experiences</p>
-                    <div className="flex space-x-2">
-                      <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16">
-                        <img src="https://www.businessofapps.com/wp-content/uploads/2020/08/zymr8_steps_the_mobile_app_dev_lifecycle_cover.jpg" alt="" />
-                      </div>
-                      <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16">
-                        <img src="https://www.appslure.com/wp-content/uploads/2024/02/An-Exciting-Future-of-Mobile-App-Development-Industry-Insights.webp" alt="" />
-                      </div>
-                      <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16">
-                        <img src="https://www.addevice.io/storage/ckeditor/uploads/images/65f82dcd3866a_ai.in.mobile.app.development.1920.1080.png" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+           <div className="relative">
+  <div className="absolute -top-6 -left-6 w-full h-full bg-violet-600 rounded-2xl"></div>
+  <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl w-full max-w-sm">
+    <div className="bg-gradient-to-r from-violet-600 to-purple-500 p-6">
+      <h3 className="text-white text-xl font-bold">Techitsa Mobile Solutions</h3>
+    </div>
+    <div className="p-6">
+      <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 mb-4 overflow-hidden">
+        <img
+          src="https://www.mindinventory.com/blog/wp-content/uploads/2018/12/benefits-of-mobile-app-for-business.webp"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <p className="text-gray-700 mb-4">Transforming ideas into powerful mobile experiences</p>
+      <div className="flex space-x-2">
+        <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 overflow-hidden">
+          <img
+            src="https://www.businessofapps.com/wp-content/uploads/2020/08/zymr8_steps_the_mobile_app_dev_lifecycle_cover.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 overflow-hidden">
+          <img
+            src="https://www.appslure.com/wp-content/uploads/2024/02/An-Exciting-Future-of-Mobile-App-Development-Industry-Insights.webp"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 overflow-hidden">
+          <img
+            src="https://www.addevice.io/storage/ckeditor/uploads/images/65f82dcd3866a_ai.in.mobile.app.development.1920.1080.png"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
             </motion.div>
           </div>
         </div>
@@ -321,7 +347,7 @@ const MobileDevelopment = () => {
                 className="text-lg text-gray-600 mb-8"
                 variants={slideUp}
               >
-                In today's mobile-first world, applications have become essential touchpoints between businesses and users. For over a decade, iROID has established itself as a premier mobile app development company, crafting solutions across diverse industries.
+                In today's mobile-first world, applications have become essential touchpoints between businesses and users. For over a decade, Techista has established itself as a premier mobile app development company, crafting solutions across diverse industries.
               </motion.p>
               <motion.p
                 className="text-lg text-gray-600"
@@ -332,25 +358,42 @@ const MobileDevelopment = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-2 gap-4"
-            >
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64">
-                <img src="https://img.freepik.com/free-vector/realistic-ui-ux-background_23-2149046824.jpg?semt=ais_hybrid&w=740" alt="" />
-              </div>
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 mt-8">
-                <img src="https://img.freepik.com/free-vector/app-development-illustration_52683-47931.jpg?semt=ais_hybrid&w=740" alt="" />
-              </div>
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64">
-                <img src="https://img.freepik.com/free-photo/high-angle-hands-holding-paper_23-2149930977.jpg?semt=ais_hybrid&w=740" alt="" />
-              </div>
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 mt-8">
-                <img src="https://img.freepik.com/premium-vector/mobile-application-coding-flat-3d-isometric-vector-concept-illustration_92926-5948.jpg?semt=ais_hybrid&w=740" alt="" />
-              </div>
-            </motion.div>
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: true }}
+  className="grid grid-cols-2 gap-4"
+>
+  <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 flex items-center justify-center overflow-hidden">
+    <img
+      src="https://img.freepik.com/free-vector/realistic-ui-ux-background_23-2149046824.jpg?semt=ais_hybrid&w=740"
+      alt=""
+      className="h-full w-full object-cover"
+    />
+  </div>
+  <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 mt-8 flex items-center justify-center overflow-hidden">
+    <img
+      src="https://img.freepik.com/free-vector/app-development-illustration_52683-47931.jpg?semt=ais_hybrid&w=740"
+      alt=""
+      className="h-full w-full object-cover"
+    />
+  </div>
+  <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 flex items-center justify-center overflow-hidden">
+    <img
+      src="https://img.freepik.com/free-photo/high-angle-hands-holding-paper_23-2149930977.jpg?semt=ais_hybrid&w=740"
+      alt=""
+      className="h-full w-full object-cover"
+    />
+  </div>
+  <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 mt-8 flex items-center justify-center overflow-hidden">
+    <img
+      src="https://img.freepik.com/premium-vector/mobile-application-coding-flat-3d-isometric-vector-concept-illustration_92926-5948.jpg?semt=ais_hybrid&w=740"
+      alt=""
+      className="h-full w-full object-cover"
+    />
+  </div>
+</motion.div>
+
           </div>
         </div>
       </div>
@@ -486,7 +529,7 @@ const MobileDevelopment = () => {
                     </svg>
                   </div>
                   <p className="text-violet-800">
-                    "iROID transformed our business with a custom mobile app that increased customer engagement by 65% in the first quarter."
+                    "Techista transformed our business with a custom mobile app that increased customer engagement by 65% in the first quarter."
                   </p>
                 </div>
               </div>
@@ -605,9 +648,9 @@ const MobileDevelopment = () => {
               >
                 <div className="flex items-center mb-4">
                   <div className="bg-violet-100 text-violet-600 rounded-lg w-12 h-12 flex items-center justify-center mr-4">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                    </svg>
+                    <div className="bg-violet-100 text-violet-600 rounded-lg w-12 h-12 flex items-center justify-center mr-">
+    {industry.icon}
+  </div>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900">{industry.title}</h3>
                 </div>

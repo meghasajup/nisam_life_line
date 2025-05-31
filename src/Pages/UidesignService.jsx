@@ -250,7 +250,7 @@ const UIDesignService = () => {
     <div className="bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900 via-indigo-900 to-violet-800 z-0"></div>
+        <div className="absolute overflow-hidden inset-0 bg-gradient-to-r from-gray-900 to-emerald-800 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform hover:from-gray-800 hover:to-emerald-700 z-0"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -287,7 +287,7 @@ const UIDesignService = () => {
                   </div>
                   <div className="p-6">
                     <div className="bg-gradient-to-br from-purple-100 to-indigo-100 border-2 border-dashed border-purple-300 rounded-xl w-full h-64 mb-4 flex flex-col items-center justify-center text-gray-500">
-                      <img src="https://img.freepik.com/free-photo/top-view-nutritional-counter-app-concept_23-2149880602.jpg?semt=ais_hybrid&w=740" alt="" />
+                     <img src="https://img.freepik.com/free-photo/top-view-nutritional-counter-app-concept_23-2149880602.jpg?semt=ais_hybrid&w=740" alt="" />
                       <p className="text-sm">UI Design Mockup</p>
                     </div>
                     <p className="text-gray-700 mb-4">Transforming ideas into powerful user experiences</p>
@@ -459,7 +459,7 @@ const UIDesignService = () => {
                     </svg>
                   </div>
                   <p className="text-purple-800">
-                    "Working with iROID transformed our product's usability. Their UX research uncovered insights that led to a complete redesign, resulting in a 45% increase in user retention."
+                    "Working with Techista transformed our product's usability. Their UX research uncovered insights that led to a complete redesign, resulting in a 45% increase in user retention."
                   </p>
                 </div>
               </div>
@@ -607,7 +607,7 @@ const UIDesignService = () => {
       </div>
 
       {/* Testimonials */}
-      <div className="py-16 bg-gradient-to-r from-purple-900 to-indigo-800 text-white">
+      {/* <div className="py-16 bg-gradient-to-r from-purple-900 to-indigo-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             className="text-3xl md:text-4xl font-bold text-center mb-16"
@@ -653,7 +653,7 @@ const UIDesignService = () => {
             ))}
           </motion.div>
         </div>
-      </div>
+      </div> */}
 
       {/* FAQ */}
       <div className="py-16 bg-gray-50">

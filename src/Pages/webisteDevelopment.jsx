@@ -222,7 +222,7 @@ const WebDevelopmentService = () => {
     <div className="bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-900 via-purple-900 to-violet-800 z-0"></div>
+        <div className="absolute overflow-hidden inset-0 bg-gradient-to-r from-gray-900 to-emerald-800 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform hover:from-gray-800 hover:to-emerald-700 z-0"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -259,7 +259,7 @@ const WebDevelopmentService = () => {
                   </div>
                   <div className="p-6">
                     <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 mb-4 flex items-center justify-center text-gray-500">
-                      <img src="https://i.pinimg.com/736x/f7/a2/e9/f7a2e9feda69ff0767250527649c3324.jpg" alt="" />
+                     <img src="https://i.pinimg.com/736x/f7/a2/e9/f7a2e9feda69ff0767250527649c3324.jpg" alt="" />
                     </div>
                     <p className="text-gray-700 mb-4">Transforming ideas into powerful digital experiences</p>
                     <div className="flex space-x-2">
@@ -310,7 +310,7 @@ const WebDevelopmentService = () => {
                 Our team of expert developers creates custom solutions that drive business growth, enhance user engagement, and deliver measurable results.
               </motion.p>
             </motion.div>
-
+            
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -322,13 +322,13 @@ const WebDevelopmentService = () => {
                 <img src="https://admin.12grids.com/uploads/blogs/original_cover_images/future-of-responsive-web-design-12grids.jpg" alt="" />
               </div>
               <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 mt-8 flex items-center justify-center text-gray-500">
-                <img src="https://blog.powr.io/hs-fs/hubfs/ecommerce-website-example-github.webp?width=801&height=450&name=ecommerce-website-example-github.webp" alt="" />
+               <img src="https://blog.powr.io/hs-fs/hubfs/ecommerce-website-example-github.webp?width=801&height=450&name=ecommerce-website-example-github.webp" alt="" />
               </div>
               <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 flex items-center justify-center text-gray-500">
                 <img src="https://www.cloudways.com/blog/wp-content/uploads/CMS-Platforms.jpg" alt="" />
               </div>
               <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 mt-8 flex items-center justify-center text-gray-500">
-                <img src="https://cdn-proxy.slickplan.com/wp-content/uploads/2022/06/ux-portfolio-example-1.jpg" alt="" />
+               <img src="https://cdn-proxy.slickplan.com/wp-content/uploads/2022/06/ux-portfolio-example-1.jpg" alt="" />
               </div>
             </motion.div>
           </div>
@@ -403,7 +403,12 @@ const WebDevelopmentService = () => {
               viewport={{ once: true }}
             >
               <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-96 flex items-center justify-center text-gray-500">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYVdW0fc-FqPszgE_rb3REkWfAbJ26pxgURg&s" alt="" />
+                <img 
+  src="https://saviynt.com/hs-fs/hubfs/Saviynt/root/solution-hero-office.png?width=768&height=780&name=solution-hero-office.png" 
+  className="w-full h-full object-cover rounded-xl" 
+  alt="" 
+/>
+
               </div>
             </motion.div>
 
@@ -437,7 +442,7 @@ const WebDevelopmentService = () => {
                     </svg>
                   </div>
                   <p className="text-indigo-800">
-                    "iROID transformed our online presence with a custom website that increased conversions by 40% in the first three months."
+                    "Techista transformed our online presence with a custom website that increased conversions by 40% in the first three months."
                   </p>
                 </div>
               </div>

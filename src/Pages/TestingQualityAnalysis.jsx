@@ -234,7 +234,7 @@ const TestingQualityAnalysis = () => {
     <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-700 to-teal-600 z-0"></div>
+        <div className="absolute overflow-hidden inset-0 bg-gradient-to-r from-gray-900 to-emerald-800 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform hover:from-gray-800 hover:to-emerald-700 z-0"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -271,9 +271,9 @@ const TestingQualityAnalysis = () => {
               className="flex justify-center"
             >
               <div className="relative">
-                <div className="absolute -top-6 -left-6 w-full h-full bg-teal-500 rounded-2xl"></div>
+                <div className="absolute -top-6 -left-6 w-full h-full  bg-violet-600 rounded-2xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl w-full max-w-md">
-                  <div className="bg-gradient-to-r from-blue-600 to-teal-500 p-6">
+                  <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 p-6">
                     <h3 className="text-white text-xl font-bold">QualityGuard Testing Services</h3>
                   </div>
                   <div className="p-6">

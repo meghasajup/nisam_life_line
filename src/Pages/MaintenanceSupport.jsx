@@ -257,7 +257,7 @@ const MaintenanceSupport = () => {
     <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-800 via-blue-600 to-teal-600 z-0"></div>
+        <div className="absolute overflow-hidden inset-0 bg-gradient-to-r from-gray-900 to-emerald-800 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform hover:from-gray-800 hover:to-emerald-700 z-0"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -278,12 +278,16 @@ const MaintenanceSupport = () => {
                 Proactive maintenance and responsive support to keep your systems running smoothly 24/7.
               </motion.p>
               <motion.div variants={slideUp} className="flex flex-wrap gap-4">
+                <a href="#maintanceprice">
                 <button className="px-8 py-3 bg-white text-blue-700 font-bold rounded-lg shadow-lg hover:bg-blue-50 transition-colors">
                   Get Support Plan
                 </button>
+                </a>
+                <a href="/contact">
                 <button className="px-8 py-3 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
                   Contact Our Team
                 </button>
+                </a>
               </motion.div>
             </motion.div>
 
@@ -294,9 +298,9 @@ const MaintenanceSupport = () => {
               className="flex justify-center"
             >
               <div className="relative">
-                <div className="absolute -top-6 -left-6 w-full h-full bg-teal-500 rounded-2xl"></div>
+                <div className="absolute -top-6 -left-6 w-full h-full bg-purple-600 rounded-2xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl w-full max-w-md">
-                  <div className="bg-gradient-to-r from-blue-600 to-teal-500 p-6">
+                  <div className="bg-purple-500 p-6">
                     <h3 className="text-white text-xl font-bold">SupportGuard Services</h3>
                   </div>
                   <div className="p-6">
@@ -401,9 +405,11 @@ const MaintenanceSupport = () => {
                 With our enterprise-grade monitoring tools and expert engineers, we ensure your systems run at peak performance while reducing downtime and operational costs.
               </motion.p>
               <motion.div variants={slideUp}>
-                <button className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                <a href="#maintanceprice">
+                <button id='#maintanceprice' className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
                   View Our Maintenance Plans
                 </button>
+                </a>
               </motion.div>
             </motion.div>
 
@@ -631,6 +637,7 @@ const MaintenanceSupport = () => {
       </div>
 
       {/* Pricing Tiers */}
+      <section id='maintanceprice'>
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
@@ -718,7 +725,7 @@ const MaintenanceSupport = () => {
             </button>
           </motion.div>
         </div>
-      </div>
+      </div></section>
 
       {/* Industries */}
       <div className="py-16 bg-gradient-to-b from-blue-50 to-white">

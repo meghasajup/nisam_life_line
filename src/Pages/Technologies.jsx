@@ -115,7 +115,7 @@ export const Technologies = () => {
             {
                 name: 'SMO',
                 image: smo,
-                description: 'Our Social Media Optimization team at iROID can enhance your business visibility to the audience through effective and exceptional SMO strategies.'
+                description: 'Our Social Media Optimization team at Techista can enhance your business visibility to the audience through effective and exceptional SMO strategies.'
             },
             {
                 name: 'SEO',

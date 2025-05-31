@@ -84,22 +84,7 @@ const EcommerceDevelopment = () => {
 
   // Platforms we work with
   const platforms = [
-    {
-      name: "Shopify",
-      description: "All-in-one commerce platform to start, grow, and manage a business."
-    },
-    {
-      name: "WooCommerce",
-      description: "Customizable e-commerce solution built on WordPress."
-    },
-    {
-      name: "Magento",
-      description: "Flexible e-commerce platform for growing businesses."
-    },
-    {
-      name: "BigCommerce",
-      description: "Enterprise-grade e-commerce solution."
-    },
+    
     {
       name: "Custom Solutions",
       description: "Tailor-made e-commerce platforms for unique business needs."
@@ -228,7 +213,7 @@ const EcommerceDevelopment = () => {
   return (
     <div className="bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-purple-900 to-indigo-800">
+      <div className="relative overflow-hidden inset-0 bg-gradient-to-r from-gray-900 to-emerald-800 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform hover:from-gray-800 hover:to-emerald-700 z-0">
         <div className="absolute inset-0 opacity-20" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E")`
         }}></div>
@@ -497,7 +482,9 @@ const EcommerceDevelopment = () => {
                 variants={itemVariants}
                 className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-lg transition-shadow"
               >
-                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mx-auto mb-4"></div>
+                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mx-auto mb-4">
+                  <img src="https://technoderivation.com/assets/images/vector/ecommerce.png" alt="" />
+                </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{platform.name}</h3>
                 <p className="text-gray-600 text-sm">{platform.description}</p>
               </motion.div>
@@ -557,7 +544,7 @@ const EcommerceDevelopment = () => {
       </div>
 
       {/* Testimonials */}
-      <div className="py-16 bg-gradient-to-r from-purple-900 to-indigo-800 text-white">
+      {/* <div className="py-16 bg-gradient-to-r from-purple-900 to-indigo-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.h2
@@ -631,7 +618,7 @@ const EcommerceDevelopment = () => {
             ))}
           </motion.div>
         </div>
-      </div>
+      </div> */}
 
       {/* FAQ */}
       <div className="py-16 bg-white">

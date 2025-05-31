@@ -87,22 +87,6 @@ const CMSDevelopment = () => {
     {
       name: "WordPress",
       description: "Flexible, user-friendly platform powering 43% of the web."
-    },
-    {
-      name: "Joomla",
-      description: "Powerful CMS for complex websites and online applications."
-    },
-    {
-      name: "Drupal",
-      description: "Enterprise-grade solution for large-scale content ecosystems."
-    },
-    {
-      name: "Strapi",
-      description: "Leading open-source headless CMS."
-    },
-    {
-      name: "Contentful",
-      description: "API-first content platform for digital teams."
     }
   ];
 
@@ -228,7 +212,7 @@ const CMSDevelopment = () => {
   return (
     <div className="bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-blue-800 to-indigo-900">
+      <div className="relative overflow-hidden inset-0 bg-gradient-to-r from-gray-900 to-emerald-800 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform hover:from-gray-800 hover:to-emerald-700 z-0">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E")`
         }}></div>
@@ -262,7 +246,7 @@ const CMSDevelopment = () => {
               className="flex justify-center"
             >
               <div className="relative">
-                <div className="absolute -top-6 -left-6 w-full h-full bg-blue-600 rounded-2xl"></div>
+                <div className="absolute -top-6 -left-6 w-full h-full bg-violet-600  rounded-2xl"></div>
                 <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl w-full max-w-md">
                   <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6">
                     <h3 className="text-white text-xl font-bold">CMS Solutions</h3>
@@ -316,7 +300,7 @@ const CMSDevelopment = () => {
                 Our CMS implementations focus on usability, scalability, and security, ensuring your content platform grows with your business while maintaining optimal performance.
               </motion.p>
             </motion.div>
-
+            
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -328,10 +312,10 @@ const CMSDevelopment = () => {
                 <img src="https://kinsta.com/wp-content/uploads/2018/03/wp-what-is-a-content-management-system-1024x512.jpg" alt="" />
               </div>
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-dashed border-blue-200 rounded-xl h-64 mt-8 flex flex-col items-center justify-center text-gray-500 p-4">
-                <img src="https://www.cflowapps.com/wp-content/uploads/2021/02/workflow-efficiency.jpg" alt="" />
+    <img src="https://www.cflowapps.com/wp-content/uploads/2021/02/workflow-efficiency.jpg" alt="" />
               </div>
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-dashed border-blue-200 rounded-xl h-64 flex flex-col items-center justify-center text-gray-500 p-4">
-                <img src="https://www.1000grad.de/wp-content/uploads/2023/07/Headless-CMS-1-scaled.jpg" alt="" />
+              <img src="https://www.1000grad.de/wp-content/uploads/2023/07/Headless-CMS-1-scaled.jpg" alt="" />
               </div>
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-dashed border-blue-200 rounded-xl h-64 mt-8 flex flex-col items-center justify-center text-gray-500 p-4">
                 <img src="https://themesnap.com/wp-content/uploads/2024/08/optimizing_cms_user_access.jpg" alt="" />
@@ -555,7 +539,9 @@ const CMSDevelopment = () => {
                 variants={itemVariants}
                 className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-lg transition-shadow"
               >
-                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mx-auto mb-4"></div>
+                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mx-auto mb-4">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCxa3XSVAFs3-W8Ld77MJzb5L9f08jNGheBg&s" alt="" />
+                </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{platform.name}</h3>
                 <p className="text-gray-600 text-sm">{platform.description}</p>
               </motion.div>
@@ -615,7 +601,7 @@ const CMSDevelopment = () => {
       </div>
 
       {/* Testimonials */}
-      <div className="py-16 bg-gradient-to-r from-blue-800 to-indigo-800 text-white">
+      {/* <div className="py-16 bg-gradient-to-r from-blue-800 to-indigo-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.h2
@@ -689,7 +675,7 @@ const CMSDevelopment = () => {
             ))}
           </motion.div>
         </div>
-      </div>
+      </div> */}
 
       {/* FAQ */}
       <div className="py-16 bg-white">
