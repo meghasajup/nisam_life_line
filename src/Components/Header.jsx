@@ -223,7 +223,7 @@ export const Header = () => {
               {/* Mobile CTA */}
               <div className="pt-4">
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="w-full flex justify-center items-center px-4 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full shadow hover:shadow-md transition-all"
                   onClick={() => setMobileMenuOpen(false)}
                 >
