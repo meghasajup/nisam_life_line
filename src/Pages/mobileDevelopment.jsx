@@ -792,12 +792,12 @@ const industries = [
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <button className="px-8 py-4 bg-white text-violet-700 font-bold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+            {/* <button className="px-8 py-4 bg-white text-violet-700 font-bold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
               Get a Free Consultation
             </button>
             <button className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
               View Our Portfolio
-            </button>
+            </button> */}
           </motion.div>
         </div>
       </div>

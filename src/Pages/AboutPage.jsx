@@ -8,37 +8,62 @@ import maneesha from "../images/Maneesha.jpg";
 
 export const AboutPage = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
-  
-   const teamMembers = [
+
+  const teamMembers = [
     {
       name: "Jeswin Joseph",
       role: "Full Stack Developer",
       bio: "Specializes in React architecture and state management with 5 years of experience.",
-      image: jeswin
+      image: jeswin,
+      socialLinks: {
+        instagram: "https://www.instagram.com/jes_win_____?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+        linkedin: "https://www.linkedin.com/in/jeswinjoseph-?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        github: "https://github.com/JESWIN100"
+      }
     },
     {
       name: "Keshava Patteri M",
       role: "Full Stack Developer",
       bio: "Expert in backend systems and API design with a focus on scalability.",
-      image: keshav
+      image: keshav,
+      socialLinks: {
+        instagram: "hhttps://www.instagram.com/keshu_mkt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+        linkedin: "https://www.linkedin.com/in/keshava-patteri-m-5471a32b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        github: "https://github.com/keshavapatteri"
+      }
     },
     {
       name: "Megha Saju P",
       role: "Full Stack Developer",
       bio: "Passionate about UI/UX design and frontend performance optimization.",
-      image: megha
+      image: megha,
+      socialLinks: {
+        instagram: "https://www.instagram.com/_megh4?igsh=ZXh2NW5qa2cxYzM1",
+        linkedin: "https://www.linkedin.com/in/megha-abhin-73b25132b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        github: "https://github.com/meghasajup"
+      }
     },
     {
       name: "Fathimath Sumayya O",
       role: "Full Stack Developer",
       bio: "Focuses on database optimization and security best practices.",
-      image: sumayya
+      image: sumayya,
+      socialLinks: {
+        instagram: "https://www.instagram.com/sumi_zaya_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+        linkedin: "https://www.linkedin.com/in/fathimath-sumayya-o-b30396307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        github: "https://github.com/Sumayyaom"
+      }
     },
-     {
+    {
       name: "Mannesha MA",
       role: "Full Stack Developer",
       bio: "Focuses on database optimization and security best practices.",
-      image: maneesha
+      image: maneesha,
+      socialLinks: {
+        instagram: "https://www.instagram.com/maneeshama7?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+        linkedin: "https://www.linkedin.com/in/maneesha-ma?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        github: "https://github.com/maneesha465"
+      }
     }
   ];
 
@@ -46,11 +71,12 @@ export const AboutPage = () => {
     {
       icon: (
         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
         </svg>
       ),
-      color: "hover:text-blue-600",
-      label: "Facebook"
+      color: "hover:text-pink-400",
+      label: "Instagram",
+      key: "instagram"
     },
     {
       icon: (
@@ -59,7 +85,8 @@ export const AboutPage = () => {
         </svg>
       ),
       color: "hover:text-blue-400",
-      label: "LinkedIn"
+      label: "LinkedIn",
+      key: "linkedin"
     },
     {
       icon: (
@@ -68,7 +95,8 @@ export const AboutPage = () => {
         </svg>
       ),
       color: "hover:text-gray-800",
-      label: "GitHub"
+      label: "GitHub",
+      key: "github"
     }
   ];
 
@@ -84,8 +112,8 @@ export const AboutPage = () => {
 
   const item = {
     hidden: { y: 30, opacity: 0 },
-    show: { 
-      y: 0, 
+    show: {
+      y: 0,
       opacity: 1,
       transition: {
         duration: 0.6,
@@ -95,11 +123,11 @@ export const AboutPage = () => {
   };
 
   // Reusable Section Component
-  const ImageTextSection = ({ 
-    reverse = false, 
-    title, 
-    subtitle, 
-    content, 
+  const ImageTextSection = ({
+    reverse = false,
+    title,
+    subtitle,
+    content,
     imageUrl,
     bgColor = "bg-white"
   }) => (
@@ -119,7 +147,7 @@ export const AboutPage = () => {
       </div>
 
       <div className={`lg:w-1/2 w-full ${reverse ? "lg:order-1" : ""}`}>
-        <motion.div 
+        <motion.div
           className="w-full h-full"
           initial={{ opacity: 0, x: reverse ? 50 : -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -142,14 +170,14 @@ export const AboutPage = () => {
       <section className="relative bg-gradient-to-br from-gray-900 to-emerald-900 text-white py-20 md:py-28 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-10">
-            <motion.h1 
+            <motion.h1
               className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
               <span className="block text-gray-100">Behind the Bytes</span>
-              <motion.span 
+              <motion.span
                 className="block text-emerald-400 mt-3 bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -158,8 +186,8 @@ export const AboutPage = () => {
                 Our Story at TechIsta Solutions
               </motion.span>
             </motion.h1>
-            
-            <motion.div 
+
+            <motion.div
               className="flex justify-center mt-8"
               initial={{ width: 0 }}
               animate={{ width: "10rem" }}
@@ -169,7 +197,7 @@ export const AboutPage = () => {
             </motion.div>
           </div>
 
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -177,8 +205,8 @@ export const AboutPage = () => {
           >
             TechIsta Solutions since 2025 - transforming complex challenges into elegant technological innovations.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
             animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
@@ -218,34 +246,6 @@ export const AboutPage = () => {
       {/* Stats Section with Cards */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          {/* <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Impact in Numbers
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full mx-auto"></div>
-          </div> */}
-
-          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { value: "200+", label: "Projects Completed" },
-              { value: "98%", label: "Client Satisfaction" },
-              { value: "5+", label: "Years of Excellence" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg border border-gray-100"
-                whileHover={{ y: -10 }}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-5xl font-bold text-emerald-600 mb-3">{stat.value}</h3>
-                <p className="text-lg text-gray-600">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div> */}
-
           <div className="mt-16 bg-gray-50 rounded-2xl p-8 md:p-12 shadow-inner">
             <p className="text-lg text-gray-700 leading-relaxed">
               As a Mobile app development company in Kerala, our focus has always been on delivering top-notch services to clients across multiple industries. Over the years, we have developed websites, web applications, and mobile applications that have enabled our clients to improve their engagement with their customers and expand their revenue. We understand that our clients are not simply looking for a website or an app, but rather a medium to connect with their customers and expand their business.
@@ -257,27 +257,27 @@ export const AboutPage = () => {
       {/* Reusable Image/Text Sections */}
       <div className='mx-auto max-w-7xl'>
         <ImageTextSection
-        title="Expertise in Strategy & Consulting"
-        subtitle="Shaping Business"
-        content="TechIsta Solutions offers extensive expertise in strategy and consulting to administer enterprises of all scopes to get to their destiny, digitally-enabled condition, both in the way they function internally and benefit their customers."
-        imageUrl="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-      />
-      
-      <ImageTextSection
-        reverse={true}
-        title="Collaborative Team Approach"
-        subtitle="Working Together"
-        content="Our cross-functional teams work in synergy to deliver exceptional results. By fostering open communication and leveraging diverse expertise, we create solutions that exceed client expectations while maintaining agility throughout the development process."
-        imageUrl="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-        bgColor="bg-gray-50"
-      />
-      
-      <ImageTextSection
-        title="Security & Reliability Focus"
-        subtitle="Protecting Assets"
-        content="We prioritize security at every layer of our solutions. From secure coding practices to rigorous penetration testing, we ensure that your digital assets remain protected against evolving threats while maintaining maximum uptime and reliability."
-        imageUrl="https://www.securitymagazine.com/ext/resources/Issues/2024/03-March/SEC-0324-Cyber-Feat-Slide1-1170x658.jpg?1711833837"
-      />
+          title="Expertise in Strategy & Consulting"
+          subtitle="Shaping Business"
+          content="TechIsta Solutions offers extensive expertise in strategy and consulting to administer enterprises of all scopes to get to their destiny, digitally-enabled condition, both in the way they function internally and benefit their customers."
+          imageUrl="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        />
+
+        <ImageTextSection
+          reverse={true}
+          title="Collaborative Team Approach"
+          subtitle="Working Together"
+          content="Our cross-functional teams work in synergy to deliver exceptional results. By fostering open communication and leveraging diverse expertise, we create solutions that exceed client expectations while maintaining agility throughout the development process."
+          imageUrl="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          bgColor="bg-gray-50"
+        />
+
+        <ImageTextSection
+          title="Security & Reliability Focus"
+          subtitle="Protecting Assets"
+          content="We prioritize security at every layer of our solutions. From secure coding practices to rigorous penetration testing, we ensure that your digital assets remain protected against evolving threats while maintaining maximum uptime and reliability."
+          imageUrl="https://www.securitymagazine.com/ext/resources/Issues/2024/03-March/SEC-0324-Cyber-Feat-Slide1-1170x658.jpg?1711833837"
+        />
 
       </div>
       {/* Enhanced Mission Section */}
@@ -287,7 +287,7 @@ export const AboutPage = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Our Mission & Vision
             </h2>
-            
+
             <div className="space-y-6">
               {[
                 {
@@ -309,7 +309,7 @@ export const AboutPage = () => {
                   )
                 }
               ].map((item, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   className="flex items-start space-x-4 bg-white p-6 rounded-xl shadow-sm border border-gray-100"
                   whileHover={{ y: -5 }}
@@ -325,7 +325,7 @@ export const AboutPage = () => {
               ))}
             </div>
           </div>
-          
+
           <div className="relative">
             <div className="absolute -inset-6 bg-gradient-to-tr from-emerald-400 to-teal-500 rounded-3xl transform rotate-3 blur-xl opacity-20"></div>
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
@@ -360,7 +360,7 @@ export const AboutPage = () => {
             </p>
           </div>
 
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8"
             variants={container}
             initial="hidden"
@@ -375,14 +375,14 @@ export const AboutPage = () => {
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                <motion.div 
+                <motion.div
                   className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 h-full flex flex-col border border-gray-200"
                   whileHover={{ y: -8 }}
                 >
                   <div className="relative h-64 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10"></div>
-                    
-                    <motion.div 
+
+                    <motion.div
                       className="absolute inset-0"
                       animate={{
                         scale: hoveredCard === index ? 1.05 : 1
@@ -395,7 +395,7 @@ export const AboutPage = () => {
                         className="w-full h-full object-cover"
                       />
                     </motion.div>
-                    
+
                     <div className="absolute bottom-0 left-0 right-0 p-5 z-20">
                       <div className="flex items-center">
                         <div className="mr-3">
@@ -407,17 +407,19 @@ export const AboutPage = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="absolute top-5 right-5 z-20">
                       <div className="flex gap-2">
                         {socialIcons.map((social, i) => (
                           <motion.a
                             key={i}
-                            href="#"
+                            href={person.socialLinks[social.key]}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className={`w-8 h-8 rounded-full bg-white flex items-center justify-center text-gray-500 ${social.color} transition-colors shadow-md`}
                             aria-label={`${person.name}'s ${social.label}`}
                             initial={{ opacity: 0, y: 20 }}
-                            animate={{ 
+                            animate={{
                               opacity: hoveredCard === index ? 1 : 0,
                               y: hoveredCard === index ? 0 : 20
                             }}
@@ -433,28 +435,18 @@ export const AboutPage = () => {
 
                   <div className="p-6 flex-grow">
                     <p className="text-gray-600 text-sm mb-4">{person.bio}</p>
-                    
-                    <div className="pt-4 border-t border-gray-100">
+
+                    {/* <div className="pt-4 border-t border-gray-100">
                       <div className="flex justify-between items-center">
                         <div className="text-sm text-gray-500">
                           <span>1+ years experience</span>
                         </div>
-                        
-                        {/* <motion.button 
-                          className="text-sm font-medium text-emerald-600 hover:text-emerald-700 transition-colors flex items-center gap-1"
-                          whileHover={{ x: 5 }}
-                        >
-                          View Profile
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </motion.button> */}
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   className="absolute -inset-1 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-500 z-[-1] opacity-0 blur-md"
                   animate={{
                     opacity: hoveredCard === index ? 0.3 : 0
@@ -473,9 +465,9 @@ export const AboutPage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-emerald-900 to-gray-900"></div>
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds.png')] opacity-10"></div>
         </div>
-        
+
         <div className="relative max-w-4xl mx-auto text-center">
-          <motion.h2 
+          <motion.h2
             className="text-4xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -483,8 +475,8 @@ export const AboutPage = () => {
           >
             Ready to start your project?
           </motion.h2>
-          
-          <motion.p 
+
+          <motion.p
             className="text-xl text-emerald-100 mb-10 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -493,7 +485,7 @@ export const AboutPage = () => {
           >
             We'd love to hear about your ideas and how we can help bring them to life.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -510,9 +502,9 @@ export const AboutPage = () => {
             </button>
           </motion.div>
         </div>
-        
+
         {/* Floating elements */}
-        <motion.div 
+        <motion.div
           className="absolute top-10 left-10 w-8 h-8 rounded-full bg-emerald-400/20"
           animate={{
             y: [0, -20, 0],
@@ -523,7 +515,7 @@ export const AboutPage = () => {
             ease: "easeInOut"
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute bottom-20 right-20 w-12 h-12 rounded-full bg-white/10"
           animate={{
             y: [0, 20, 0],

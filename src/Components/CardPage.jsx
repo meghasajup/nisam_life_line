@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { FaClock, FaUsers, FaHeadset, FaPaintBrush, FaUserCircle, FaLock, FaSearch, FaLaptopCode  } from 'react-icons/fa';
+import { FaClock, FaUsers, FaHeadset, FaPaintBrush, FaUserCircle, FaLock, FaSearch, FaLaptopCode } from 'react-icons/fa';
 
 export const cards = [
   {
@@ -58,9 +58,9 @@ export const CardPage = () => {
               key={index}
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 text-center"
             >
-             <div className="flex justify-center">
-      {card.icon}
-    </div>
+              <div className="flex justify-center">
+                {card.icon}
+              </div>
               <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
               <p className="text-gray-600">{card.description}</p>
             </div>
