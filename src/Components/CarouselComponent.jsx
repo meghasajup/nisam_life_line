@@ -1,104 +1,135 @@
-
-
-import React from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import React, { useState, useEffect } from 'react';
 
 const slides = [
   {
-    img: "https://img.freepik.com/premium-vector/geometric-template-website-banner_230610-400.jpg?semt=ais_items_boosted&w=740",
-    title: "Welcome to TechIsta",
-    description:
-      "Providing guidance, resources, and technical assistance to help students successfully complete their academic and personal projects.",
+    image: "https://wallpapercave.com/wp/wp8246854.jpg",
+    title: "Welecom to Techista Solutions",
+    description: "Where innovation meets business success."
   },
   {
-    img: "https://images.ctfassets.net/nnkxuzam4k38/4BIP4ge9ontCTkNubiY4lb/48121f9d09134fd83670b1d6e182aa66/white-particles-background.png?w=3840&q=60&fm=webp",
-    title: "Web Development Company",
-    description:
-      "Build dynamic, user-friendly, and scalable web applications with modern technologies and expert guidance.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c29mdHdhcmUlMjBjb21wYW55fGVufDB8fDB8fHww",
+    title: "Team Collaboration",
+    description: "Empowering teams to work smarter and faster"
   },
+  {
+    image: "https://wallpapers.com/images/hd/business-background-83br7zd1i2i2o59x.jpg",
+    title: "Global Reach",
+    description: "Connecting businesses worldwide with our platform"
+  }
 ];
 
 export const CarouselComponent = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    setIsAutoPlaying(false);
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    setIsAutoPlaying(false);
+  };
+
+  const goToSlide = (idx) => {
+    setCurrentIndex(idx);
+    setIsAutoPlaying(false);
+  };
+
+  useEffect(() => {
+    let interval;
+    if (isAutoPlaying) {
+      interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+      }, 5000);
+    }
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, currentIndex]);
+
   return (
-    <div className="rounded-xl overflow-hidden relative">
-      <Carousel
-        showThumbs={false}
-        showStatus={false}
-        infiniteLoop
-        autoPlay
-        interval={5000}
-        transitionTime={800}
-        emulateTouch
-      >
-        {slides.map((slide, index) => (
-          <div key={index} className="relative h-[500px] w-full flex items-center px-10">
-            {index === 0 ? (
-              <>
-                {/* First Slide: text left, animation right */}
-                <div className="flex-1 text-left">
-                  <h1 className="text-5xl font-extrabold mb-4 px-20 text-[#00C3A5] whitespace-nowrap font-serif">
-                    {slide.title}
-                  </h1>
-                  <p className="text-2xl text-[#9A6EFF] px-10">{slide.description}</p>
-                </div>
-
-                <div className="flex-1 flex justify-end">
-                  <img
-                    src="https://mir-s3-cdn-cf.behance.net/project_modules/source/7934b071252497.5bbeed275a7a7.gif"
-                    alt="Animated Decoration"
-                    className="w-80 h-80 object-contain"
-                  />
-                </div>
-              </>
-            ) : index === 1 ? (
-              <>
-                {/* Second Slide: Background image stays visible */}
-                <img
-                  src={slide.img}
-                  alt={`Slide ${index + 1}`}
-                  className="object-cover absolute inset-0 w-full h-full"
-                />
-
-                {/* Overlay container with animation left and text right */}
-                <div className="relative z-10 flex w-full h-full px-10 items-center justify-between">
-                  {/* Animation on left */}
-                  <div className="flex-1 flex justify-start">
-                    <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUthmhN6QwIiAtFyazOEwAAEYo3A1H34CzJA&s"
-                      alt="Animated Decoration"
-                      className="w-80 h-80 object-contain"
-                    />
-                  </div>
-
-                  {/* Text on right */}
-                  <div className="flex-1 text-right">
-                    <h1 className="text-5xl font-extrabold mb-4 pr-20 text-[#00C3A5] whitespace-nowrap font-serif">
-                      {slide.title}
-                    </h1>
-                    <p className="text-2xl text-[#9A6EFF] pr-10">{slide.description}</p>
-                  </div>
-                </div>
-              </>
-            ) : (
-              <>
-                {/* Other slides fallback */}
-                <img
-                  src={slide.img}
-                  alt={`Slide ${index + 1}`}
-                  className="object-cover absolute inset-0 w-full h-full"
-                />
-                <div className="absolute inset-0 flex justify-center items-end flex-col px-8 text-right">
-                  <h1 className="text-5xl font-extrabold mb-8 text-[#00C3A5] whitespace-nowrap font-serif">
-                    {slide.title}
-                  </h1>
-                  <p className="text-2xl text-[#9A6EFF]">{slide.description}</p>
-                </div>
-              </>
-            )}
+    <div className="w-full relative group">
+      {/* Full-width Slides Container */}
+      <div className="relative overflow-hidden w-full h-[70vh] min-h-[500px]">
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10"></div>
+        
+        {/* Slide Image */}
+        <img
+          src={slides[currentIndex].image}
+          alt={`Slide ${currentIndex + 1}`}
+          className="w-full h-full object-cover object-center transition-all duration-1000 ease-in-out"
+        />
+        
+        {/* Slide Content */}
+        <div className="absolute inset-0 flex items-center z-20">
+          <div className="container mx-auto px-8 text-white max-w-4xl">
+            <div className="space-y-6">
+              <h2 className="text-5xl font-bold tracking-tight animate-fadeIn">
+                {slides[currentIndex].title}
+              </h2>
+              <p className="text-xl animate-fadeIn delay-100">
+                {slides[currentIndex].description}
+              </p>
+              <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium text-lg transition-all transform hover:scale-105 animate-fadeIn delay-200">
+                Get Started
+              </button>
+            </div>
           </div>
+        </div>
+      </div>
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute top-1/2 left-8 transform -translate-y-1/2 bg-white/30 text-white rounded-full p-3 hover:bg-white/50 backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-20 shadow-lg hover:scale-110"
+        aria-label="Previous Slide"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 right-8 transform -translate-y-1/2 bg-white/30 text-white rounded-full p-3 hover:bg-white/50 backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-20 shadow-lg hover:scale-110"
+        aria-label="Next Slide"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* Dots Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+        {slides.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => goToSlide(idx)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              idx === currentIndex ? 'w-8 bg-blue-500' : 'w-4 bg-white/50 hover:bg-white/80'
+            }`}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
         ))}
-      </Carousel>
+      </div>
+
+      {/* Play/Pause Button */}
+      <button
+        onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+        className="absolute bottom-8 right-8 bg-white/30 text-white rounded-full p-2 hover:bg-white/50 backdrop-blur-sm z-20 transition-all"
+        aria-label={isAutoPlaying ? "Pause slideshow" : "Play slideshow"}
+      >
+        {isAutoPlaying ? (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
+          </svg>
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+          </svg>
+        )}
+      </button>
     </div>
   );
 };
