@@ -18,7 +18,10 @@ export const Header = () => {
   }, []);
 
   const navItems = [
-        { name: 'Works', href: '#portfolio' },
+        // { name: 'Works', href: '#portfolio' },
+         { name: 'Home', href: '/' },
+ { name: 'About Us', href: '/About' },
+
     { name: 'Technologies', href: 'Technologies' },
    
     {
@@ -33,7 +36,6 @@ export const Header = () => {
         { name: 'Web Development Service', href: '/WebDevelopmentService' },
       ]
     },
- { name: 'About Us', href: '/About' },
     { name: 'Contact', href: '/contact' }
   ];
 
