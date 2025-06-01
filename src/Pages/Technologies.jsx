@@ -198,9 +198,9 @@ export const Technologies = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gray-50 ">
             {/* Hero Section */}
-            <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-800 text-white py-20">
+            <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-800  text-white py-20">
                 <div className="container mx-auto px-6 text-center">
                     <h1 className="text-5xl font-bold mb-6">Our Technology Stack</h1>
                     <p className="text-xl max-w-3xl mx-auto leading-relaxed opacity-90">

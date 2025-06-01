@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 const slides = [
   {
-    image: "https://wallpapercave.com/wp/wp8246854.jpg",
+    image: "https://img.freepik.com/premium-photo/innovative-collaboration_1034820-37058.jpg",
     title: "Welecom to Techista Solutions",
     description: "Where innovation meets business success."
   },
   {
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c29mdHdhcmUlMjBjb21wYW55fGVufDB8fDB8fHww",
+    image: "https://img.freepik.com/free-photo/man-wearing-virtual-reality-goggles-with-special-effects-around-him_23-2148815724.jpg",
     title: "Team Collaboration",
     description: "Empowering teams to work smarter and faster"
   },
@@ -48,9 +48,9 @@ export const CarouselComponent = () => {
   }, [isAutoPlaying, currentIndex]);
 
   return (
-    <div className="w-full relative group">
+    <div className="relative h-[70vh] min-h-[700px] overflow-hidden">
       {/* Full-width Slides Container */}
-      <div className="relative overflow-hidden w-full h-[70vh] min-h-[500px]">
+      <div className="">
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10"></div>
         

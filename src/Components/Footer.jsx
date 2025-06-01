@@ -7,27 +7,77 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
         {/* Services Column */}
         <div className="transform hover:-translate-y-1 transition duration-300">
-          <h3 className="text-xl font-bold mb-6 pb-2 border-b-2 border-blue-500 inline-block">Services</h3>
-          <ul className="space-y-3">
-            {['Website Development', 'E-Commerce Development', 'Mobile App Development', 
-              'Digital Marketing', 'UI/UX Design', 'Software Development', 
-              'Web App Development', 'Testing & Quality Analysis', 'Maintenance & Support'].map((service) => (
-              <li key={service} className="hover:text-blue-400 transition-colors duration-200 flex items-center">
-                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                {service}
-              </li>
-            ))}
-          </ul>
-        </div>
+  <h3 className="text-xl font-bold mb-6 pb-2 border-b-2 border-blue-500 inline-block">
+    Services
+  </h3>
+
+  <div className="space-y-3">
+    <div>
+      <a href="/WebDevelopmentService" className="hover:text-blue-400 transition-colors duration-200 flex items-center">
+        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+        Website Development
+      </a>
+    </div>
+    <div>
+      <a href="/EcommerceDevelopment" className="hover:text-blue-400 transition-colors duration-200 flex items-center">
+        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+        E-Commerce Development
+      </a>
+    </div>
+    <div>
+      <a href="/MobileDevelopment" className="hover:text-blue-400 transition-colors duration-200 flex items-center">
+        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+        Mobile App Development
+      </a>
+    </div>
+    <div>
+      <a href="#" className="hover:text-blue-400 transition-colors duration-200 flex items-center">
+        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+        Digital Marketing
+      </a>
+    </div>
+    <div>
+      <a href="/UIDesignService" className="hover:text-blue-400 transition-colors duration-200 flex items-center">
+        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+        UI/UX Design
+      </a>
+    </div>
+    <div>
+      <a href="#" className="hover:text-blue-400 transition-colors duration-200 flex items-center">
+        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+        Software Development
+      </a>
+    </div>
+    <div>
+      <a href="" className="hover:text-blue-400 transition-colors duration-200 flex items-center">
+        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+        Web App Development
+      </a>
+    </div>
+    <div>
+      <a href="/TestingQualityAnalysis" className="hover:text-blue-400 transition-colors duration-200 flex items-center">
+        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+        Testing & Quality Analysis
+      </a>
+    </div>
+    <div>
+      <a href="/MaintenanceSupport" className="hover:text-blue-400 transition-colors duration-200 flex items-center">
+        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+        Maintenance & Support
+      </a>
+    </div>
+  </div>
+</div>
+
 
         {/* Technologies Column */}
         <div className="transform hover:-translate-y-1 transition duration-300">
           <h3 className="text-xl font-bold mb-6 pb-2 border-b-2 border-purple-500 inline-block">Technologies</h3>
           <ul className="space-y-3">
-            {['Python Development', 'PHP Development', 'HTML5 Design', 
+            {['Flutter Development', 'PHP Development', 'HTML5 Design', 
               'WordPress Development', 'UI Design', 'CRM Development', 
               'Angular JS Development', 'React JS Development', 'Node JS Development',
-              'Laravel Development', 'Bootstrap Development', 'jQuery Development'].map((tech) => (
+              'Laravel Development', 'Bootstrap Development',].map((tech) => (
               <li key={tech} className="hover:text-purple-400 transition-colors duration-200 flex items-center">
                 <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
                 {tech}
@@ -51,7 +101,8 @@ export const Footer = () => {
             </div>
             <div>
               <h4 className="font-semibold text-blue-300">Address</h4>
-              <p className="hover:text-blue-400 transition-colors duration-200">  Office No-131A, Sector-52, Madyamarg, Chandgrah-160019</p>
+              <p className="hover:text-blue-400 transition-colors duration-200"> 9nd floor,
+Palarivattom, Cochin – 25</p>
             </div>
           </div>
         </div>
@@ -60,7 +111,7 @@ export const Footer = () => {
         <div>
           <h3 className="text-xl font-bold mb-6 pb-2 border-b-2 border-yellow-500 inline-block">Company</h3>
           <ul className="space-y-3 mb-8">
-            {['About Us', 'All Services', 'Portfolio', 'Careers', 'Technologies', 'Contact Us'].map((item) => (
+            {['About Us', 'All Services', 'Portfolio' , 'Technologies', 'Contact Us'].map((item) => (
               <li key={item} className="hover:text-yellow-400 transition-colors duration-200">
                 <a href="#" className="flex items-center">
                   <span className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
@@ -72,19 +123,19 @@ export const Footer = () => {
 
           <h3 className="text-xl font-bold mb-6 pb-2 border-b-2 border-pink-500 inline-block">Follow Us</h3>
           <div className="flex space-x-4 mb-8">
-            <a href="#" className="text-white hover:text-blue-400 transition-colors duration-300 text-2xl">
+            <a href="https://www.instagram.com/techista_solutions?utm_source=qr&igsh=MXB4Z2NucG9zZHE5MQ==" className="text-white hover:text-blue-400 transition-colors duration-300 text-2xl">
               <FaFacebook />
             </a>
-            <a href="#" className="text-white hover:text-sky-400 transition-colors duration-300 text-2xl">
+            <a href="https://www.instagram.com/techista_solutions?utm_source=qr&igsh=MXB4Z2NucG9zZHE5MQ==" className="text-white hover:text-sky-400 transition-colors duration-300 text-2xl">
               <FaTwitter />
             </a>
-            <a href="#" className="text-white hover:text-blue-600 transition-colors duration-300 text-2xl">
+            <a href="https://www.instagram.com/techista_solutions?utm_source=qr&igsh=MXB4Z2NucG9zZHE5MQ==" className="text-white hover:text-blue-600 transition-colors duration-300 text-2xl">
               <FaLinkedin />
             </a>
             <a href="https://www.instagram.com/techista_solutions?utm_source=qr&igsh=MXB4Z2NucG9zZHE5MQ%3D%3D" className="text-white hover:text-pink-500 transition-colors duration-300 text-2xl">
               <FaInstagram />
             </a>
-            <a href="#" className="text-white hover:text-gray-400 transition-colors duration-300 text-2xl">
+            <a href="https://github.com/techistasolutions" className="text-white hover:text-gray-400 transition-colors duration-300 text-2xl">
               <FaGithub />
             </a>
           </div>
@@ -94,11 +145,11 @@ export const Footer = () => {
             <p className="mt-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
               Think Unique, Think Smart®
             </p>
-            <div className="flex space-x-2 mt-4">
+            {/* <div className="flex space-x-2 mt-4">
               <span className="text-xs bg-gray-800 px-2 py-1 rounded">Privacy Policy</span>
               <span className="text-xs bg-gray-800 px-2 py-1 rounded">Terms of Service</span>
               <span className="text-xs bg-gray-800 px-2 py-1 rounded">Cookies</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

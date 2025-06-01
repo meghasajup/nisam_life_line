@@ -12,29 +12,24 @@ import MobileDevelopment from '../Pages/mobileDevelopment'
 import TestingQualityAnalysis from '../Pages/TestingQualityAnalysis'
 import UIDesignService from '../Pages/UidesignService'
 import WebDevelopmentService from '../Pages/webisteDevelopment'
+import { HomePageLayout } from '../Layout/HomepageLayout'
 
 export const router = createBrowserRouter([
-    {
+     {
         path: "/",
-        element: <RootLayout />,
+        element: <HomePageLayout />,
         children: [
             {
                 path: "/",
                 element: <HomePage />
             },
-//keshu
-            {
+
+ {
                 path: "About",
                 element: <AboutPage />
             },
 
-
-            {
-                path: "contact",
-                element: <ContactPage />
-            },
-//Megha
-            {
+             {
                 path: "Technologies",
                 element: <Technologies />
             },
@@ -72,6 +67,26 @@ export const router = createBrowserRouter([
                 path: "WebDevelopmentService",
                 element: <WebDevelopmentService />
             },
+
+        ]
+    },
+    {
+        path: "/",
+        element: <RootLayout />,
+        children: [
+            // {
+            //     path: "/",
+            //     element: <HomePage />
+            // },
+//keshu
+           
+
+            {
+                path: "contact",
+                element: <ContactPage />
+            },
+//Megha
+           
 
         ]
     },

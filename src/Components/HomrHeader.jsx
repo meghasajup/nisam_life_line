@@ -23,7 +23,7 @@ const navItems = [
   { name: 'Contact', href: '/contact' },
 ];
 
-export const Header = () => {
+export const HomeHeader = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,8 +76,8 @@ export const Header = () => {
                     to={item.href || '#'}
                     className={`relative z-30 px-3 lg:px-4 py-2 flex items-center text-sm font-medium transition-colors duration-300 ${
                       hoveredItem === item.name
-                        ? 'text-gray-600 hover:text-gray-500'
-                        : 'text-black'
+                        ? 'text-gray-100 hover:text-gray-200'
+                        : 'text-white'
                     }`}
                   >
                     {item.name}
