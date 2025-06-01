@@ -1,6 +1,6 @@
 import React from 'react';
 
-import img1 from '../images/img1.avif';
+
 import { CarouselComponent } from '../Components/CarouselComponent';
 import { CardPage } from '../Components/CardPage';
 import { Intro } from '../Components/Intro';
@@ -11,7 +11,7 @@ import { HelpYouGetStarted } from '../Components/Services';
 export const HomePage = () => {
   return (
     <div className="px-4 bg-white">
-      <div className="flex flex-col md:flex-row items-center min-h-[70vh]" style={{ backgroundImage: `url(${img1})` }}>
+      <div>
 
         <CarouselComponent />
 
