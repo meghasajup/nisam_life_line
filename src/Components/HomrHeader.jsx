@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaChevronDown } from 'react-icons/fa';
-import Logo from '../images/bg-removed.png';
+import Logo from '../images/blacked.png';
 
 const navItems = [
   { name: 'Home', href: '/' },

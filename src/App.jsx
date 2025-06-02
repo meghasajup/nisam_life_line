@@ -1,20 +1,37 @@
-// import React from 'react'
-// export default function App() {
-//   return (
-//     <h1 className="text-3xl font-bold underline">
-//       Hello world!
-//     </h1>
-//   )
-// }
-
-import React from 'react'
-import { RouterProvider } from 'react-router-dom'
-
-import './App.css'
-import { router } from './Router/Router.jsx'
+import React from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { Toaster } from 'sonner'; // Make sure this is installed and imported
+import './App.css';
+import { router } from './Router/Router.jsx';
 
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <>
+      <RouterProvider router={router} />
+      <Toaster
+        position="bottom-center"
+        theme="light"
+        toastOptions={{
+          style: {
+            background: '#e0f7fa',
+            color: '#004d40',
+          },
+          success: {
+            style: {
+              background: '#2e7d32',
+              color: '#ffffff',
+            },
+          },
+          error: {
+            style: {
+              background: '#c62828',
+              color: '#ffffff',
+            },
+          },
+        }}
+      />
+    </>
+  );
 }
 
-export default App
+export default App;
