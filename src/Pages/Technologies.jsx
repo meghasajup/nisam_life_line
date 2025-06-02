@@ -29,6 +29,7 @@ import seo from '../assets/Technologies/digital_marketing/seo.png';
 export const Technologies = () => {
     const [selectedCategory, setSelectedCategory] = useState('Backend Technologies');
     const [showQuoteModal, setShowQuoteModal] = useState(false);
+    const [showContactPage, setShowContactPage] = useState(false);
 
     const categories = [
         { name: 'Frontend Technologies', count: 6 },
@@ -197,6 +198,76 @@ export const Technologies = () => {
         ]
     };
 
+    const handleGetStarted = () => {
+        setShowQuoteModal(false);
+        setShowContactPage(true);
+    };
+
+    const handleBackToMain = () => {
+        setShowContactPage(false);
+    };
+
+    // Contact Page Component
+    if (showContactPage) {
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-800 flex items-center justify-center">
+                <div className="max-w-2xl mx-auto text-center text-white px-6 mt-20">
+
+                    {/* Main Content */}
+                    <h1 className="text-4xl font-bold mb-6">We're Still Crafting This Page!</h1>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8 border border-white/20">
+                        <p className="text-xl text-emerald-100 mb-6 leading-relaxed">
+                            Our development team is working hard to create an amazing experience for you.
+                            In the meantime, we'd love to hear about your project!
+                        </p>
+
+                        <div className="space-y-4 text-left">
+                            <div className="flex items-center space-x-3">
+                                <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                                <span className="text-emerald-200">Reach out to us directly via email or phone</span>
+                            </div>
+                            <div className="flex items-center space-x-3">
+                                <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                                <span className="text-emerald-200">Schedule a consultation to discuss your needs</span>
+                            </div>
+                            <div className="flex items-center space-x-3">
+                                <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                                <span className="text-emerald-200">Get a personalized quote for your project</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Contact Information */}
+                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 mb-8 border border-white/10">
+                        <h3 className="text-xl font-semibold mb-4 text-emerald-200">Get In Touch</h3>
+                        <div className="space-y-3">
+                            <div className="flex items-center justify-center space-x-3">
+                                <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <span className="text-white">techistasolutions@gmail.com</span>
+                            </div>
+                            <div className="flex items-center justify-center space-x-3">
+                                <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                                <span className="text-white">+91 8921703086 | +91 9400440686</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Back Button */}
+                    <button
+                        onClick={handleBackToMain}
+                        className="px-8 py-3 bg-white text-gray-800 font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform hover:bg-gray-100"
+                    >
+                        ← Back to Technologies
+                    </button>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="min-h-screen bg-gray-50 ">
             {/* Hero Section */}
@@ -298,18 +369,18 @@ export const Technologies = () => {
 
             {/* Quote Modal */}
             {showQuoteModal && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4">
-                    <div className="bg-white rounded-xl p-8 max-w-md w-full shadow-2xl">
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4 py-8">
+                    <div className="bg-white rounded-xl p-8 max-w-md w-full shadow-2xl my-8">
                         <h3 className="text-2xl font-bold text-gray-800 mb-4">Request a Quote</h3>
                         <p className="text-gray-600 mb-6">
                             Thank you for your interest! We'll get back to you with a detailed quote for your project.
                         </p>
                         <div className="flex gap-4">
                             <button
-                                onClick={() => setShowQuoteModal(false)}
+                                onClick={handleGetStarted}
                                 className="flex-1 px-6 py-3 bg-gradient-to-r from-gray-900 to-emerald-800 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform hover:from-gray-800 hover:to-emerald-700"
                             >
-                                GET STARTED
+                                Get Started
                             </button>
                             <button
                                 onClick={() => setShowQuoteModal(false)}

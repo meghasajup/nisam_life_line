@@ -776,12 +776,12 @@ const CMSDevelopment = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <button className="px-8 py-4 bg-white text-blue-700 font-bold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+                {/* <button className="px-8 py-4 bg-white text-blue-700 font-bold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
                   Get Started
                 </button>
                 <button className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
                   Schedule a Consultation
-                </button>
+                </button> */}
               </motion.div>
             </div>
           </div>

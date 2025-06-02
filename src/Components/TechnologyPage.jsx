@@ -19,7 +19,6 @@ const technologies = [
   { name: 'Node.js', icon: <FaNodeJs />, color: 'text-green-600' },
   { name: 'Express.js', icon: <SiExpress />, color: 'text-gray-800' },
   { name: 'Python', icon: <FaPython />, color: 'text-blue-400' },
-  { name: 'Django', icon: <SiDjango />, color: 'text-green-700' },
   { name: 'Flask', icon: <SiFlask />, color: 'text-gray-500' },
   { name: 'GraphQL', icon: <SiGraphql />, color: 'text-pink-600' },
   { name: 'MongoDB', icon: <SiMongodb />, color: 'text-green-700' },

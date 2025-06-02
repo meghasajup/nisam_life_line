@@ -703,7 +703,7 @@ const WebDevelopmentService = () => {
           >
             Partner with Kochi's leading web development company to create a stunning, high-performing website for your business.
           </motion.p>
-          <motion.div
+          {/* <motion.div
             className="flex flex-col sm:flex-row justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -716,7 +716,7 @@ const WebDevelopmentService = () => {
             <button className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
               View Our Portfolio
             </button>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </div>

@@ -255,12 +255,12 @@ const TestingQualityAnalysis = () => {
                 Elevate your software quality with comprehensive testing solutions that ensure reliability, performance, and exceptional user experiences.
               </motion.p>
               <motion.div variants={slideUp}>
-                <button className="px-8 py-3 bg-white text-blue-700 font-bold rounded-lg shadow-lg hover:bg-blue-50 transition-colors mr-4">
+                {/* <button className="px-8 py-3 bg-white text-blue-700 font-bold rounded-lg shadow-lg hover:bg-blue-50 transition-colors mr-4">
                   Request Testing Proposal
                 </button>
                 <button className="px-8 py-3 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
                   View Case Studies
-                </button>
+                </button> */}
               </motion.div>
             </motion.div>
 

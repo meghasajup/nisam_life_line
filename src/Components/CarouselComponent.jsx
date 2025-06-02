@@ -53,14 +53,14 @@ export const CarouselComponent = () => {
       <div className="">
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-10"></div>
-        
+
         {/* Slide Image */}
         <img
           src={slides[currentIndex].image}
           alt={`Slide ${currentIndex + 1}`}
           className="w-full h-full object-cover object-center transition-all duration-1000 ease-in-out"
         />
-        
+
         {/* Slide Content */}
         <div className="absolute inset-0 flex items-center z-20">
           <div className="container mx-auto px-8 text-white max-w-4xl">
@@ -72,7 +72,7 @@ export const CarouselComponent = () => {
                 {slides[currentIndex].description}
               </p>
               <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium text-lg transition-all transform hover:scale-105 animate-fadeIn delay-200">
-                Get Started
+                <a href="/Technologies">Get Started</a>
               </button>
             </div>
           </div>
@@ -106,9 +106,8 @@ export const CarouselComponent = () => {
           <button
             key={idx}
             onClick={() => goToSlide(idx)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              idx === currentIndex ? 'w-8 bg-blue-500' : 'w-4 bg-white/50 hover:bg-white/80'
-            }`}
+            className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8 bg-blue-500' : 'w-4 bg-white/50 hover:bg-white/80'
+              }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
         ))}
