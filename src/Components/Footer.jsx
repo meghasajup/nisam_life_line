@@ -3,7 +3,8 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaGithub } from 'react-
 
 export const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-gray-900 to-black text-white py-12 px-4 md:px-8">
+    <footer className="bg-gradient-to-r from-blue-600 to-purple-300 text-white py-12 px-4 md:px-8">
+      {/* bg-gradient-to-r from-blue-500 via-purple-500 to-blue-800 */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
         {/* Services Column */}
         <div className="transform hover:-translate-y-1 transition duration-300">
@@ -93,16 +94,16 @@ export const Footer = () => {
           <h3 className="text-xl font-bold mb-6 pb-2 border-b-2 border-green-500 inline-block">Contact Us</h3>
           <div className="space-y-4">
             <div>
-              <h4 className="font-semibold text-blue-300">Email</h4>
+              <h4 className="font-semibold text-blue-100">Email</h4>
               <p className="hover:text-blue-400 transition-colors duration-200">techistasolutions@gmail.com</p>
             </div>
             <div>
-              <h4 className="font-semibold text-blue-300">Phone</h4>
+              <h4 className="font-semibold text-blue-100">Phone</h4>
               <p className="hover:text-blue-400 transition-colors duration-200">+91 9400440686</p>
               <p className="hover:text-blue-400 transition-colors duration-200">+91 8921703086</p>
             </div>
             <div>
-              <h4 className="font-semibold text-blue-300">Address</h4>
+              <h4 className="font-semibold text-blue-100">Address</h4>
               <p className="hover:text-blue-400 transition-colors duration-200"> 9nd floor,
                 Palarivattom, Cochin – 25</p>
             </div>
@@ -165,8 +166,8 @@ export const Footer = () => {
           </div>
 
           <div className="mt-8 border-t border-gray-700 pt-6">
-            <p className="text-sm text-gray-400">Copyright © Techista 2025. All rights reserved.</p>
-            <p className="mt-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+            <p className="text-sm text-gray-600">Copyright © Techista 2025. All rights reserved.</p>
+            <p className="mt-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-500">
               Think Unique, Think Smart®
             </p>
             {/* <div className="flex space-x-2 mt-4">
