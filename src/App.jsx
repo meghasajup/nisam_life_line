@@ -1,14 +1,14 @@
 import React from 'react';
-// import { RouterProvider } from 'react-router-dom';
-// import { router } from './Router/Router.jsx';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './Router/Router.jsx';
 import { Toaster } from 'sonner';
 import './App.css';
 
 function App() {
   return (
     <>
-      {/* <RouterProvider router={router} /> */}
-      <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
+      <RouterProvider router={router} />
+      {/* <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
         <div className="text-center animate-fadeIn">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4 animate-bounce">
             🚧 Under Construction 🚧
@@ -28,7 +28,7 @@ function App() {
     </span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <Toaster
         position="bottom-center"
