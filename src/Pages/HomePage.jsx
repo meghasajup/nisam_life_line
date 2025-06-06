@@ -10,7 +10,7 @@ import { HelpYouGetStarted } from '../Components/Services';
 
 export const HomePage = () => {
   return (
-    <div className="px-4 bg-white">
+    <div className=" bg-white">
       <div>
 
         <CarouselComponent />
@@ -22,7 +22,7 @@ export const HomePage = () => {
       <div className="mt-2 mb-6 space-y-6">
         {/* Ensure each section has spacing */}
         <div>
-          <Intro />
+          {/* <Intro /> */}
         </div>
         <div >
           <HelpYouGetStarted />

@@ -178,13 +178,16 @@ console.log("data",data);
         <div className="mt-16 bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             <div className="w-full lg:w-1/2">
-              <iframe
-                title="Office Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!..."
-                className="w-full h-96 border-0"
-                allowFullScreen
-                loading="lazy"
-              ></iframe>
+             <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.56659330425!2d77.46612584428054!3d12.954280236534027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1749185923027!5m2!1sen!2sin"
+  width="600"
+  height="450"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
+
             </div>
 
             <div className="w-full lg:w-1/2 p-8">
@@ -194,7 +197,7 @@ console.log("data",data);
                   <div className="bg-black text-white px-3 py-1 inline-block text-sm font-bold rounded mb-3">
                     INDIA
                   </div>
-                  <p className="text-gray-700 mb-2">2nd floor, Palarivattom, Cochin – 25</p>
+                  <p className="text-gray-700 mb-2">swaschi cross raod ,<br/>shantinagar banglore-560027</p>
                   <p className="mt-3">
                     <span className="font-semibold">Email:</span> techistasolutions@gmail.com
                   </p>

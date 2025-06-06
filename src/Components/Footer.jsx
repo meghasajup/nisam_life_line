@@ -104,8 +104,7 @@ export const Footer = () => {
             </div>
             <div>
               <h4 className="font-semibold text-blue-100">Address</h4>
-              <p className="hover:text-blue-400 transition-colors duration-200"> 9nd floor,
-                Palarivattom, Cochin – 25</p>
+              <p className="hover:text-blue-400 transition-colors duration-200"> swaschi cross raod ,<br/>shantinagar banglore-560027</p>
             </div>
           </div>
         </div>

@@ -55,7 +55,7 @@ export const HomeHeader = () => {
               <NavLink to="/" className="flex items-center h-full">
                 <img
                   src={Logo}
-                  className="h-14 w-auto text-white"
+                  className="h-32 w-auto text-white"
                   alt="Techista Logo"
                 />
               </NavLink>

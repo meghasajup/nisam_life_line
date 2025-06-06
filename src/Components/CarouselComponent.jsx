@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import homeimage from "../assets/Technologies/Frontend/homeimg.jpg"
+
 const slides = [
   {
-    image: homeimage,
-     title: "Welcome to TechIsta Solutions",
+    image: "https://images.prismic.io//intuzwebsite/a5aa75f4-eb5b-42b8-ae8d-7c89332549b6_Main.png?w=1200&q=75&auto=format,compress&fm=png8",
+    title: "Welcome to TechIsta Solutions",
     description: "Your One-step Hub for Websites, Web Apps & Project Support.",
   },
   {
-    image: "https://img.freepik.com/free-photo/team-looking-futuristic-digital-interface-office_23-2151966687.jpg?ga=GA1.1.283967315.1748624414&semt=ais_hybrid&w=740",
+    image: "https://www.talentlms.com/blog/wp-content/uploads/2022/07/TLMS_20220704_1200x628.png",
     title: "Team Collaboration",
     description: "Where brilliant minds connect, breakthrough ideas emerge.",
   },
   {
-    image: "https://images.unsplash.com/photo-1496065187959-7f07b8353c55?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fHRlY2hub2xvZ3l8ZW58MHx8MHx8fDA%3D",
+    image: "https://images.huffingtonpost.com/2016-09-15-1473953255-214886-networkmarketing.jpg",
     title: "Global Reach",
     description: "Connecting ideas with the world, digital solutions empower clients across borders and exceed expectations at every step.",
   },
@@ -48,37 +48,54 @@ export const CarouselComponent = () => {
   }, [isAutoPlaying, currentIndex]);
 
   return (
-    <div className="relative overflow-hidden">
-      {/* Slide Image Container with fixed aspect ratio (16:9) */}
-      <div className="relative w-full aspect-[16/9] sm:aspect-[14/6] min-h-[350px] sm:min-h-[400px]">
+    <div className="relative w-screen   h-[99vh] overflow-hidden">
+      {/* Slide Image */}
+      <div className="relative w-full h-full">
         <img
           src={slides[currentIndex].image}
           alt={`Slide ${currentIndex + 1}`}
-          className="absolute top-0 left-0 w-full h-full  object-container sm:object-cover object-center transition-all duration-1000 ease-in-out"
+          className="absolute top-0 left-0 w-full h-full object-cover object-center transition-all duration-1000 ease-in-out"
         />
 
-        {/* Slide Content (text overlay) */}
-       <div className={`absolute inset-0 flex items-center z-20 px-4 sm:px-8`}>
-  <div
-    className={`
-      text-white max-w-3xl space-y-6 p-4 rounded-md transition-all duration-700 ease-in-out
-      ${currentIndex === 0 ? "mx-auto text-center" : ""}
-      ${currentIndex === 1 ? "mx-auto text-center" : ""}
-      ${currentIndex === 1 ? "ml-auto text-left" : ""}
-    `}
-  >
-    <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-center animate-fadeIn">
-      {slides[currentIndex].title}
-    </h2>
-    <p className="text-xl md:text-2xl animate-fadeIn">
-      {slides[currentIndex].description}
-    </p>
-  </div>
-</div>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent z-10"></div>
 
+        {/* Text Content */}
+        <div className="absolute inset-0 flex items-center z-20 px-4 sm:px-8 lg:px-16">
+          <div className="text-white max-w-2xl space-y-4 md:space-y-6 p-4 md:p-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+              {slides[currentIndex].title}
+            </h2>
+            <p className="text-lg sm:text-xl md:text-2xl mt-2 md:mt-4 max-w-lg">
+              {slides[currentIndex].description}
+            </p>
+           
+          </div>
+        </div>
       </div>
 
-     
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/30 text-white rounded-full p-2 hover:bg-white/50 backdrop-blur-sm z-30 transition-all"
+        aria-label="Previous slide"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/30 text-white rounded-full p-2 hover:bg-white/50 backdrop-blur-sm z-30 transition-all"
+        aria-label="Next slide"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+
+      {/* Indicators */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
         {slides.map((_, idx) => (
           <button

@@ -248,7 +248,9 @@ export const AboutPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="mt-16 bg-gray-50 rounded-2xl p-8 md:p-12 shadow-inner">
             <p className="text-lg text-gray-700 leading-relaxed">
-              As a Mobile app development company in Kerala, our focus has always been on delivering top-notch services to clients across multiple industries. Over the years, we have developed websites, web applications, and mobile applications that have enabled our clients to improve their engagement with their customers and expand their revenue. We understand that our clients are not simply looking for a website or an app, but rather a medium to connect with their customers and expand their business.
+             As a leading website and mobile app development company in Kerala, we specialize in crafting impactful digital experiences that drive growth and customer engagement. Our team is dedicated to delivering high-quality websites, web applications, and mobile apps tailored to meet the unique needs of businesses across diverse industries.
+
+With years of experience, we go beyond just building websites or apps — we create powerful platforms that help our clients connect meaningfully with their audience, streamline operations, and increase revenue. We understand that digital presence is not just a necessity but a strategic asset, and we are committed to transforming your vision into a scalable, user-focused digital solution.
             </p>
           </div>
         </div>

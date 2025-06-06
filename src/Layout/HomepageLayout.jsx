@@ -7,7 +7,7 @@ export const HomePageLayout = () => {
   return (
     <div >
     <HomeHeader/>
-        <div className='min-h-screen'><Outlet/></div>
+        <div className='min-h-screen '><Outlet/></div>
       <Footer/>
       </div>
   )
