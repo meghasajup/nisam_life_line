@@ -13,6 +13,7 @@ import TestingQualityAnalysis from '../Pages/TestingQualityAnalysis'
 import UIDesignService from '../Pages/UidesignService'
 import WebDevelopmentService from '../Pages/webisteDevelopment'
 import { HomePageLayout } from '../Layout/HomepageLayout'
+import Service from '../Pages/Service'
 
 export const router = createBrowserRouter([
      {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
  {
                 path: "About",
                 element: <AboutPage />
+            },
+             {
+                path: "service",
+                element: <Service />
             },
 
              {
@@ -67,6 +72,10 @@ export const router = createBrowserRouter([
                 path: "WebDevelopmentService",
                 element: <WebDevelopmentService />
             },
+            {
+                path: "contact",
+                element: <ContactPage />
+            },
 
         ]
     },
@@ -81,10 +90,7 @@ export const router = createBrowserRouter([
 //keshu
            
 
-            {
-                path: "contact",
-                element: <ContactPage />
-            },
+            
 //Megha
            
 

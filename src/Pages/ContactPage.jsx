@@ -43,19 +43,20 @@ console.log("data",data);
 
 
   return (
-    <div className="min-h-screen bg-white mt-20 text-gray-900 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+    <div className="min-h-screen ">
+      <div className="">
+        <div className=" text-center mb-16 bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-800  text-white py-20">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-emerald-600">Contact</span> Us
           </h1>
           <div className="w-32 h-1 bg-emerald-500 mx-auto mb-6"></div>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
             Reach out to our team - we're here to help and answer any questions you may have.
           </p>
         </div>
+        
 
-        <div className="flex flex-col md:flex-row bg-white p-6 md:p-12 rounded-xl shadow-lg border border-gray-100">
+        <div className="flex max-w-7xl mx-auto flex-col md:flex-row bg-white p-6 md:p-12 rounded-xl shadow-lg border border-gray-100">
           <div className="w-full md:w-2/3">
             <h2 className="text-3xl md:text-4xl font-bold mb-2">Schedule a call</h2>
             <p className="text-gray-600 mb-6">
@@ -175,7 +176,7 @@ console.log("data",data);
         </div>
 
         {/* Map & Address */}
-        <div className="mt-16 bg-white rounded-xl shadow-lg overflow-hidden">
+        <div className="mt-16 max-w-7xl mx-auto bg-white rounded-xl mb-10 shadow-lg overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             <div className="w-full lg:w-1/2">
              <iframe

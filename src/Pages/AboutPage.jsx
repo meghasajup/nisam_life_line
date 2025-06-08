@@ -168,54 +168,15 @@ export const AboutPage = () => {
     <div className="min-h-screen bg-gray-50 overflow-hidden">
       {/* Enhanced Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 to-emerald-900 text-white py-20 md:py-28 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-10">
-            <motion.h1
-              className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              <span className="block text-gray-100">Behind the Bytes</span>
-              <motion.span
-                className="block text-emerald-400 mt-3 bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-              >
-                Our Story at TechIsta Solutions
-              </motion.span>
-            </motion.h1>
+        <div className="container mx-auto px-6 text-center">
+                    
+                      <h1 className="text-5xl font-bold mb-6">Our Story at TechIsta Solutions
+</h1>
+                    <p className="text-xl max-w-3xl mx-auto leading-relaxed opacity-90">
+                        TechIsta Solutions since 2025 - transforming complex challenges into elegant technological innovations.
+                    </p>
+                </div>
 
-            <motion.div
-              className="flex justify-center mt-8"
-              initial={{ width: 0 }}
-              animate={{ width: "10rem" }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            >
-              <div className="w-40 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full"></div>
-            </motion.div>
-          </div>
-
-          <motion.p
-            className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            TechIsta Solutions since 2025 - transforming complex challenges into elegant technological innovations.
-          </motion.p>
-
-          <motion.div
-            className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-          >
-            <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </motion.div>
-        </div>
 
         {/* Animated background elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden">

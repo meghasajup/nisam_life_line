@@ -8,18 +8,7 @@ const navItems = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/About' },
   { name: 'Technologies', href: '/Technologies' },
-  {
-    name: 'Services',
-    submenu: [
-      { name: 'CMS Development', href: '/CMSDevelopment' },
-      { name: 'Ecommerce Development', href: '/EcommerceDevelopment' },
-      { name: 'Maintenance Support', href: '/MaintenanceSupport' },
-      { name: 'Mobile Development', href: '/MobileDevelopment' },
-      { name: 'Testing Quality Analysis', href: '/TestingQualityAnalysis' },
-      { name: 'UI Design Service', href: '/UIDesignService' },
-      { name: 'Web Development Service', href: '/WebDevelopmentService' },
-    ],
-  },
+    { name: 'Services', href: '/service' },
   { name: 'Contact', href: '/contact' },
 ];
 

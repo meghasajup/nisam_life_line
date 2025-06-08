@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaGithub } from 'react-
 
 export const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-blue-600 to-purple-300 text-white py-12 px-4 md:px-8">
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-800  text-white py-20 px-4 md:px-8">
       {/* bg-gradient-to-r from-blue-500 via-purple-500 to-blue-800 */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
         {/* Services Column */}

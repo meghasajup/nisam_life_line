@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
-
+import image1 from "../images/page1.png"
+import image2 from "../images/page2.png"
+import image3 from "../images/page3.png"
 const slides = [
   {
-    image: "https://images.prismic.io//intuzwebsite/a5aa75f4-eb5b-42b8-ae8d-7c89332549b6_Main.png?w=1200&q=75&auto=format,compress&fm=png8",
-    title: "Welcome to TechIsta Solutions",
+    image: image1,
+    title: "Best Website Development Company",
     description: "Your One-step Hub for Websites, Web Apps & Project Support.",
   },
   {
-    image: "https://www.talentlms.com/blog/wp-content/uploads/2022/07/TLMS_20220704_1200x628.png",
+    image: image2,
     title: "Team Collaboration",
     description: "Where brilliant minds connect, breakthrough ideas emerge.",
   },
   {
-    image: "https://images.huffingtonpost.com/2016-09-15-1473953255-214886-networkmarketing.jpg",
+    image: image3,
     title: "Global Reach",
     description: "Connecting ideas with the world, digital solutions empower clients across borders and exceed expectations at every step.",
   },
