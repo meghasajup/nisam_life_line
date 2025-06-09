@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-// Enhanced Service icons with updated color scheme
+//Service icons with updated color scheme
 const ServiceIcon = ({ icon }) => (
   <div className="relative p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 text-gray-700 group-hover:from-gray-100 group-hover:to-gray-200 transition-all duration-300">
     <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-gray-900 to-emerald-800 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
@@ -19,7 +19,7 @@ const ServiceCard = ({ service, delay }) => (
   >
     {/* Subtle background pattern */}
     <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gray-50 to-transparent rounded-full -translate-y-16 translate-x-16 opacity-50"></div>
-    
+
     <div className="relative z-10">
       <ServiceIcon icon={service.icon} />
       <h3 className="text-2xl font-bold mt-6 mb-3 text-gray-900 group-hover:text-gray-800 transition-colors duration-300">
@@ -31,10 +31,10 @@ const ServiceCard = ({ service, delay }) => (
       <a href={service.link}>
         <button className="inline-flex items-center text-gray-700 font-semibold hover:text-emerald-700 group-hover:translate-x-1 transition-all duration-300">
           Learn more
-          <motion.svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="h-5 w-5 ml-2" 
-            viewBox="0 0 20 20" 
+          <motion.svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 ml-2"
+            viewBox="0 0 20 20"
             fill="currentColor"
             whileHover={{ x: 3 }}
             transition={{ duration: 0.2 }}
@@ -169,7 +169,7 @@ const ServicesPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        {/* Header - Unchanged as requested */}
+        {/* Header */}
         <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-800 text-white py-20 mb-16">
           <div className="container mx-auto px-6 text-center">
             <h1 className="text-5xl font-bold mb-6">Our Services</h1>
@@ -180,7 +180,7 @@ const ServicesPage = () => {
         </div>
 
         <div className='max-w-7xl mx-auto px-6'>
-          {/* Enhanced Category Tabs with updated colors */}
+          {/* Category */}
           <motion.div
             className="flex flex-wrap justify-center gap-3 mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -193,19 +193,17 @@ const ServicesPage = () => {
                 onClick={() => setActiveTab(category.id)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`group relative px-6 py-3 rounded-full font-semibold capitalize transition-all duration-300 ${
-                  activeTab === category.id
+                className={`group relative px-6 py-3 rounded-full font-semibold capitalize transition-all duration-300 ${activeTab === category.id
                     ? 'bg-gradient-to-r from-gray-900 to-emerald-800 text-white shadow-lg shadow-gray-300'
                     : 'bg-white text-gray-700 hover:bg-gray-50 hover:text-gray-900 shadow-md hover:shadow-lg border border-gray-200'
-                }`}
+                  }`}
               >
                 <span className="relative z-10 flex items-center gap-2">
                   {category.label}
-                  <span className={`text-xs px-2 py-1 rounded-full ${
-                    activeTab === category.id 
-                      ? 'bg-white/20 text-white' 
+                  <span className={`text-xs px-2 py-1 rounded-full ${activeTab === category.id
+                      ? 'bg-white/20 text-white'
                       : 'bg-gray-100 text-gray-600 group-hover:bg-gray-200 group-hover:text-gray-700'
-                  }`}>
+                    }`}>
                     {category.count}
                   </span>
                 </span>
@@ -221,7 +219,7 @@ const ServicesPage = () => {
             ))}
           </motion.div>
 
-          {/* Enhanced Services Grid */}
+          {/* Services Grid */}
           <motion.div
             key={activeTab}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-20"
@@ -238,8 +236,8 @@ const ServicesPage = () => {
             ))}
           </motion.div>
 
-          {/* Call to Action Section with updated colors */}
-          <motion.div 
+          {/* Call to Action Section */}
+          <motion.div
             className="text-center py-16 mb-20"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
