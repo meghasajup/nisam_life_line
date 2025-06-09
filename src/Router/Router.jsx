@@ -83,20 +83,6 @@ export const router = createBrowserRouter([
         path: "/",
         element: <RootLayout />,
         children: [
-            // {
-            //     path: "/",
-            //     element: <HomePage />
-            // },
-//keshu
-           
-
-            
-//Megha
-           
-
         ]
     },
-
-
-
 ])

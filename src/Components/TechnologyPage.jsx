@@ -46,23 +46,36 @@ export const TechnologyPage = () => {
   };
 
   return (
-    <div className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white text-center">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-          Our <span className="text-[#00C3A5]">Technology</span> Stack
-        </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-          We leverage cutting-edge technologies to build robust and scalable solutions
-        </p>
+    <div className="py-20 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-100 text-center relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#00C3A5]/5 to-transparent rounded-full blur-3xl -translate-x-48 -translate-y-48"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-[#00C3A5]/5 to-transparent rounded-full blur-3xl translate-x-48 translate-y-48"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="mb-16">
+          <h2 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent mb-6 leading-tight">
+            Our <span className="bg-gradient-to-r from-[#00C3A5] to-[#00a389] bg-clip-text text-transparent">Technology</span> Stack
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#00C3A5] to-[#00a389] mx-auto mb-6 rounded-full"></div>
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed font-medium">
+            We leverage cutting-edge technologies to build robust and scalable solutions that drive innovation and deliver exceptional user experiences
+          </p>
+        </div>
 
-        <div className="relative h-96 md:h-[500px] mb-16">
+        <div className="relative h-96 md:h-[500px] mb-20">
           {/* Central active technology display */}
-          <div className="absolute inset-0 flex items-center justify-center z-10">
-            <div className="w-48 h-48 bg-white rounded-full shadow-xl flex flex-col items-center justify-center p-6 border-4 border-[#00C3A5]">
-              <div className={`text-6xl mb-4 ${activeTech.color}`}>
+          <div className="absolute inset-0 flex items-center justify-center z-20">
+            <div className="w-56 h-56 bg-white/90 backdrop-blur-sm rounded-full shadow-2xl flex flex-col items-center justify-center p-8 border-4 border-[#00C3A5] relative group">
+              {/* Rotating border effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00C3A5] via-[#00a389] to-[#00C3A5] opacity-0 group-hover:opacity-20 transition-opacity duration-500 animate-spin"></div>
+              
+              <div className={`text-7xl mb-6 ${activeTech.color} transform transition-all duration-500 group-hover:scale-110 relative z-10`}>
                 {activeTech.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-800">{activeTech.name}</h3>
+              <h3 className="text-2xl font-bold text-gray-800 relative z-10">{activeTech.name}</h3>
+              
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 rounded-full bg-[#00C3A5]/10 blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
           </div>
 
@@ -77,31 +90,51 @@ export const TechnologyPage = () => {
               return (
                 <div
                   key={index}
-                  className={`absolute w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-125 hover:shadow-lg ${tech.color}`}
+                  className={`absolute w-20 h-20 bg-white/95 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center cursor-pointer transition-all duration-500 hover:scale-125 hover:shadow-2xl hover:bg-white group border border-gray-100/50 ${tech.color}`}
                   style={{
                     transform: `translate(${x}px, ${y}px)`,
                   }}
                   onMouseEnter={() => handleTechHover(tech)}
                 >
-                  <div className="text-2xl">{tech.icon}</div>
+                  <div className="text-3xl transform transition-transform duration-300 group-hover:rotate-12">{tech.icon}</div>
+                  
+                  {/* Hover glow effect */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00C3A5]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               );
             })}
           </div>
+
+          {/* Orbital ring decoration */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="w-[440px] h-[440px] border border-dashed border-[#00C3A5]/20 rounded-full animate-pulse"></div>
+          </div>
         </div>
 
         {/* Technology grid for mobile */}
-        <div className="md:hidden grid grid-cols-4 gap-4">
+        <div className="md:hidden grid grid-cols-4 gap-6 px-2">
           {technologies.slice(0, 8).map((tech, index) => (
             <div
               key={index}
-              className="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center"
+              className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg flex flex-col items-center border border-gray-100/50 hover:shadow-xl hover:scale-105 transition-all duration-300 group"
               onMouseEnter={() => handleTechHover(tech)}
             >
-              <div className={`text-3xl mb-2 ${tech.color}`}>{tech.icon}</div>
-              <span className="text-xs font-medium text-gray-700">{tech.name}</span>
+              <div className={`text-4xl mb-3 ${tech.color} transform transition-transform duration-300 group-hover:scale-110`}>{tech.icon}</div>
+              <span className="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">{tech.name}</span>
+              
+              {/* Mobile hover effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00C3A5]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           ))}
+        </div>
+
+        {/* Bottom decorative element */}
+        <div className="mt-16 flex justify-center">
+          <div className="flex space-x-2">
+            <div className="w-3 h-3 bg-[#00C3A5] rounded-full animate-pulse"></div>
+            <div className="w-3 h-3 bg-[#00C3A5]/60 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+            <div className="w-3 h-3 bg-[#00C3A5]/30 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+          </div>
         </div>
       </div>
     </div>

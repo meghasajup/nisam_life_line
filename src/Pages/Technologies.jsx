@@ -26,6 +26,7 @@ import express from '../assets/Technologies/Frontend/express.png';
 import smo from '../assets/Technologies/digital_marketing/smo.png';
 import seo from '../assets/Technologies/digital_marketing/seo.png';
 import { motion } from 'framer-motion';
+
 export const Technologies = () => {
     const [selectedCategory, setSelectedCategory] = useState('Backend Technologies');
     const [showQuoteModal, setShowQuoteModal] = useState(false);
@@ -42,7 +43,6 @@ export const Technologies = () => {
         { name: 'Digital Marketing', count: 2 },
         { name: 'UI / UX Design', count: 3 },
         { name: 'Website Development', count: 1 }
-
     ];
 
     const technologies = {
@@ -198,223 +198,205 @@ export const Technologies = () => {
         ]
     };
 
-    const handleGetStarted = () => {
-        setShowQuoteModal(false);
-        setShowContactPage(true);
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+            }
+        }
     };
 
-    const handleBackToMain = () => {
-        setShowContactPage(false);
+    const cardVariants = {
+        hidden: { 
+            opacity: 0, 
+            y: 30,
+            scale: 0.9
+        },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            scale: 1,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+            }
+        }
     };
-
-    // Contact Page Component
-    if (showContactPage) {
-        return (
-            <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-800 flex items-center justify-center">
-                <div className="max-w-2xl mx-auto text-center text-white px-6 mt-20">
-
-                    {/* Main Content */}
-                    <h1 className="text-4xl font-bold mb-6">We're Still Crafting This Page!</h1>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8 border border-white/20">
-                        <p className="text-xl text-emerald-100 mb-6 leading-relaxed">
-                            Our development team is working hard to create an amazing experience for you.
-                            In the meantime, we'd love to hear about your project!
-                        </p>
-
-                        <div className="space-y-4 text-left">
-                            <div className="flex items-center space-x-3">
-                                <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                                <span className="text-emerald-200">Reach out to us directly via email or phone</span>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                                <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                                <span className="text-emerald-200">Schedule a consultation to discuss your needs</span>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                                <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
-                                <span className="text-emerald-200">Get a personalized quote for your project</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Contact Information */}
-                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 mb-8 border border-white/10">
-                        <h3 className="text-xl font-semibold mb-4 text-emerald-200">Get In Touch</h3>
-                        <div className="space-y-3">
-                            <div className="flex items-center justify-center space-x-3">
-                                <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                                <span className="text-white">techistasolutions@gmail.com</span>
-                            </div>
-                            <div className="flex items-center justify-center space-x-3">
-                                <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                                <span className="text-white">+91 8921703086 | +91 9400440686</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Back Button */}
-                    <button
-                        onClick={handleBackToMain}
-                        className="px-8 py-3 bg-white text-gray-800 font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform hover:bg-gray-100"
-                    >
-                        ← Back to Technologies
-                    </button>
-                </div>
-            </div>
-        );
-    }
 
     return (
-        <div className="min-h-screen bg-gray-50 ">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-emerald-50/30">
             {/* Hero Section */}
-            <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-800  text-white py-20">
-                <div className="container mx-auto px-6 text-center">
-                    <h1 className="text-5xl font-bold mb-6">Our Technology Stack</h1>
-                    <p className="text-xl max-w-3xl mx-auto leading-relaxed opacity-90">
-                        Fuel up your business with our innovative solutions. We provide comprehensive IT services
-                        and solutions, going beyond just creating websites or apps to provide a platform for our
-                        clients to connect with customers and grow their businesses.
+            <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-800 text-white py-20 md:py-28 px-4">
+                <div className="container mx-auto px-6 text-center relative z-10">
+                    <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                        Our Technology Stack
+                    </h1>
+                    <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed opacity-90">
+                        Empower your business with our comprehensive IT solutions that connect you with customers and drive growth.
                     </p>
                 </div>
-            </div>
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-                      {[...Array(10)].map((_, i) => (
+
+                {/* Animated background elements */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                    {[...Array(10)].map((_, i) => (
                         <motion.div
-                          key={i}
-                          className="absolute rounded-full bg-emerald-400/10"
-                          style={{
-                            top: `${Math.random() * 100}%`,
-                            left: `${Math.random() * 100}%`,
-                            width: `${Math.random() * 200 + 50}px`,
-                            height: `${Math.random() * 200 + 50}px`,
-                          }}
-                          animate={{
-                            scale: [1, 1.5, 1],
-                            opacity: [0.1, 0.3, 0.1],
-                          }}
-                          transition={{
-                            duration: Math.random() * 5 + 5,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                          }}
+                            key={i}
+                            className="absolute rounded-full bg-emerald-400/10"
+                            style={{
+                                top: `${Math.random() * 100}%`,
+                                left: `${Math.random() * 100}%`,
+                                width: `${Math.random() * 200 + 50}px`,
+                                height: `${Math.random() * 200 + 50}px`,
+                            }}
+                            animate={{
+                                scale: [1, 1.5, 1],
+                                opacity: [0.1, 0.3, 0.1],
+                            }}
+                            transition={{
+                                duration: Math.random() * 5 + 5,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            }}
                         />
-                      ))}
-                    </div>
+                    ))}
+                </div>
+            </section>
 
             {/* Main Content */}
             <div className="container mx-auto px-6 py-16">
-                <div className="flex flex-col lg:flex-row gap-8">
-                    {/* Sidebar */}
-                    <div className="lg:w-1/3">
-                        <div className="bg-gradient-to-b from-gray-900 via-gray-800 to-emerald-800 rounded-lg p-6 sticky top-6 shadow-xl">
-                            <h3 className="text-white text-xl font-semibold mb-6">Technology Categories</h3>
-                            <div className="space-y-2">
-                                {categories.map((category) => (
-                                    <button
+                <div className="flex flex-col xl:flex-row gap-10">
+                    {/* Enhanced Sidebar */}
+                    <div className="xl:w-1/3">
+                        <motion.div 
+                            className="bg-white rounded-2xl shadow-2xl sticky top-8 overflow-hidden border border-gray-100"
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                        >
+                            {/* Sidebar Header */}
+                            <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-emerald-900 p-8">
+                                <div className="flex items-center space-x-3 mb-2">
+                                    <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+                                    <div className="w-2 h-2 bg-emerald-300 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                                    <div className="w-1 h-1 bg-emerald-200 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                                </div>
+                                <h3 className="text-white text-2xl font-bold tracking-tight">Technology Categories</h3>
+                                <p className="text-emerald-200 text-sm mt-2 font-light">Explore our expertise domains</p>
+                            </div>
+                            
+                            {/* Categories List */}
+                            <div className="p-6 space-y-3 bg-gradient-to-b from-gray-50 to-white">
+                                {categories.map((category, index) => (
+                                    <motion.button
                                         key={category.name}
                                         onClick={() => setSelectedCategory(category.name)}
-                                        className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-300 flex justify-between items-center ${selectedCategory === category.name
-                                            ? 'bg-emerald-700 text-white shadow-lg transform scale-105'
-                                            : 'text-gray-200 hover:bg-emerald-800/50 hover:text-white'
-                                            }`}
+                                        className={`w-full text-left px-6 py-4 rounded-xl transition-all duration-500 flex justify-between items-center group relative overflow-hidden ${
+                                            selectedCategory === category.name
+                                                ? 'bg-gradient-to-r from-emerald-600 to-emerald-700 text-white shadow-xl shadow-emerald-500/25 transform scale-105'
+                                                : 'text-gray-700 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-emerald-100 hover:text-emerald-800 hover:shadow-lg hover:scale-102'
+                                        }`}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                                        whileHover={{ x: selectedCategory === category.name ? 0 : 5 }}
+                                        whileTap={{ scale: 0.98 }}
                                     >
-                                        <span>{category.name}</span>
-                                        <span className="bg-emerald-600 text-white px-2 py-1 rounded-full text-sm font-medium">
+                                        <span className="font-medium text-sm relative z-10">{category.name}</span>
+                                        <span className={`px-3 py-1 rounded-full text-xs font-bold relative z-10 ${
+                                            selectedCategory === category.name
+                                                ? 'bg-white/20 text-white'
+                                                : 'bg-emerald-100 text-emerald-700 group-hover:bg-emerald-200'
+                                        }`}>
                                             {category.count}
                                         </span>
-                                    </button>
+                                        
+                                        {/* Hover effect overlay */}
+                                        <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/10 to-emerald-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    </motion.button>
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
 
-                    {/* Technology Cards */}
-                    <div className="lg:w-2/3">
-                        <div className="mb-8">
-                            <h2 className="text-3xl font-bold text-gray-800 mb-2">{selectedCategory}</h2>
-                            <p className="text-gray-600">
-                                Explore our expertise in {selectedCategory.toLowerCase()} and discover how we can help transform your business.
-                            </p>
-                        </div>
+                    {/* Enhanced Technology Cards */}
+                    <div className="xl:w-2/3">
+                        <motion.div 
+                            className="mb-12"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                        >
+                            <div className="flex items-center space-x-4 mb-6">
+                                <div className="w-1 h-12 bg-gradient-to-b from-emerald-500 to-emerald-700 rounded-full"></div>
+                                <div>
+                                    <h2 className="text-4xl font-bold text-gray-800 mb-2 tracking-tight">{selectedCategory}</h2>
+                                    <p className="text-gray-600 text-lg font-light">
+                                        Explore our expertise in {selectedCategory.toLowerCase()} and discover how we can help transform your business.
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
 
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <motion.div 
+                            className="grid lg:grid-cols-2 gap-8"
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate="visible"
+                            key={selectedCategory}
+                        >
                             {technologies[selectedCategory]?.map((tech, index) => (
-                                <div
+                                <motion.div
                                     key={tech.name}
-                                    className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-100 hover:border-emerald-300 group transform hover:-translate-y-1"
+                                    variants={cardVariants}
+                                    className="group relative"
+                                    whileHover={{ y: -8 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 >
-                                    <div className="flex items-start space-x-4">
-                                        <div className="flex-shrink-0">
-                                            <img
-                                                src={tech.image}
-                                                alt={tech.name}
-                                                className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300"
-                                            />
-                                        </div>
-                                        <div className="flex-1">
-                                            <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-emerald-800 transition-colors duration-300">
-                                                {tech.name}
-                                            </h3>
-                                            <p className="text-gray-600 leading-relaxed mb-4">
-                                                {tech.description}
-                                            </p>
+                                    <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 hover:border-emerald-200 relative overflow-hidden backdrop-blur-sm">
+                                        {/* Card background gradient */}
+                                        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-emerald-50/30 to-emerald-100/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        
+                                        {/* Decorative corner element */}
+                                        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-emerald-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        
+                                        <div className="flex items-start space-x-6 relative z-10">
+                                            <div className="flex-shrink-0 relative">
+                                                <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                                    <img
+                                                        src={tech.image}
+                                                        alt={tech.name}
+                                                        className="w-10 h-10 object-contain filter group-hover:brightness-110 transition-all duration-300"
+                                                    />
+                                                </div>
+                                                {/* Pulsing ring */}
+                                                <div className="absolute inset-0 rounded-2xl border-2 border-emerald-400 opacity-0 group-hover:opacity-30 scale-110 group-hover:scale-125 transition-all duration-500"></div>
+                                            </div>
+                                            
+                                            <div className="flex-1">
+                                                <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-emerald-800 transition-colors duration-300 tracking-tight">
+                                                    {tech.name}
+                                                </h3>
+                                                <p className="text-gray-600 leading-relaxed text-base font-light">
+                                                    {tech.description}
+                                                </p>
+                                                
+                                                {/* Subtle progress bar effect */}
+                                                <div className="mt-6 w-full h-1 bg-gray-100 rounded-full overflow-hidden">
+                                                    <div className="h-full bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-1000 ease-out"></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))}
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
-
-            <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-emerald-800 text-white py-16">
-                <div className="container mx-auto px-6 text-center">
-                    <h2 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
-                    <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-                        Let's turn your vision into reality. Our expert team is ready to bring your ideas to life
-                        using the latest technologies and best practices.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button
-                            onClick={() => setShowQuoteModal(true)}
-                            className="px-8 py-3 bg-gradient-to-r from-gray-900 to-emerald-800 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform hover:from-gray-800 hover:to-emerald-700 border border-emerald-600"
-                        >
-                            REQUEST QUOTE
-                            <span className="ml-2">→</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            {/* Quote Modal */}
-            {showQuoteModal && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4 py-8">
-                    <div className="bg-white rounded-xl p-8 max-w-md w-full shadow-2xl my-8">
-                        <h3 className="text-2xl font-bold text-gray-800 mb-4">Request a Quote</h3>
-                        <p className="text-gray-600 mb-6">
-                            Thank you for your interest! We'll get back to you with a detailed quote for your project.
-                        </p>
-                        <div className="flex gap-4">
-                            <button
-                                onClick={handleGetStarted}
-                                className="flex-1 px-6 py-3 bg-gradient-to-r from-gray-900 to-emerald-800 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform hover:from-gray-800 hover:to-emerald-700"
-                            >
-                                Get Started
-                            </button>
-                            <button
-                                onClick={() => setShowQuoteModal(false)}
-                                className="flex-1 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-300"
-                            >
-                                DISMISS
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
         </div>
     );
 };

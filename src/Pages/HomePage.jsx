@@ -1,9 +1,6 @@
 import React from 'react';
-
-
 import { CarouselComponent } from '../Components/CarouselComponent';
 import { CardPage } from '../Components/CardPage';
-import { Intro } from '../Components/Intro';
 import { TechnologyPage } from '../Components/TechnologyPage';
 import { HelpYouGetStarted } from '../Components/Services';
 
@@ -11,11 +8,9 @@ import { HelpYouGetStarted } from '../Components/Services';
 export const HomePage = () => {
   return (
     <div className=" bg-white">
+
       <div>
-
         <CarouselComponent />
-
-
       </div>
 
       {/* Main Content Sections */}
