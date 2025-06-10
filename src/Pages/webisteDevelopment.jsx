@@ -88,15 +88,6 @@ const WebDevelopmentService = () => {
     }
   ];
 
-  // Cost factors
-  const costFactors = [
-    "Type of Website",
-    "Design Requirements",
-    "Functionality & Features",
-    "Content Creation",
-    "Timeline & Urgency",
-    "Maintenance & Support"
-  ];
 
   // Industries served
   const industries = [
@@ -129,34 +120,6 @@ const WebDevelopmentService = () => {
       title: "Professional Services",
       description: "Showcase services, client testimonials, and case studies.",
       icon: "💼"
-    }
-  ];
-
-  // Development process
-  const developmentProcess = [
-    {
-      step: "1",
-      title: "Discovery & Planning",
-      description: "Identify business goals, user needs, create wireframes and mockups.",
-      icon: "🔍"
-    },
-    {
-      step: "2",
-      title: "Design & Development",
-      description: "Create UI/UX designs and build the website with modern technologies.",
-      icon: "🎨"
-    },
-    {
-      step: "3",
-      title: "Testing & Optimization",
-      description: "Conduct comprehensive testing and optimize for performance.",
-      icon: "🧪"
-    },
-    {
-      step: "4",
-      title: "Deployment & Maintenance",
-      description: "Deploy to live server and provide ongoing updates and support.",
-      icon: "🚀"
     }
   ];
 
