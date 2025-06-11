@@ -1205,28 +1205,15 @@ const WebDevelopmentService = () => {
             ))}
           </motion.div>
 
-          {/* Call to Action */}
-          <motion.div
-            className="text-center mt-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <div className="bg-gradient-to-r from-gray-500 to-emerald-500 rounded-2xl p-8 shadow-xl">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Still Have Questions?
-              </h3>
-              <p className="text-gray-100 text-lg mb-6 max-w-2xl mx-auto">
-                Our expert team is here to help you with any additional questions about our web development services.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="/contact"><button className="bg-white text-gray-800 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                  Contact Our Team
-                </button></a>
-              </div>
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-emerald-100 to-gray-100 rounded-full border border-emerald-200/50">
+              <span className="text-emerald-700 font-medium mr-2">Still have questions?</span>
+              <a href="/contact"><button className="text-emerald-600 hover:text-emerald-800 font-semibold underline decoration-2 underline-offset-2 transition-colors">
+                Contact us
+              </button></a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

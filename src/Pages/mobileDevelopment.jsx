@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
- import { FiShoppingCart, FiHeart, FiBookOpen, FiCreditCard, FiMap, FiUsers } from "react-icons/fi";
+import { FiShoppingCart, FiHeart, FiBookOpen, FiCreditCard, FiMap, FiUsers } from "react-icons/fi";
+import MobileHeader from '../Components/MobileDevHeader';
 const MobileDevelopment = () => {
   // State for FAQ section
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
@@ -40,142 +41,133 @@ const MobileDevelopment = () => {
 
   // Why choose us
   const whyChooseUs = [
-    "Industry-leading expertise",
-    "Innovative design approach",
-    "Native & hybrid app development",
-    "Customized business solutions",
-    "End-to-end development services",
-    "Competitive pricing models"
+    {
+      title: "Industry-leading expertise",
+      description: "Over a decade of experience in mobile app development",
+      icon: "🏆"
+    },
+    {
+      title: "Innovative design approach",
+      description: "Cutting-edge UI/UX design that enhances user experience",
+      icon: "💡"
+    },
+    {
+      title: "Native & hybrid app development",
+      description: "Comprehensive solutions for all mobile platforms",
+      icon: "📱"
+    },
+    {
+      title: "Customized business solutions",
+      description: "Tailored applications that meet your specific needs",
+      icon: "⚙️"
+    },
+    {
+      title: "End-to-end development services",
+      description: "From concept to deployment and beyond",
+      icon: "🔄"
+    },
+    {
+      title: "Competitive pricing models",
+      description: "Flexible pricing options that fit your budget",
+      icon: "💰"
+    }
   ];
 
   // Developer expertise
   const expertise = [
     {
-      title: "iOS & Android Development",
-      description: "Native app development for both major mobile platforms."
+      title: "Android Development with Flutter",
+      description: "Native app development for both major mobile platforms with optimal performance and user experience.",
+      icon: "📱",
+      color: "from-blue-500 to-cyan-400",
+      bgColor: "from-blue-50 to-cyan-50",
+      iconBg: "bg-gradient-to-r from-blue-500/10 to-cyan-500/10",
+      borderColor: "border-blue-200/50",
+      hoverBorder: "hover:border-blue-400/60"
     },
     {
       title: "Cross-Platform Solutions",
-      description: "Flutter and React Native development for cost-effective solutions."
+      description: "Flutter and React Native development for cost-effective solutions that work seamlessly across platforms.",
+      icon: "🔄",
+      color: "from-purple-500 to-indigo-400",
+      bgColor: "from-purple-50 to-indigo-50",
+      iconBg: "bg-gradient-to-r from-purple-500/10 to-indigo-500/10",
+      borderColor: "border-purple-200/50",
+      hoverBorder: "hover:border-purple-400/60"
     },
     {
       title: "UI/UX Design",
-      description: "Creating intuitive, visually appealing mobile interfaces."
+      description: "Creating intuitive, visually appealing mobile interfaces that prioritize user experience and engagement.",
+      icon: "🎨",
+      color: "from-emerald-500 to-teal-400",
+      bgColor: "from-emerald-50 to-teal-50",
+      iconBg: "bg-gradient-to-r from-emerald-500/10 to-teal-500/10",
+      borderColor: "border-emerald-200/50",
+      hoverBorder: "hover:border-emerald-400/60"
     },
     {
       title: "API Integration",
-      description: "Seamless integration with backend services and third-party APIs."
+      description: "Seamless integration with backend services, third-party APIs, and cloud platforms for enhanced functionality.",
+      icon: "🔗",
+      color: "from-orange-500 to-red-400",
+      bgColor: "from-orange-50 to-red-50",
+      iconBg: "bg-gradient-to-r from-orange-500/10 to-red-500/10",
+      borderColor: "border-orange-200/50",
+      hoverBorder: "hover:border-orange-400/60"
     },
     {
       title: "App Maintenance & Support",
-      description: "Ongoing updates, security patches, and performance optimization."
+      description: "Ongoing updates, security patches, performance optimization, and 24/7 technical support services.",
+      icon: "🛠️",
+      color: "from-amber-500 to-yellow-400",
+      bgColor: "from-amber-50 to-yellow-50",
+      iconBg: "bg-gradient-to-r from-amber-500/10 to-yellow-500/10",
+      borderColor: "border-amber-200/50",
+      hoverBorder: "hover:border-amber-400/60"
     },
     {
       title: "App Store Optimization",
-      description: "Maximize visibility and downloads in app stores."
+      description: "Maximize visibility and downloads in app stores with strategic optimization and marketing techniques.",
+      icon: "📊",
+      color: "from-rose-500 to-pink-400",
+      bgColor: "from-rose-50 to-pink-50",
+      iconBg: "bg-gradient-to-r from-rose-500/10 to-pink-500/10",
+      borderColor: "border-rose-200/50",
+      hoverBorder: "hover:border-rose-400/60"
     }
-  ];
-
-  // Cost factors
-  const costFactors = [
-    "Platform (iOS, Android, Cross-platform)",
-    "Design complexity",
-    "Features & functionality",
-    "Backend integration",
-    "Maintenance requirements",
-    "Timeline & urgency"
   ];
 
   // Industries served
- 
-
-const industries = [
-  {
-    title: "E-commerce",
-    description: "Mobile shopping experiences with seamless checkout.",
-    icon: <FiShoppingCart className="w-6 h-6" />
-  },
-  {
-    title: "Healthcare",
-    description: "Telemedicine, appointment booking, and health tracking.",
-    icon: <FiHeart className="w-6 h-6" />
-  },
-  {
-    title: "Education",
-    description: "E-learning platforms and educational tools.",
-    icon: <FiBookOpen className="w-6 h-6" />
-  },
-  {
-    title: "Fintech",
-    description: "Banking, payments, and financial management apps.",
-    icon: <FiCreditCard className="w-6 h-6" />
-  },
-  {
-    title: "Travel & Hospitality",
-    description: "Booking systems and travel planning tools.",
-    icon: <FiMap className="w-6 h-6" />
-  },
-  {
-    title: "Social Networking",
-    description: "Community building and social engagement platforms.",
-    icon: <FiUsers className="w-6 h-6" />
-  }
-];
-
-
-  // Development process
-  const developmentProcess = [
+  const industries = [
     {
-      step: "1",
-      title: "Discovery & Planning",
-      description: "Requirement analysis, wireframing, and technical planning."
+      title: "E-commerce",
+      description: "Mobile shopping experiences with seamless checkout.",
+      icon: <FiShoppingCart className="w-6 h-6" />
     },
     {
-      step: "2",
-      title: "Design & Prototyping",
-      description: "UI/UX design, prototyping, and user testing."
+      title: "Healthcare",
+      description: "Telemedicine, appointment booking, and health tracking.",
+      icon: <FiHeart className="w-6 h-6" />
     },
     {
-      step: "3",
-      title: "Development",
-      description: "Agile development with iterative releases."
+      title: "Education",
+      description: "E-learning platforms and educational tools.",
+      icon: <FiBookOpen className="w-6 h-6" />
     },
     {
-      step: "4",
-      title: "Testing & QA",
-      description: "Comprehensive testing across devices and platforms."
+      title: "Fintech",
+      description: "Banking, payments, and financial management apps.",
+      icon: <FiCreditCard className="w-6 h-6" />
     },
     {
-      step: "5",
-      title: "Deployment",
-      description: "App store submission and launch."
+      title: "Travel & Hospitality",
+      description: "Booking systems and travel planning tools.",
+      icon: <FiMap className="w-6 h-6" />
     },
     {
-      step: "6",
-      title: "Maintenance",
-      description: "Updates, enhancements, and performance optimization."
-    }
-  ];
-
-  // Case studies
-  const caseStudies = [
-    {
-      title: "Retail Shopping App",
-      date: "2023",
-      category: "E-commerce",
-      description: "Developed a feature-rich shopping app with AR try-on capabilities for a fashion retailer."
-    },
-    {
-      title: "Healthcare Platform",
-      date: "2022",
-      category: "Healthtech",
-      description: "Created a telemedicine app connecting patients with specialists across the country."
-    },
-    {
-      title: "Fitness Tracker",
-      date: "2023",
-      category: "Wellness",
-      description: "Built a personalized workout and nutrition tracking app with AI recommendations."
+      title: "Social Networking",
+      description: "Community building and social engagement platforms.",
+      icon: <FiUsers className="w-6 h-6" />
     }
   ];
 
@@ -209,16 +201,22 @@ const industries = [
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.2,
+        delayChildren: 0.2
       }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: {
+      opacity: 0,
+      y: 30,
+      scale: 0.95
+    },
     visible: {
-      y: 0,
       opacity: 1,
+      y: 0,
+      scale: 1,
       transition: {
         duration: 0.6,
         ease: "easeOut"
@@ -226,12 +224,14 @@ const industries = [
     }
   };
 
-  const fadeIn = {
-    hidden: { opacity: 0 },
+  const textVariants = {
+    hidden: { opacity: 0, x: 50 },
     visible: {
       opacity: 1,
+      x: 0,
       transition: {
-        duration: 0.8
+        duration: 0.8,
+        ease: "easeOut"
       }
     }
   };
@@ -247,190 +247,229 @@ const industries = [
     }
   };
 
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <div className="bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-emerald-800 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform hover:from-gray-800 hover:to-emerald-700 z-0"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={containerVariants}
-            >
-              <motion.h1
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
-                variants={slideUp}
-              >
-                Transform Your Business With Powerful Mobile Apps
-              </motion.h1>
-              <motion.p
-                className="text-xl text-violet-200 mb-8 max-w-2xl"
-                variants={slideUp}
-              >
-                As a leading mobile app development company, we deliver custom, high-performance applications that drive growth and engage users.
-              </motion.p>
-
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="flex justify-center"
-            >
-           <div className="relative">
-  <div className="absolute -top-6 -left-6 w-full h-full bg-violet-600 rounded-2xl"></div>
-  <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl w-full max-w-sm">
-    <div className="bg-gradient-to-r from-violet-600 to-purple-500 p-6">
-      <h3 className="text-white text-xl font-bold">Techitsa Mobile Solutions</h3>
-    </div>
-    <div className="p-6">
-      <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 mb-4 overflow-hidden">
-        <img
-          src="https://www.mindinventory.com/blog/wp-content/uploads/2018/12/benefits-of-mobile-app-for-business.webp"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <p className="text-gray-700 mb-4">Transforming ideas into powerful mobile experiences</p>
-      <div className="flex space-x-2">
-        <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 overflow-hidden">
-          <img
-            src="https://www.businessofapps.com/wp-content/uploads/2020/08/zymr8_steps_the_mobile_app_dev_lifecycle_cover.jpg"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 overflow-hidden">
-          <img
-            src="https://www.appslure.com/wp-content/uploads/2024/02/An-Exciting-Future-of-Mobile-App-Development-Industry-Insights.webp"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 overflow-hidden">
-          <img
-            src="https://www.addevice.io/storage/ckeditor/uploads/images/65f82dcd3866a_ai.in.mobile.app.development.1920.1080.png"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-            </motion.div>
-          </div>
-        </div>
-      </div>
+      <MobileHeader />
 
       {/* Introduction */}
-      <div className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="bg-white py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-emerald-50 opacity-40"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full opacity-10 transform translate-x-32 -translate-y-32"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-r from-emerald-500 to-gray-500 rounded-full opacity-10 transform -translate-x-16 translate-y-16"></div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
               initial="hidden"
               whileInView="visible"
               variants={containerVariants}
               viewport={{ once: true }}
+              className="space-y-8"
             >
-              <motion.h2
-                className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
-                variants={slideUp}
-              >
-                Our Mobile App Development Services
-              </motion.h2>
+              <motion.div variants={slideUp} className="relative">
+                <div className="absolute -left-4 top-0 w-1 h-16 bg-gradient-to-b from-gray-500 to-emerald-500 rounded-full"></div>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                  Our Mobile App
+                  <span className="bg-gradient-to-r from-gray-600 to-emerald-600 bg-clip-text text-transparent"> Development</span> Services
+                </h2>
+              </motion.div>
+
               <motion.p
-                className="text-lg text-gray-600 mb-8"
+                className="text-xl text-gray-700 leading-relaxed font-light"
                 variants={slideUp}
               >
-                In today's mobile-first world, applications have become essential touchpoints between businesses and users. For over a decade, Techista has established itself as a premier mobile app development company, crafting solutions across diverse industries.
+                In today's mobile-first world, applications have become essential touch points between businesses and users. For over a decade, <span className="font-semibold text-gray-900">TechIsta</span> has established itself as a premier mobile app development company, crafting solutions across diverse industries.
               </motion.p>
+
               <motion.p
-                className="text-lg text-gray-600"
+                className="text-lg text-gray-600 leading-relaxed"
                 variants={slideUp}
               >
-                We specialize in creating native and hybrid applications for iOS and Android, transforming your vision into intuitive, high-performance mobile experiences.
+                We specialize in creating native and hybrid applications for Android, transforming your vision into intuitive, high-performance mobile experiences.
               </motion.p>
+
+              <motion.div
+                variants={slideUp}
+                className="flex flex-wrap gap-4 pt-4"
+              >
+                <div className="bg-gradient-to-r from-gray-500 to-emerald-500 text-white px-6 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                  Andorid Development
+                </div>
+              </motion.div>
             </motion.div>
 
             <motion.div
-  initial={{ opacity: 0, scale: 0.95 }}
-  whileInView={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.7 }}
-  viewport={{ once: true }}
-  className="grid grid-cols-2 gap-4"
->
-  <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 flex items-center justify-center overflow-hidden">
-    <img
-      src="https://img.freepik.com/free-vector/realistic-ui-ux-background_23-2149046824.jpg?semt=ais_hybrid&w=740"
-      alt=""
-      className="h-full w-full object-cover"
-    />
-  </div>
-  <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 mt-8 flex items-center justify-center overflow-hidden">
-    <img
-      src="https://img.freepik.com/free-vector/app-development-illustration_52683-47931.jpg?semt=ais_hybrid&w=740"
-      alt=""
-      className="h-full w-full object-cover"
-    />
-  </div>
-  <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 flex items-center justify-center overflow-hidden">
-    <img
-      src="https://img.freepik.com/free-photo/high-angle-hands-holding-paper_23-2149930977.jpg?semt=ais_hybrid&w=740"
-      alt=""
-      className="h-full w-full object-cover"
-    />
-  </div>
-  <div className="bg-gray-200 border-2 border-dashed rounded-xl h-64 mt-8 flex items-center justify-center overflow-hidden">
-    <img
-      src="https://img.freepik.com/premium-vector/mobile-application-coding-flat-3d-isometric-vector-concept-illustration_92926-5948.jpg?semt=ais_hybrid&w=740"
-      alt=""
-      className="h-full w-full object-cover"
-    />
-  </div>
-</motion.div>
+              initial="hidden"
+              whileInView="visible"
+              variants={containerVariants}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              {/* Main Image Grid */}
+              <div className="grid grid-cols-2 gap-6">
+                <motion.div
+                  variants={imageVariants}
+                  className="relative group"
+                >
+                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+                    <div className="h-48 rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-emerald-100">
+                      <img
+                        src="https://img.freepik.com/free-vector/realistic-ui-ux-background_23-2149046824.jpg?semt=ais_hybrid&w=740"
+                        alt="UI/UX Design"
+                        className="h-full w-full object-cover hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-gray-500/20 to-emerald-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </motion.div>
 
+                <motion.div
+                  variants={imageVariants}
+                  className="relative group mt-8"
+                >
+                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+                    <div className="h-48 rounded-xl overflow-hidden bg-gradient-to-br from-emerald-100 to-gray-100">
+                      <img
+                        src="https://img.freepik.com/free-vector/app-development-illustration_52683-47931.jpg?semt=ais_hybrid&w=740"
+                        alt="App Development"
+                        className="h-full w-full object-cover hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-gray-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  variants={imageVariants}
+                  className="relative group"
+                >
+                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+                    <div className="h-48 rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-emerald-100">
+                      <img
+                        src="https://img.freepik.com/free-photo/high-angle-hands-holding-paper_23-2149930977.jpg?semt=ais_hybrid&w=740"
+                        alt="Mobile Strategy"
+                        className="h-full w-full object-cover hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-gray-500/20 to-emerald-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  variants={imageVariants}
+                  className="relative group mt-8"
+                >
+                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
+                    <div className="h-48 rounded-xl overflow-hidden bg-gradient-to-br from-emerald-100 to-gray-100">
+                      <img
+                        src="https://img.freepik.com/premium-vector/mobile-application-coding-flat-3d-isometric-vector-concept-illustration_92926-5948.jpg?semt=ais_hybrid&w=740"
+                        alt="Mobile Coding"
+                        className="h-full w-full object-cover hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-gray-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full opacity-20 animate-pulse"></div>
+              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-r from-emerald-500 to-gray-500 rounded-full opacity-30 animate-bounce"></div>
+            </motion.div>
           </div>
         </div>
       </div>
 
+
+
+
       {/* Services */}
-      <div className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+      <div className="py-20 bg-gradient-to-br from-gray-50 via-white to-emerald-50 relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-20 w-48 h-48 bg-gradient-to-r from-emerald-500/10 to-gray-500/10 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-gradient-to-r from-gray-500/15 to-emerald-500/15 rounded-full blur-lg"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <motion.div
+              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 backdrop-blur-sm rounded-full border border-gray-200/50 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-sm font-medium bg-gradient-to-r from-gray-600 to-emerald-600 bg-clip-text text-transparent">
+                Premium Mobile Solutions
+              </span>
+            </motion.div>
+
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              Comprehensive Mobile Development Services
+              <span className="text-gray-900">Comprehensive </span>
+              <span className="bg-gradient-to-r from-gray-500 to-emerald-500 bg-clip-text text-transparent">
+                Mobile Development
+              </span>
+              <br />
+              <span className="text-gray-900">Services</span>
             </motion.h2>
+
             <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-violet-600 to-purple-500 mx-auto rounded-full mb-6"
-              initial={{ width: 0 }}
-              whileInView={{ width: "6rem" }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              className="w-32 h-1.5 bg-gradient-to-r from-gray-500 to-emerald-500 mx-auto rounded-full mb-8 relative"
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: "8rem", opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
               viewport={{ once: true }}
-            />
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full blur-sm opacity-50"></div>
+            </motion.div>
+
             <motion.p
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              We provide end-to-end mobile solutions that transform business operations and enhance user experiences.
+              We provide end-to-end mobile solutions that transform business operations and enhance user experiences with cutting-edge technology and innovative design.
             </motion.p>
           </div>
 
+          {/* Services Grid */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
             initial="hidden"
             whileInView="visible"
             variants={containerVariants}
@@ -440,201 +479,389 @@ const industries = [
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group"
+                className="group relative"
               >
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-full transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
-                  <div className={`bg-gradient-to-r ${service.color} h-2`}></div>
-                  <div className="p-6">
-                    <div className="flex items-center mb-4">
-                      <div className="text-4xl mr-4">{service.icon}</div>
-                      <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
-                    </div>
-                    <p className="text-gray-600 leading-relaxed">{service.description}</p>
-                    <div className="mt-6">
-                      <button className="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg font-medium transition-colors duration-300 group-hover:bg-gradient-to-r group-hover:from-violet-600 group-hover:to-purple-500 group-hover:text-white">
-                        Learn More
-                      </button>
-                    </div>
+                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden h-full transform transition-all duration-500 group-hover:-translate-y-3 border border-gray-100/50 backdrop-blur-sm relative">
+                  {/* Gradient Top Border */}
+                  <div className={`bg-gradient-to-r ${service.color} h-1.5 relative`}>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
+
+                  {/* Card Content */}
+                  <div className="p-8 relative">
+                    {/* Background Pattern */}
+                    <div className="absolute top-0 right-0 w-20 h-20 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                      <div className="w-full h-full bg-gradient-to-br from-gray-500 to-emerald-500 rounded-full transform rotate-12"></div>
+                    </div>
+
+                    {/* Icon and Title */}
+                    <div className="flex items-start mb-6">
+                      <div className="text-5xl mr-4 transform group-hover:scale-110 transition-transform duration-300">
+                        {service.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-gray-600 group-hover:to-emerald-600 group-hover:bg-clip-text transition-all duration-300">
+                          {service.title}
+                        </h3>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-gray-600 leading-relaxed mb-8 text-base">
+                      {service.description}
+                    </p>
+                  </div>
+
+                  {/* Hover Effect Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                 </div>
+
+                {/* Floating Shadow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-500/20 to-emerald-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 -z-10 transform translate-y-4"></div>
               </motion.div>
             ))}
           </motion.div>
 
+          {/* CTA Section */}
           <motion.div
-            className="mt-16 bg-gradient-to-r from-violet-600 to-purple-500 rounded-2xl shadow-xl p-8 text-white text-center"
-            initial={{ opacity: 0, scale: 0.9 }}
+            className="relative bg-white rounded-3xl shadow-2xl p-12 md:p-16 text-center overflow-hidden border border-gray-100/50"
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Build Your Mobile Solution?</h3>
-            <p className="text-violet-100 max-w-2xl mx-auto mb-6">
-              Partner with a leading app development company to create innovative, high-quality mobile experiences for your business.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="px-6 py-3 bg-white text-violet-700 font-bold rounded-lg shadow-md hover:bg-gray-100 transition-colors">
-                Schedule a Consultation
-              </button>
-              <button className="px-6 py-3 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
-                View Case Studies
-              </button>
+            {/* Background Pattern */}
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-emerald-50/50"></div>
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gray-500 to-emerald-500"></div>
+
+            {/* Decorative Elements */}
+            <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 rounded-full blur-xl"></div>
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-r from-emerald-500/10 to-gray-500/10 rounded-full blur-2xl"></div>
+
+            <div className="relative z-10">
+              <motion.h3
+                className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <span className="text-gray-900">Ready to Build Your </span>
+                <span className="bg-gradient-to-r from-gray-500 to-emerald-500 bg-clip-text text-transparent">
+                  Mobile Solution?
+                </span>
+              </motion.h3>
+
+              <motion.p
+                className="text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                Partner with a leading app development company to create innovative, high-quality mobile experiences that drive business growth and user engagement.
+              </motion.p>
             </div>
           </motion.div>
         </div>
       </div>
 
+
+
+
       {/* Why Choose Us */}
-      <div className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-            >
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-96">
-                <img src="https://www.softwaresuggest.com/blog/wp-content/uploads/2024/03/14-best-free-and-open-source-mobile-app-development-software-1.jpg" alt="" />
-              </div>
-            </motion.div>
+      <div className="py-24 bg-gradient-to-br from-slate-50 via-white to-gray-50 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(16,185,129,0.1),transparent_50%)]"></div>
+        </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Why Choose Us For Mobile App Development?
-              </h2>
-              <ul className="space-y-4 mb-8">
-                {whyChooseUs.map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="bg-violet-600 rounded-full p-1 mt-1 mr-3">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                    </div>
-                    <span className="text-lg text-gray-800">{item}</span>
-                  </li>
-                ))}
-              </ul>
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-violet-500/20 to-emerald-500/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-16 w-32 h-32 bg-gradient-to-r from-emerald-500/20 to-violet-500/20 rounded-full blur-2xl animate-bounce"></div>
 
-              <div className="bg-violet-50 rounded-xl p-6 border border-violet-100">
-                <div className="flex items-start">
-                  <div className="bg-violet-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            {/* Left Side - Image */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={imageVariants}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              {/* Main Image Container */}
+              <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100/50 transform rotate-1 hover:rotate-0 transition-transform duration-700">
+                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gray-500 to-emerald-500"></div>
+
+                <div className="p-6">
+                  <div className="relative h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-slate-100">
+                    <img
+                      src="https://www.softwaresuggest.com/blog/wp-content/uploads/2024/03/14-best-free-and-open-source-mobile-app-development-software-1.jpg"
+                      alt="Mobile App Development"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                   </div>
-                  <p className="text-violet-800">
-                    "Techista transformed our business with a custom mobile app that increased customer engagement by 65% in the first quarter."
-                  </p>
                 </div>
               </div>
+
+              {/* Decorative Elements */}
+              <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-r from-gray-500/30 to-emerald-500/30 rounded-full blur-lg"></div>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-emerald-500/30 to-gray-500/30 rounded-full blur-xl"></div>
+            </motion.div>
+
+            {/* Right Side - Content */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={textVariants}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              {/* Header */}
+              <div className="space-y-6">
+                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                  <span className="text-gray-900">Why </span>
+                  <span className="bg-gradient-to-r from-gray-500 to-emerald-500 bg-clip-text text-transparent">
+                    Choose Us
+                  </span>
+                </h2>
+
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  We combine cutting-edge technology with creative excellence to deliver mobile solutions that transform businesses and delight users.
+                </p>
+              </div>
+
+              {/* Features Grid */}
+              <motion.div
+                variants={containerVariants}
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+              >
+                {whyChooseUs.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl border border-gray-100/50 transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-gradient-to-r from-gray-500 to-emerald-500 text-white rounded-xl w-12 h-12 flex items-center justify-center text-xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        {item.icon}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-violet-600 group-hover:to-emerald-600 group-hover:bg-clip-text transition-all duration-300">
+                          {item.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Hover Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-violet-500/5 to-emerald-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </motion.div>
+                ))}
+              </motion.div>
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Expertise */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Our Mobile Development Expertise
-          </motion.h2>
 
+
+
+      {/* Expertise */}
+      <div className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-gray-500/5 to-emerald-500/5 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-60 right-20 w-60 h-60 bg-gradient-to-r from-gray-500/5 to-emerald-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-40 left-1/4 w-32 h-32 bg-gradient-to-r from-gray-500/5 to-emerald-500/5 rounded-full blur-2xl animate-pulse delay-2000"></div>
+          <div className="absolute bottom-20 right-1/3 w-48 h-48 bg-gradient-to-r from-gray-500/5 to-emerald-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <motion.div
+              className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200/50 shadow-lg mb-8"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-2 h-2 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full mr-3 animate-pulse"></div>
+              <span className="text-sm font-semibold bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
+                Technical Excellence
+              </span>
+            </motion.div>
+
+            <motion.h2
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+              variants={titleVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <span className="text-gray-900">Our Mobile Development</span>
+              <br />
+              <span className="bg-gradient-to-r from-gray-500 to-emerald-500 bg-clip-text text-transparent">
+                Expertise
+              </span>
+            </motion.h2>
+
+            <motion.div
+              className="flex justify-center mb-8"
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: "auto", opacity: 1 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="h-1.5 w-32 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full blur-sm opacity-60"></div>
+              </div>
+            </motion.div>
+
+            <motion.p
+              className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              We combine cutting-edge technologies with innovative methodologies to deliver mobile solutions that exceed expectations and drive business success.
+            </motion.p>
+          </div>
+
+          {/* Expertise Grid */}
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            variants={containerVariants}
             viewport={{ once: true }}
           >
             {expertise.map((item, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:border-violet-300 transition-all"
+                className="group relative"
               >
-                <div className="flex items-center mb-4">
-                  <div className="bg-violet-100 text-violet-600 rounded-lg w-12 h-12 flex items-center justify-center mr-4">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
+                <div className={`bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-lg border ${item.borderColor} ${item.hoverBorder} transition-all duration-500 hover:shadow-2xl hover:scale-105 h-full relative overflow-hidden`}>
+                  {/* Background Gradient */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${item.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+
+                  {/* Top Gradient Line */}
+                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${item.color} opacity-60 group-hover:opacity-100 transition-opacity duration-300`}></div>
+
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Icon Container */}
+                    <div className="flex items-center mb-6">
+                      <div className={`${item.iconBg} rounded-2xl w-16 h-16 flex items-center justify-center mr-5 group-hover:scale-110 transition-transform duration-300 border border-white/50`}>
+                        <span className="text-3xl">{item.icon}</span>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-gray-600 group-hover:bg-clip-text transition-all duration-300">
+                          {item.title}
+                        </h3>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-gray-600 leading-relaxed text-base group-hover:text-gray-700 transition-colors duration-300">
+                      {item.description}
+                    </p>
+
+                    {/* Decorative Elements */}
+                    <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-20 transition-opacity duration-500">
+                      <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-full`}></div>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
+
+                  {/* Hover Effect Lines */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    <div className={`absolute top-0 left-0 w-full h-px bg-gradient-to-r ${item.color}`}></div>
+                    <div className={`absolute bottom-0 left-0 w-full h-px bg-gradient-to-r ${item.color}`}></div>
+                    <div className={`absolute top-0 left-0 h-full w-px bg-gradient-to-b ${item.color}`}></div>
+                    <div className={`absolute top-0 right-0 h-full w-px bg-gradient-to-b ${item.color}`}></div>
+                  </div>
                 </div>
-                <p className="text-gray-600">{item.description}</p>
+
+                {/* Floating Shadow */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${item.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 -z-10 transform translate-y-4`}></div>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </div>
 
-      {/* Development Process */}
-      <div className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Our Development Process
-          </motion.h2>
 
-          <div className="relative">
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-violet-600 to-purple-500 transform -translate-y-1/2 hidden lg:block"></div>
 
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 relative"
-              initial="hidden"
-              whileInView="visible"
-              variants={containerVariants}
-              viewport={{ once: true }}
-            >
-              {developmentProcess.map((step, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 relative"
-                >
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-violet-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl">
-                    {step.step}
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 mt-6 text-center">{step.title}</h3>
-                  <p className="text-gray-600 text-center">{step.description}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </div>
 
       {/* Industries */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Industries We Serve
-          </motion.h2>
+      <div className="py-20 bg-gradient-to-br from-gray-50 via-white to-emerald-50 relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-20 right-10 w-40 h-40 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 rounded-full blur-xl"></div>
+          <div className="absolute bottom-20 left-20 w-32 h-32 bg-gradient-to-r from-emerald-500/10 to-gray-500/10 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-gray-500/5 to-emerald-500/5 rounded-full blur-3xl"></div>
+        </div>
 
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <motion.div
+              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 backdrop-blur-sm rounded-full border border-gray-200/50 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-sm font-medium bg-gradient-to-r from-gray-600 to-emerald-600 bg-clip-text text-transparent">
+                Diverse Industry Expertise
+              </span>
+            </motion.div>
+
+            <motion.h2
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-gray-900">Industries We </span>
+              <span className="bg-gradient-to-r from-gray-500 to-emerald-500 bg-clip-text text-transparent">
+                Transform
+              </span>
+            </motion.h2>
+
+            <motion.div
+              className="w-32 h-1.5 bg-gradient-to-r from-gray-500 to-emerald-500 mx-auto rounded-full mb-8 relative"
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: "8rem", opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full blur-sm opacity-50"></div>
+            </motion.div>
+
+            <motion.p
+              className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              From startups to enterprises, we deliver tailored mobile solutions across diverse industries, driving innovation and growth through cutting-edge technology.
+            </motion.p>
+          </div>
+
+          {/* Industries Grid */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
             initial="hidden"
             whileInView="visible"
             variants={containerVariants}
@@ -644,84 +871,125 @@ const industries = [
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
+                className="group relative"
               >
-                <div className="flex items-center mb-4">
-                  <div className="bg-violet-100 text-violet-600 rounded-lg w-12 h-12 flex items-center justify-center mr-4">
-                    <div className="bg-violet-100 text-violet-600 rounded-lg w-12 h-12 flex items-center justify-center mr-">
-    {industry.icon}
-  </div>
+                <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden h-full transform transition-all duration-500 group-hover:-translate-y-3 border border-gray-100/50 backdrop-blur-sm relative">
+                  {/* Gradient Top Border */}
+                  <div className="bg-gradient-to-r from-gray-500 to-emerald-500 h-1.5 relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900">{industry.title}</h3>
+
+                  {/* Card Content */}
+                  <div className="p-8 relative">
+                    {/* Background Pattern */}
+                    <div className="absolute top-0 right-0 w-20 h-20 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                      <div className="w-full h-full bg-gradient-to-br from-gray-500 to-emerald-500 rounded-full transform rotate-12"></div>
+                    </div>
+
+                    {/* Icon Container */}
+                    <div className="relative mb-6">
+                      <div className="bg-gradient-to-br from-gray-100 to-emerald-100 rounded-2xl w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 relative overflow-hidden">
+                        {/* Icon Background Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-500/20 to-emerald-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                        {/* Icon */}
+                        <div className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 relative z-10">
+                          {industry.icon}
+                        </div>
+                      </div>
+
+                      {/* Floating Glow Effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-gray-500/20 to-emerald-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-gray-600 group-hover:to-emerald-600 group-hover:bg-clip-text transition-all duration-300">
+                      {industry.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-gray-600 leading-relaxed text-base group-hover:text-gray-700 transition-colors duration-300">
+                      {industry.description}
+                    </p>
+                  </div>
+
+                  {/* Hover Effect Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                 </div>
-                <p className="text-gray-600">{industry.description}</p>
+
+                {/* Floating Shadow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-500/20 to-emerald-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 -z-10 transform translate-y-4"></div>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </div>
 
-      {/* Case Studies */}
-      <div className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Success Stories
-          </motion.h2>
 
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            variants={containerVariants}
-            viewport={{ once: true }}
-          >
-            {caseStudies.map((caseStudy, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="bg-gray-200 border-2 border-dashed w-full h-48"></div>
-                <div className="p-6">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-sm font-medium text-violet-600 bg-violet-100 px-3 py-1 rounded-full">
-                      {caseStudy.category}
-                    </span>
-                    <span className="text-sm text-gray-500">{caseStudy.date}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{caseStudy.title}</h3>
-                  <p className="text-gray-600 mb-4">{caseStudy.description}</p>
-                  <button className="text-violet-600 font-medium hover:text-violet-800 transition-colors">
-                    Read Case Study →
-                  </button>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
 
       {/* FAQ */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Frequently Asked Questions
-          </motion.h2>
+      {/* Enhanced FAQ Section */}
+      <div className="py-20 bg-gradient-to-br from-gray-50 via-white to-emerald-50 relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-gray-500/5 to-emerald-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-60 right-20 w-60 h-60 bg-gradient-to-r from-emerald-500/8 to-gray-500/8 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-40 left-1/3 w-32 h-32 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 rounded-full blur-xl"></div>
+        </div>
 
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <motion.div
+              className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200/50 mb-8 shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-2 h-2 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full mr-3"></div>
+              <span className="text-sm font-medium bg-gradient-to-r from-gray-600 to-emerald-600 bg-clip-text text-transparent">
+                Got Questions? We Have Answers
+              </span>
+            </motion.div>
+
+            <motion.h2
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-gray-900">Frequently Asked </span>
+              <span className="bg-gradient-to-r from-gray-500 to-emerald-500 bg-clip-text text-transparent">
+                Questions
+              </span>
+            </motion.h2>
+
+            <motion.div
+              className="w-24 h-1.5 bg-gradient-to-r from-gray-500 to-emerald-500 mx-auto rounded-full mb-8 relative"
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: "6rem", opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full blur-sm opacity-50"></div>
+            </motion.div>
+
+            <motion.p
+              className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              Find answers to common questions about our mobile app development services and process.
+            </motion.p>
+          </div>
+
+          {/* FAQ Items */}
           <motion.div
-            className="space-y-4"
+            className="space-y-6"
             initial="hidden"
             whileInView="visible"
             variants={containerVariants}
@@ -731,74 +999,107 @@ const industries = [
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white border border-gray-200 rounded-xl overflow-hidden"
+                className="group relative"
               >
-                <button
-                  className="flex justify-between items-center w-full p-6 text-left"
-                  onClick={() => toggleFaq(index)}
-                >
-                  <span className="text-lg font-medium text-gray-900">{faq.question}</span>
-                  <svg
-                    className={`w-6 h-6 text-violet-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                  </svg>
-                </button>
+                <div className="bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+                  {/* Top Gradient Border */}
+                  <div className="h-1 bg-gradient-to-r from-gray-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                {openFaqIndex === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="px-6 pb-6 text-gray-600"
+                  <button
+                    className="flex justify-between items-center w-full p-8 text-left group relative"
+                    onClick={() => toggleFaq(index)}
                   >
-                    {faq.answer}
-                  </motion.div>
-                )}
+                    {/* Background Hover Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-gray-50/50 to-emerald-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    <div className="flex items-start flex-1 relative z-10">
+                      {/* Question Number */}
+                      <div className="bg-gradient-to-r from-gray-500 to-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-sm font-bold shadow-lg">
+                        {String(index + 1).padStart(2, '0')}
+                      </div>
+
+                      <div className="flex-1">
+                        <span className="text-lg md:text-xl font-semibold text-gray-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-gray-600 group-hover:to-emerald-600 group-hover:bg-clip-text transition-all duration-300">
+                          {faq.question}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Arrow Icon */}
+                    <div className="relative z-10 ml-4">
+                      <div className="bg-gradient-to-r from-gray-100 to-emerald-100 group-hover:from-gray-500 group-hover:to-emerald-500 rounded-full p-3 transition-all duration-300">
+                        <svg
+                          className={`w-5 h-5 text-gray-600 group-hover:text-white transform transition-all duration-300 ${openFaqIndex === index ? 'rotate-180' : ''
+                            }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+
+                  {/* Answer Content */}
+                  {openFaqIndex === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="relative"
+                    >
+                      {/* Separator Line */}
+                      <div className="px-8">
+                        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+                      </div>
+
+                      <div className="px-8 pb-8 pt-6">
+                        <div className="bg-gradient-to-r from-gray-50/50 to-emerald-50/50 rounded-xl p-6 border border-gray-100/50 relative overflow-hidden">
+                          {/* Background Pattern */}
+                          <div className="absolute top-0 right-0 w-20 h-20 opacity-5">
+                            <div className="w-full h-full bg-gradient-to-br from-gray-500 to-emerald-500 rounded-full transform rotate-12"></div>
+                          </div>
+
+                          <div className="flex items-start relative z-10">
+                            {/* Answer Icon */}
+                            <div className="bg-gradient-to-r from-gray-500 to-emerald-500 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 shadow-lg">
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                            </div>
+
+                            <div className="flex-1">
+                              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+                                {faq.answer}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
+
+                {/* Floating Shadow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 -z-10 transform translate-y-4"></div>
               </motion.div>
             ))}
           </motion.div>
-        </div>
-      </div>
 
-      {/* CTA */}
-      <div className="py-16 bg-gradient-to-r from-violet-700 to-purple-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Ready to Transform Your Business with a Mobile App?
-          </motion.h2>
-          <motion.p
-            className="text-xl text-violet-200 max-w-3xl mx-auto mb-8"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Let's discuss your project and create a custom mobile solution that exceeds your expectations.
-          </motion.p>
-          <motion.div
-            className="flex flex-col sm:flex-row justify-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            {/* <button className="px-8 py-4 bg-white text-violet-700 font-bold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
-              Get a Free Consultation
-            </button>
-            <button className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
-              View Our Portfolio
-            </button> */}
-          </motion.div>
+
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-emerald-100 to-gray-100 rounded-full border border-emerald-200/50">
+              <span className="text-emerald-700 font-medium mr-2">Still have questions?</span>
+              <a href="/contact"><button className="text-emerald-600 hover:text-emerald-800 font-semibold underline decoration-2 underline-offset-2 transition-colors">
+                Contact us
+              </button></a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
