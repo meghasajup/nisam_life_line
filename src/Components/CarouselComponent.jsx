@@ -19,7 +19,7 @@ const slides = [
   {
     image: image3,
     title: "Global Reach",
-    description: "Connecting ideas with the world, digital solutions empower clients across borders and exceed expectations at every step.",
+    description: "Connecting ideas with the world, digital solutions empower clients across borders and exceed expectations at every step." ,
   },
 ];
 
