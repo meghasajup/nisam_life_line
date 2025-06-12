@@ -4,6 +4,7 @@ import { CardPage } from '../Components/CardPage';
 import { TechnologyPage } from '../Components/TechnologyPage';
 import { HelpYouGetStarted } from '../Components/Services';
 import { WebDevelopmentLanding } from '../Components/Features';
+import ProfessionalMissionPage from '../Components/Mission&vission';
 
 
 export const HomePage = () => {
@@ -19,6 +20,10 @@ export const HomePage = () => {
         
         <div >
           <HelpYouGetStarted />
+        </div>
+
+        <div>
+          <ProfessionalMissionPage />
         </div>
 
         <div>

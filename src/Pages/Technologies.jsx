@@ -23,7 +23,6 @@ import devops from '../assets/Technologies/enterprises/devops.png';
 import db from '../assets/Technologies/enterprises/db.png';
 import integration from '../assets/Technologies/enterprises/intergration.png';
 import express from '../assets/Technologies/Frontend/express.png';
-import smo from '../assets/Technologies/digital_marketing/smo.png';
 import seo from '../assets/Technologies/digital_marketing/seo.png';
 import { motion } from 'framer-motion';
 
@@ -113,11 +112,6 @@ export const Technologies = () => {
             },
         ],
         'Digital Marketing': [
-            {
-                name: 'SMO',
-                image: smo,
-                description: 'Our Social Media Optimization team at Techista can enhance your business visibility to the audience through effective and exceptional SMO strategies.'
-            },
             {
                 name: 'SEO',
                 image: seo,
