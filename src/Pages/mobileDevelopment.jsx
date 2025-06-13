@@ -928,7 +928,6 @@ const MobileDevelopment = () => {
 
 
       {/* FAQ */}
-      {/* Enhanced FAQ Section */}
       <div className="py-20 bg-gradient-to-br from-gray-50 via-white to-emerald-50 relative overflow-hidden">
         {/* Background Decorative Elements */}
         <div className="absolute inset-0">
