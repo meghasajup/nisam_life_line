@@ -78,16 +78,6 @@ const TestingQualityAnalysis = () => {
     }
   ];
 
-  // Cost factors
-  const costFactors = [
-    "Application Complexity",
-    "Testing Scope & Coverage",
-    "Automation Requirements",
-    "Timeline & Urgency",
-    "Device & Platform Coverage",
-    "Reporting & Documentation Needs"
-  ];
-
   // Industries served
   const industries = [
     {
@@ -254,14 +244,6 @@ const TestingQualityAnalysis = () => {
               >
                 Elevate your software quality with comprehensive testing solutions that ensure reliability, performance, and exceptional user experiences.
               </motion.p>
-              <motion.div variants={slideUp}>
-                {/* <button className="px-8 py-3 bg-white text-blue-700 font-bold rounded-lg shadow-lg hover:bg-blue-50 transition-colors mr-4">
-                  Request Testing Proposal
-                </button>
-                <button className="px-8 py-3 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
-                  View Case Studies
-                </button> */}
-              </motion.div>
             </motion.div>
 
             <motion.div
@@ -360,6 +342,9 @@ const TestingQualityAnalysis = () => {
         </div>
       </div>
 
+
+
+
       {/* Features */}
       <div className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -416,6 +401,9 @@ const TestingQualityAnalysis = () => {
           </motion.div>
         </div>
       </div>
+
+
+
 
       {/* Why Choose Us */}
       <div className="py-16">
@@ -505,6 +493,9 @@ const TestingQualityAnalysis = () => {
         </div>
       </div>
 
+
+
+
       {/* Expertise */}
       <div className="py-16 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -550,6 +541,9 @@ const TestingQualityAnalysis = () => {
           </motion.div>
         </div>
       </div>
+
+
+
 
       {/* Tools Section */}
       <div className="py-16 bg-gradient-to-r from-blue-900 to-teal-800 text-white">
@@ -603,68 +597,8 @@ const TestingQualityAnalysis = () => {
         </div>
       </div>
 
-      {/* Cost Section */}
-      <div className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Transparent Testing Pricing
-          </motion.h2>
-          <motion.p
-            className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Flexible engagement models tailored to your budget and requirements
-          </motion.p>
 
-          <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-            initial="hidden"
-            whileInView="visible"
-            variants={containerVariants}
-            viewport={{ once: true }}
-          >
-            {costFactors.map((factor, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-start hover:shadow-xl transition-shadow"
-              >
-                <div className="bg-blue-100 text-blue-800 rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
-                  {index + 1}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 text-lg">{factor}</h3>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
 
-          <motion.div
-            className="mt-16 bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl shadow-xl p-8 text-white text-center"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Flexible Engagement Models</h3>
-            <p className="text-blue-100 max-w-2xl mx-auto mb-6">
-              We offer project-based, dedicated team, and hourly engagement models to suit your specific testing requirements and budget.
-            </p>
-            <button className="px-6 py-3 bg-white text-blue-700 font-bold rounded-lg shadow-md hover:bg-blue-50 transition-colors">
-              Get Pricing Details
-            </button>
-          </motion.div>
-        </div>
-      </div>
 
       {/* Industries */}
       <div className="py-16 bg-gradient-to-b from-blue-50 to-white">
@@ -712,6 +646,9 @@ const TestingQualityAnalysis = () => {
         </div>
       </div>
 
+
+
+
       {/* Testing Process */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -754,21 +691,71 @@ const TestingQualityAnalysis = () => {
         </div>
       </div>
 
-      {/* FAQ */}
-      <div className="py-16 bg-gradient-to-b from-white to-blue-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Frequently Asked Questions
-          </motion.h2>
 
+
+
+      {/* FAQ */}
+      <div className="py-20 bg-gradient-to-br from-gray-50 via-white to-emerald-50 relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-gray-500/5 to-emerald-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-60 right-20 w-60 h-60 bg-gradient-to-r from-emerald-500/8 to-gray-500/8 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-40 left-1/3 w-32 h-32 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 rounded-full blur-xl"></div>
+        </div>
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <motion.div
+              className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200/50 mb-8 shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-2 h-2 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full mr-3"></div>
+              <span className="text-sm font-medium bg-gradient-to-r from-gray-600 to-emerald-600 bg-clip-text text-transparent">
+                Got Questions? We Have Answers
+              </span>
+            </motion.div>
+
+            <motion.h2
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-gray-900">Frequently Asked </span>
+              <span className="bg-gradient-to-r from-gray-500 to-emerald-500 bg-clip-text text-transparent">
+                Questions
+              </span>
+            </motion.h2>
+
+            <motion.div
+              className="w-24 h-1.5 bg-gradient-to-r from-gray-500 to-emerald-500 mx-auto rounded-full mb-8 relative"
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: "6rem", opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full blur-sm opacity-50"></div>
+            </motion.div>
+
+            <motion.p
+              className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              Find answers to common questions about our maintenance and support services and process.
+            </motion.p>
+          </div>
+
+          {/* FAQ Items */}
           <motion.div
-            className="space-y-4"
+            className="space-y-6"
             initial="hidden"
             whileInView="visible"
             variants={containerVariants}
@@ -778,74 +765,106 @@ const TestingQualityAnalysis = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white border border-blue-200 rounded-xl overflow-hidden"
+                className="group relative"
               >
-                <button
-                  className="flex justify-between items-center w-full p-6 text-left hover:bg-blue-50 transition-colors"
-                  onClick={() => toggleFaq(index)}
-                >
-                  <span className="text-lg font-medium text-gray-900">{faq.question}</span>
-                  <svg
-                    className={`w-6 h-6 text-blue-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                  </svg>
-                </button>
+                <div className="bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+                  {/* Top Gradient Border */}
+                  <div className="h-1 bg-gradient-to-r from-gray-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                {openFaqIndex === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="px-6 pb-6 text-gray-600"
+                  <button
+                    className="flex justify-between items-center w-full p-8 text-left group relative"
+                    onClick={() => toggleFaq(index)}
                   >
-                    {faq.answer}
-                  </motion.div>
-                )}
+                    {/* Background Hover Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-gray-50/50 to-emerald-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    <div className="flex items-start flex-1 relative z-10">
+                      {/* Question Number */}
+                      <div className="bg-gradient-to-r from-gray-500 to-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-sm font-bold shadow-lg">
+                        {String(index + 1).padStart(2, '0')}
+                      </div>
+
+                      <div className="flex-1">
+                        <span className="text-lg md:text-xl font-semibold text-gray-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-gray-600 group-hover:to-emerald-600 group-hover:bg-clip-text transition-all duration-300">
+                          {faq.question}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Arrow Icon */}
+                    <div className="relative z-10 ml-4">
+                      <div className="bg-gradient-to-r from-gray-100 to-emerald-100 group-hover:from-gray-500 group-hover:to-emerald-500 rounded-full p-3 transition-all duration-300">
+                        <svg
+                          className={`w-5 h-5 text-gray-600 group-hover:text-white transform transition-all duration-300 ${openFaqIndex === index ? 'rotate-180' : ''
+                            }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+
+                  {/* Answer Content */}
+                  {openFaqIndex === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="relative"
+                    >
+                      {/* Separator Line */}
+                      <div className="px-8">
+                        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+                      </div>
+
+                      <div className="px-8 pb-8 pt-6">
+                        <div className="bg-gradient-to-r from-gray-50/50 to-emerald-50/50 rounded-xl p-6 border border-gray-100/50 relative overflow-hidden">
+                          {/* Background Pattern */}
+                          <div className="absolute top-0 right-0 w-20 h-20 opacity-5">
+                            <div className="w-full h-full bg-gradient-to-br from-gray-500 to-emerald-500 rounded-full transform rotate-12"></div>
+                          </div>
+
+                          <div className="flex items-start relative z-10">
+                            {/* Answer Icon */}
+                            <div className="bg-gradient-to-r from-gray-500 to-emerald-500 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 shadow-lg">
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                            </div>
+
+                            <div className="flex-1">
+                              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+                                {faq.answer}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
+
+                {/* Floating Shadow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 -z-10 transform translate-y-4"></div>
               </motion.div>
             ))}
           </motion.div>
-        </div>
-      </div>
 
-      {/* CTA */}
-      <div className="py-16 bg-gradient-to-r from-blue-700 to-teal-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Ready to Enhance Your Software Quality?
-          </motion.h2>
-          <motion.p
-            className="text-xl text-blue-100 max-w-3xl mx-auto mb-8"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Partner with our expert QA team to deliver flawless software experiences to your users.
-          </motion.p>
-          <motion.div
-            className="flex flex-col sm:flex-row justify-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <button className="px-8 py-4 bg-white text-blue-700 font-bold rounded-lg hover:bg-blue-50 transition-colors shadow-lg">
-              Request a Consultation
-            </button>
-            <button className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
-              Download Testing Brochure
-            </button>
-          </motion.div>
+
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-emerald-100 to-gray-100 rounded-full border border-emerald-200/50">
+              <span className="text-emerald-700 font-medium mr-2">Still have questions?</span>
+              <a href="/contact"><button className="text-emerald-600 hover:text-emerald-800 font-semibold underline decoration-2 underline-offset-2 transition-colors">
+                Contact us
+              </button></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -36,7 +36,6 @@ const MaintenanceSupport = () => {
 
   // Why choose us
   const whyChooseUs = [
-    "Dedicated support team with 15+ years experience",
     "Proactive rather than reactive maintenance",
     "Customized SLAs to match your business needs",
     "Transparent pricing with no hidden costs",
@@ -75,51 +74,6 @@ const MaintenanceSupport = () => {
       title: "Disaster Recovery",
       description: "Comprehensive backup solutions and disaster recovery planning.",
       icon: "🔄"
-    }
-  ];
-
-  // Support tiers
-  const supportTiers = [
-    {
-      name: "Basic",
-      price: "$499",
-      period: "month",
-      features: [
-        "Business hours support",
-        "Monthly system reviews",
-        "Remote assistance",
-        "Security patches",
-        "Standard response time"
-      ],
-      recommended: false
-    },
-    {
-      name: "Professional",
-      price: "$899",
-      period: "month",
-      features: [
-        "24/5 support coverage",
-        "Weekly system checks",
-        "Proactive monitoring",
-        "Priority response",
-        "Monthly reports",
-        "Performance tuning"
-      ],
-      recommended: true
-    },
-    {
-      name: "Enterprise",
-      price: "$1,499",
-      period: "month",
-      features: [
-        "24/7 premium support",
-        "Dedicated support engineer",
-        "Daily system checks",
-        "Emergency on-site assistance",
-        "Custom SLAs",
-        "Quarterly optimization"
-      ],
-      recommended: false
     }
   ];
 
@@ -257,7 +211,12 @@ const MaintenanceSupport = () => {
     <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute overflow-hidden inset-0 bg-gradient-to-r from-gray-900 to-emerald-800 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform hover:from-gray-800 hover:to-emerald-700 z-0"></div>
+        <motion.div
+          className="absolute overflow-hidden inset-0 bg-gradient-to-r from-gray-900 to-emerald-800 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform hover:from-gray-800 hover:to-emerald-700 z-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        ></motion.div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -268,113 +227,150 @@ const MaintenanceSupport = () => {
               <motion.h1
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
                 variants={slideUp}
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 Professional IT Maintenance & Support
               </motion.h1>
               <motion.p
                 className="text-xl text-blue-100 mb-8 max-w-2xl"
                 variants={slideUp}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                initial={{ opacity: 0, y: 20 }}
+                transition={{ delay: 0.2 }}
               >
                 Proactive maintenance and responsive support to keep your systems running smoothly 24/7.
               </motion.p>
-              <motion.div variants={slideUp} className="flex flex-wrap gap-4">
-                <a href="#maintanceprice">
-                <button className="px-8 py-3 bg-white text-blue-700 font-bold rounded-lg shadow-lg hover:bg-blue-50 transition-colors">
-                  Get Support Plan
-                </button>
-                </a>
-                <a href="/contact">
-                <button className="px-8 py-3 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
-                  Contact Our Team
-                </button>
-                </a>
-              </motion.div>
+              <motion.div
+                variants={slideUp}
+                className="flex flex-wrap gap-4"
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                initial={{ opacity: 0 }}
+                transition={{ staggerChildren: 0.1 }}
+              >              </motion.div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
+              whileHover={{ scale: 1.02 }}
               className="flex justify-center"
             >
               <div className="relative">
-                <div className="absolute -top-6 -left-6 w-full h-full bg-purple-600 rounded-2xl"></div>
-                <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl w-full max-w-md">
-                  <div className="bg-purple-500 p-6">
+                <motion.div
+                  className="absolute -top-6 -left-6 w-full h-full bg-gradient-to-r from-gray-500 to-emerald-500 rounded-2xl"
+                  animate={{
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                ></motion.div>
+                <motion.div
+                  className="relative bg-white rounded-2xl overflow-hidden shadow-2xl w-full max-w-md"
+                  whileHover={{ y: -5 }}
+                >
+                  <motion.div
+                    className="bg-gradient-to-r from-gray-500 to-emerald-500 p-6"
+                    initial={{ y: -50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                  >
                     <h3 className="text-white text-xl font-bold">SupportGuard Services</h3>
-                  </div>
+                  </motion.div>
                   <div className="p-6">
-                    <div className="bg-gradient-to-br from-blue-50 to-teal-50 border-2 border-dashed border-blue-200 rounded-xl w-full h-64 mb-4 flex items-center justify-center">
-                      <div className="text-center p-4">
+                    <motion.div
+                      className="bg-gradient-to-br from-blue-50 to-teal-50 border-2 border-dashed border-blue-200 rounded-xl w-full h-64 mb-4 flex items-center justify-center"
+                      initial={{ rotate: -2 }}
+                      animate={{ rotate: 2 }}
+                      transition={{
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        duration: 3
+                      }}
+                    >
+                      <motion.div
+                        className="text-center p-4"
+                        initial={{ scale: 0.9 }}
+                        animate={{ scale: 1 }}
+                        transition={{
+                          delay: 0.6,
+                          type: "spring"
+                        }}
+                      >
                         <div className="flex justify-center mb-4">
-                          <div className="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl">
+                          <motion.div
+                            className="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl"
+                            animate={{
+                              rotate: 360,
+                            }}
+                            transition={{
+                              duration: 10,
+                              repeat: Infinity,
+                              ease: "linear"
+                            }}
+                          >
                             <span>99.9%</span>
-                          </div>
+                          </motion.div>
                         </div>
-                        <p className="text-blue-800 font-medium">Uptime Guarantee</p>
-                        <p className="text-blue-600 mt-2">24/7 Monitoring & Support</p>
-                      </div>
-                    </div>
-                    <div className="flex flex-wrap gap-2 justify-center">
-                      <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">24/7 Support</div>
-                      <div className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Proactive Monitoring</div>
-                      <div className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Security</div>
-                    </div>
+                        <motion.p
+                          className="text-blue-800 font-medium"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 0.7 }}
+                        >
+                          Uptime Guarantee
+                        </motion.p>
+                        <motion.p
+                          className="text-blue-600 mt-2"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 0.8 }}
+                        >
+                          24/7 Monitoring & Support
+                        </motion.p>
+                      </motion.div>
+                    </motion.div>
+                    <motion.div
+                      className="flex flex-wrap gap-2 justify-center"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 1 }}
+                    >
+                      <motion.div
+                        className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        24/7 Support
+                      </motion.div>
+                      <motion.div
+                        className="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        Proactive Monitoring
+                      </motion.div>
+                      <motion.div
+                        className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        Security
+                      </motion.div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Stats Section */}
-      <div className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <motion.div
-              className="text-center p-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-4xl font-bold text-blue-600 mb-2">99.9%</div>
-              <p className="text-gray-600">System Uptime</p>
-            </motion.div>
-            <motion.div
-              className="text-center p-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-4xl font-bold text-blue-600 mb-2">24/7</div>
-              <p className="text-gray-600">Support Coverage</p>
-            </motion.div>
-            <motion.div
-              className="text-center p-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-4xl font-bold text-blue-600 mb-2">15 min</div>
-              <p className="text-gray-600">Avg. Response Time</p>
-            </motion.div>
-            <motion.div
-              className="text-center p-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-4xl font-bold text-blue-600 mb-2">98%</div>
-              <p className="text-gray-600">Client Retention</p>
-            </motion.div>
-          </div>
-        </div>
-      </div>
+
+
 
       {/* Introduction */}
       <div className="py-16 px-4 sm:px-6 lg:px-8">
@@ -406,9 +402,9 @@ const MaintenanceSupport = () => {
               </motion.p>
               <motion.div variants={slideUp}>
                 <a href="#maintanceprice">
-                <button id='#maintanceprice' className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-                  View Our Maintenance Plans
-                </button>
+                  <button id='#maintanceprice' className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                    View Our Maintenance Plans
+                  </button>
                 </a>
               </motion.div>
             </motion.div>
@@ -444,6 +440,9 @@ const MaintenanceSupport = () => {
           </div>
         </div>
       </div>
+
+
+
 
       {/* Features */}
       <div className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -501,6 +500,9 @@ const MaintenanceSupport = () => {
           </motion.div>
         </div>
       </div>
+
+
+
 
       {/* Why Choose Us */}
       <div className="py-16">
@@ -590,6 +592,9 @@ const MaintenanceSupport = () => {
         </div>
       </div>
 
+
+
+
       {/* Services Offered */}
       <div className="py-16 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -636,96 +641,7 @@ const MaintenanceSupport = () => {
         </div>
       </div>
 
-      {/* Pricing Tiers */}
-      <section id='maintanceprice'>
-      <div className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-6"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Flexible Support Plans
-          </motion.h2>
-          <motion.p
-            className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Choose the support level that matches your business requirements
-          </motion.p>
 
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            variants={containerVariants}
-            viewport={{ once: true }}
-          >
-            {supportTiers.map((tier, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className={`relative rounded-2xl overflow-hidden shadow-lg ${tier.recommended
-                    ? "ring-2 ring-blue-600 transform -translate-y-2"
-                    : "border border-gray-200"
-                  }`}
-              >
-                {tier.recommended && (
-                  <div className="absolute top-0 left-0 right-0 bg-blue-600 text-white text-center py-2 font-bold">
-                    MOST POPULAR
-                  </div>
-                )}
-                <div className="p-8 bg-white">
-                  <h3 className="text-2xl font-bold text-center text-gray-900 mb-2">{tier.name}</h3>
-                  <div className="text-center mb-6">
-                    <span className="text-4xl font-bold text-blue-600">{tier.price}</span>
-                    <span className="text-gray-500">/{tier.period}</span>
-                  </div>
-                  <ul className="space-y-4 mb-8">
-                    {tier.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <svg className="h-6 w-6 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <button
-                    className={`w-full py-3 px-4 rounded-lg font-medium ${tier.recommended
-                        ? "bg-blue-600 text-white hover:bg-blue-700"
-                        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-                      }`}
-                  >
-                    Select Plan
-                  </button>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <motion.div
-            className="mt-16 bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl shadow-xl p-8 text-white text-center"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Custom Enterprise Solutions</h3>
-            <p className="text-blue-100 max-w-2xl mx-auto mb-6">
-              Need a tailored solution? Our enterprise support packages are customized to meet the specific needs of large organizations with complex infrastructures.
-            </p>
-            <button className="px-6 py-3 bg-white text-blue-700 font-bold rounded-lg shadow-md hover:bg-blue-50 transition-colors">
-              Request Custom Plan
-            </button>
-          </motion.div>
-        </div>
-      </div></section>
 
       {/* Industries */}
       <div className="py-16 bg-gradient-to-b from-blue-50 to-white">
@@ -773,6 +689,9 @@ const MaintenanceSupport = () => {
         </div>
       </div>
 
+
+
+
       {/* Support Process */}
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -815,21 +734,71 @@ const MaintenanceSupport = () => {
         </div>
       </div>
 
-      {/* FAQ */}
-      <div className="py-16 bg-gradient-to-b from-white to-blue-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Frequently Asked Questions
-          </motion.h2>
 
+
+
+      {/* FAQ */}
+      <div className="py-20 bg-gradient-to-br from-gray-50 via-white to-emerald-50 relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-gray-500/5 to-emerald-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-60 right-20 w-60 h-60 bg-gradient-to-r from-emerald-500/8 to-gray-500/8 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-40 left-1/3 w-32 h-32 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 rounded-full blur-xl"></div>
+        </div>
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <motion.div
+              className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200/50 mb-8 shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-2 h-2 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full mr-3"></div>
+              <span className="text-sm font-medium bg-gradient-to-r from-gray-600 to-emerald-600 bg-clip-text text-transparent">
+                Got Questions? We Have Answers
+              </span>
+            </motion.div>
+
+            <motion.h2
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-gray-900">Frequently Asked </span>
+              <span className="bg-gradient-to-r from-gray-500 to-emerald-500 bg-clip-text text-transparent">
+                Questions
+              </span>
+            </motion.h2>
+
+            <motion.div
+              className="w-24 h-1.5 bg-gradient-to-r from-gray-500 to-emerald-500 mx-auto rounded-full mb-8 relative"
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: "6rem", opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full blur-sm opacity-50"></div>
+            </motion.div>
+
+            <motion.p
+              className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              Find answers to common questions about our maintenance and support services and process.
+            </motion.p>
+          </div>
+
+          {/* FAQ Items */}
           <motion.div
-            className="space-y-4"
+            className="space-y-6"
             initial="hidden"
             whileInView="visible"
             variants={containerVariants}
@@ -839,74 +808,106 @@ const MaintenanceSupport = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white border border-blue-200 rounded-xl overflow-hidden"
+                className="group relative"
               >
-                <button
-                  className="flex justify-between items-center w-full p-6 text-left hover:bg-blue-50 transition-colors"
-                  onClick={() => toggleFaq(index)}
-                >
-                  <span className="text-lg font-medium text-gray-900">{faq.question}</span>
-                  <svg
-                    className={`w-6 h-6 text-blue-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                  </svg>
-                </button>
+                <div className="bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+                  {/* Top Gradient Border */}
+                  <div className="h-1 bg-gradient-to-r from-gray-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                {openFaqIndex === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="px-6 pb-6 text-gray-600"
+                  <button
+                    className="flex justify-between items-center w-full p-8 text-left group relative"
+                    onClick={() => toggleFaq(index)}
                   >
-                    {faq.answer}
-                  </motion.div>
-                )}
+                    {/* Background Hover Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-gray-50/50 to-emerald-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    <div className="flex items-start flex-1 relative z-10">
+                      {/* Question Number */}
+                      <div className="bg-gradient-to-r from-gray-500 to-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-sm font-bold shadow-lg">
+                        {String(index + 1).padStart(2, '0')}
+                      </div>
+
+                      <div className="flex-1">
+                        <span className="text-lg md:text-xl font-semibold text-gray-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-gray-600 group-hover:to-emerald-600 group-hover:bg-clip-text transition-all duration-300">
+                          {faq.question}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Arrow Icon */}
+                    <div className="relative z-10 ml-4">
+                      <div className="bg-gradient-to-r from-gray-100 to-emerald-100 group-hover:from-gray-500 group-hover:to-emerald-500 rounded-full p-3 transition-all duration-300">
+                        <svg
+                          className={`w-5 h-5 text-gray-600 group-hover:text-white transform transition-all duration-300 ${openFaqIndex === index ? 'rotate-180' : ''
+                            }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+
+                  {/* Answer Content */}
+                  {openFaqIndex === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="relative"
+                    >
+                      {/* Separator Line */}
+                      <div className="px-8">
+                        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+                      </div>
+
+                      <div className="px-8 pb-8 pt-6">
+                        <div className="bg-gradient-to-r from-gray-50/50 to-emerald-50/50 rounded-xl p-6 border border-gray-100/50 relative overflow-hidden">
+                          {/* Background Pattern */}
+                          <div className="absolute top-0 right-0 w-20 h-20 opacity-5">
+                            <div className="w-full h-full bg-gradient-to-br from-gray-500 to-emerald-500 rounded-full transform rotate-12"></div>
+                          </div>
+
+                          <div className="flex items-start relative z-10">
+                            {/* Answer Icon */}
+                            <div className="bg-gradient-to-r from-gray-500 to-emerald-500 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 shadow-lg">
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                            </div>
+
+                            <div className="flex-1">
+                              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+                                {faq.answer}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
+
+                {/* Floating Shadow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 -z-10 transform translate-y-4"></div>
               </motion.div>
             ))}
           </motion.div>
-        </div>
-      </div>
 
-      {/* CTA */}
-      <div className="py-16 bg-gradient-to-r from-blue-700 to-teal-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            Ready for Stress-Free IT Maintenance?
-          </motion.h2>
-          <motion.p
-            className="text-xl text-blue-100 max-w-3xl mx-auto mb-8"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Focus on your business while we ensure your IT infrastructure runs flawlessly 24/7.
-          </motion.p>
-          <motion.div
-            className="flex flex-col sm:flex-row justify-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            {/* <button className="px-8 py-4 bg-white text-blue-700 font-bold rounded-lg hover:bg-blue-50 transition-colors shadow-lg">
-              Get Started Today
-            </button>
-            <button className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
-              Schedule a Demo
-            </button> */}
-          </motion.div>
+
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-emerald-100 to-gray-100 rounded-full border border-emerald-200/50">
+              <span className="text-emerald-700 font-medium mr-2">Still have questions?</span>
+              <a href="/contact"><button className="text-emerald-600 hover:text-emerald-800 font-semibold underline decoration-2 underline-offset-2 transition-colors">
+                Contact us
+              </button></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
