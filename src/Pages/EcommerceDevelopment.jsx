@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { List, ShoppingCart, User, CreditCard, Package, BarChart, Globe, Users, Zap, CheckCircle } from 'lucide-react';
 
 const EcommerceDevelopment = () => {
   // State for FAQ section
@@ -40,7 +41,6 @@ const EcommerceDevelopment = () => {
 
   // Why choose us
   const whyChooseUs = [
-    "E-commerce specialists with 10+ years experience",
     "Mobile-first responsive designs",
     "SEO-optimized product listings",
     "Conversion rate optimization",
@@ -52,71 +52,33 @@ const EcommerceDevelopment = () => {
   const features = [
     {
       title: "Product Catalogs",
-      description: "Beautifully organized product displays with filters and search functionality.",
-      icon: "📋"
+      desc: "Beautifully organized product displays with filters and search functionality.",
+      icon: List
     },
     {
       title: "Shopping Cart",
-      description: "Intuitive cart system with saved items and easy checkout process.",
-      icon: "🛒"
+      desc: "Intuitive cart system with saved items and easy checkout process.",
+      icon: ShoppingCart
     },
     {
       title: "User Accounts",
-      description: "Personalized accounts with order history and saved preferences.",
-      icon: "👤"
+      desc: "Personalized accounts with order history and saved preferences.",
+      icon: User
     },
     {
       title: "Payment Processing",
-      description: "Multiple payment options with PCI-compliant security.",
-      icon: "💳"
+      desc: "Multiple payment options with PCI-compliant security.",
+      icon: CreditCard
     },
     {
       title: "Order Management",
-      description: "Dashboard to track, manage, and fulfill customer orders.",
-      icon: "📦"
+      desc: "Dashboard to track, manage, and fulfill customer orders.",
+      icon: Package
     },
     {
       title: "Analytics Dashboard",
-      description: "Detailed insights into sales, customers, and marketing performance.",
-      icon: "📈"
-    }
-  ];
-
-  // Platforms we work with
-  const platforms = [
-    
-    {
-      name: "Custom Solutions",
-      description: "Tailor-made e-commerce platforms for unique business needs."
-    }
-  ];
-
-  // Development process
-  const processSteps = [
-    {
-      step: "1",
-      title: "Discovery & Strategy",
-      description: "Understanding your business goals and target audience."
-    },
-    {
-      step: "2",
-      title: "Design & Prototyping",
-      description: "Creating wireframes and UI designs for your store."
-    },
-    {
-      step: "3",
-      title: "Development",
-      description: "Building your e-commerce platform with modern technologies."
-    },
-    {
-      step: "4",
-      title: "Testing & Optimization",
-      description: "Ensuring flawless performance across all devices."
-    },
-    {
-      step: "5",
-      title: "Launch & Marketing",
-      description: "Going live and driving traffic to your new store."
+      desc: "Detailed insights into sales, customers, and marketing performance.",
+      icon: BarChart
     }
   ];
 
@@ -141,28 +103,6 @@ const EcommerceDevelopment = () => {
     {
       question: "Can you migrate my existing store?",
       answer: "Yes, we specialize in seamless migrations from any platform to your new e-commerce solution."
-    }
-  ];
-
-  // Testimonials
-  const testimonials = [
-    {
-      name: "Rajesh Kumar",
-      company: "FashionHub",
-      content: "Our online sales increased by 180% after launching our new e-commerce platform. The team delivered beyond our expectations.",
-      avatar: "RK"
-    },
-    {
-      name: "Priya Sharma",
-      company: "HomeDecor India",
-      content: "The mobile app they developed has become our primary sales channel. User-friendly and beautifully designed.",
-      avatar: "PS"
-    },
-    {
-      name: "Vikram Patel",
-      company: "ElectroWorld",
-      content: "The inventory management system they implemented saved us 20 hours per week in operational costs.",
-      avatar: "VP"
     }
   ];
 
@@ -200,13 +140,29 @@ const EcommerceDevelopment = () => {
   };
 
   const slideUp = {
-    hidden: { y: 50, opacity: 0 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
-      y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.7
-      }
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const slideInLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, ease: "easeOut" }
+    }
+  };
+
+  const slideInRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, ease: "easeOut" }
     }
   };
 
@@ -223,86 +179,245 @@ const EcommerceDevelopment = () => {
             <motion.div
               initial="hidden"
               animate="visible"
-              variants={containerVariants}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.2,
+                    delayChildren: 0.3
+                  }
+                }
+              }}
             >
-              <motion.h1
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
-                variants={slideUp}
+              <motion.div
+                variants={{
+                  hidden: { y: 30, opacity: 0 },
+                  visible: {
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10
+                    }
+                  }
+                }}
               >
-                Transform Your Business with E-commerce
-              </motion.h1>
+                <motion.h1
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  Transform Your Business with E-commerce
+                </motion.h1>
+              </motion.div>
+
               <motion.p
                 className="text-xl text-indigo-200 mb-8 max-w-2xl"
-                variants={slideUp}
+                variants={{
+                  hidden: { x: -30, opacity: 0 },
+                  visible: {
+                    x: 0,
+                    opacity: 1,
+                    transition: {
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      delay: 0.2
+                    }
+                  }
+                }}
               >
                 We build high-conversion online stores that drive sales and grow your business.
               </motion.p>
 
+              <motion.div
+                variants={{
+                  hidden: { scale: 0.9, opacity: 0 },
+                  visible: {
+                    scale: 1,
+                    opacity: 1,
+                    transition: {
+                      delay: 0.4,
+                      type: "spring",
+                      stiffness: 100
+                    }
+                  }
+                }}
+              >
+              </motion.div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                rotate: 0,
+                transition: {
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 10,
+                  delay: 0.5
+                }
+              }}
+              whileHover={{
+                y: -10,
+                transition: { type: "spring", stiffness: 300 }
+              }}
               className="flex justify-center"
             >
               <div className="relative">
-                <div className="absolute -top-6 -left-6 w-full h-full bg-purple-600 rounded-2xl"></div>
-                <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl w-full max-w-md">
-                  <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-6">
+                <motion.div
+                  className="absolute -top-6 -left-6 w-full h-full bg-gradient-to-r from-gray-500 to-emerald-500 rounded-2xl"
+                  animate={{
+                    y: [0, -10, 0],
+                    transition: {
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }
+                  }}
+                ></motion.div>
+                <motion.div
+                  className="relative bg-white rounded-2xl overflow-hidden shadow-2xl w-full max-w-md"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <motion.div
+                    className="bg-gradient-to-r from-gray-500 to-emerald-500 p-6"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.7 }}
+                  >
                     <h3 className="text-white text-xl font-bold">E-commerce Solutions</h3>
-                  </div>
+                  </motion.div>
                   <div className="p-6">
-                    <div className="flex justify-center mb-4">
-                      <div className="bg-gray-200 border-2 border-dashed rounded-xl w-64 h-64 flex items-center justify-center">
-                        <img src="https://wizzy.ai/blog/wp-content/uploads/2024/07/9175118_6461-1024x640.jpg" alt="" />
+                    <motion.div
+                      className="flex justify-center mb-4"
+                      initial={{ scale: 0.8 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: 0.8 }}
+                    >
+                      <div className="bg-gray-200 border-2 border-dashed rounded-xl w-64 h-64 flex items-center justify-center overflow-hidden">
+                        <motion.img
+                          src="https://wizzy.ai/blog/wp-content/uploads/2024/07/9175118_6461-1024x640.jpg"
+                          alt="E-commerce illustration"
+                          initial={{ opacity: 0, scale: 1.1 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.9, duration: 0.7 }}
+                        />
                       </div>
-                    </div>
-                    <p className="text-gray-700 text-center">Custom online stores built for your business needs</p>
-                    <div className="flex justify-center mt-6 gap-2">
-                      <div className="w-3 h-3 rounded-full bg-purple-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-indigo-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-blue-500"></div>
-                    </div>
+                    </motion.div>
+                    <motion.p
+                      className="text-gray-700 text-center"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 1.0 }}
+                    >
+                      Custom online stores built for your business needs
+                    </motion.p>
+                    <motion.div
+                      className="flex justify-center mt-6 gap-2"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 1.1 }}
+                    >
+                      <motion.div
+                        className="w-3 h-3 rounded-full bg-purple-500"
+                        animate={{
+                          scale: [1, 1.2, 1],
+                          transition: {
+                            delay: 1.2,
+                            duration: 1,
+                            repeat: Infinity
+                          }
+                        }}
+                      ></motion.div>
+                      <motion.div
+                        className="w-3 h-3 rounded-full bg-indigo-500"
+                        animate={{
+                          scale: [1, 1.2, 1],
+                          transition: {
+                            delay: 1.4,
+                            duration: 1,
+                            repeat: Infinity
+                          }
+                        }}
+                      ></motion.div>
+                      <motion.div
+                        className="w-3 h-3 rounded-full bg-blue-500"
+                        animate={{
+                          scale: [1, 1.2, 1],
+                          transition: {
+                            delay: 1.6,
+                            duration: 1,
+                            repeat: Infinity
+                          }
+                        }}
+                      ></motion.div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
         </div>
       </div>
 
+
+
+
       {/* Services */}
-      <div className="py-16 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <motion.h2
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+      <div className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          {/* Header Section */}
+          <div className="text-center mb-20">
+            <motion.div
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full text-white text-sm font-semibold shadow-lg mb-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              Our E-commerce Services
+              <Globe className="w-4 h-4 mr-2" />
+              Professional E-Commerce Development
+            </motion.div>
+
+            <motion.h2
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Our E-commerce
+              <span className="block bg-gradient-to-r from-gray-600 to-emerald-600 bg-clip-text text-transparent">
+                Development Services
+              </span>
             </motion.h2>
+
             <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full mb-6"
+              className="w-32 h-1.5 bg-gradient-to-r from-gray-500 to-emerald-500 mx-auto rounded-full mb-8 shadow-sm"
               initial={{ width: 0 }}
-              whileInView={{ width: "6rem" }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              whileInView={{ width: "8rem" }}
+              transition={{ duration: 1, delay: 0.3 }}
               viewport={{ once: true }}
             />
+
             <motion.p
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
               Comprehensive solutions to build, grow, and optimize your online store
+              <span className="font-semibold text-gray-800"> online store</span>
             </motion.p>
           </div>
 
+          {/* Services Grid */}
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
             initial="hidden"
@@ -314,92 +429,207 @@ const EcommerceDevelopment = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="group"
+                className="group relative"
               >
-                <div className={`bg-gradient-to-br ${service.color} rounded-2xl shadow-lg overflow-hidden h-full transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl`}>
-                  <div className="p-6 text-white">
-                    <div className="text-4xl mb-4">{service.icon}</div>
-                    <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                    <p className="opacity-90">{service.description}</p>
+                {/* Card */}
+                <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden h-full transform transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-2xl group-hover:border-emerald-200 relative">
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-emerald-500 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+
+                  {/* Content */}
+                  <div className="p-8 relative z-10">
+                    {/* Icon Container */}
+                    <div className="mb-6 relative">
+                      <div className="w-16 h-16 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        {service.icon}
+                      </div>
+                      {/* Glow Effect */}
+                      <div className="absolute inset-0 w-16 h-16 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-gray-800 transition-colors duration-300">
+                      {service.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-gray-600 leading-relaxed mb-6 group-hover:text-gray-700 transition-colors duration-300">
+                      {service.description}
+                    </p>
+
+                    {/* Feature List */}
+                    <div className="space-y-2">
+                      <div className="flex items-center text-sm text-gray-500">
+                        <div className="w-1.5 h-1.5 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full mr-3"></div>
+                        Custom Development
+                      </div>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <div className="w-1.5 h-1.5 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full mr-3"></div>
+                        Mobile Responsive
+                      </div>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <div className="w-1.5 h-1.5 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full mr-3"></div>
+                        SEO Optimized
+                      </div>
+                    </div>
+
+                    {/* Bottom Accent */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-500 to-emerald-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                   </div>
+                </div>
+
+                {/* Floating Number */}
+                <div className="absolute -top-3 -left-3 w-8 h-8 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                  {index + 1}
                 </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
+
+        {/* Floating Elements */}
+        <motion.div
+          animate={{
+            y: [-20, 20, -20],
+            rotate: [0, 360, 0]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-20 right-10 w-20 h-20 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full opacity-10 blur-xl"
+        />
+        <motion.div
+          animate={{
+            y: [20, -20, 20],
+            rotate: [360, 0, 360]
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+          className="absolute bottom-20 left-10 w-16 h-16 bg-gradient-to-r from-emerald-500 to-gray-500 rounded-full opacity-10 blur-xl"
+        />
       </div>
 
+
+
+
       {/* Why Choose Us */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-            >
-              <div className="bg-gradient-to-br from-purple-50 to-indigo-50 border-2 border-dashed border-purple-200 rounded-xl w-full h-96 flex items-center justify-center">
-                <img src="https://cybridge.in/img/lead-generation/leadgen-attract.png" alt="" />
-              </div>
-            </motion.div>
+      <div className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }} />
+        </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Why Choose Our E-commerce Solutions?
-              </h2>
-              <ul className="space-y-4 mb-8">
-                {whyChooseUs.map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="bg-purple-600 rounded-full p-1 mt-1 mr-3">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                    </div>
-                    <span className="text-lg text-gray-800">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="bg-purple-50 rounded-xl p-6 border border-purple-100">
-                <div className="flex items-start">
-                  <div className="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          >
+            {/* Left Column - Visual */}
+            <motion.div variants={slideInLeft} className="relative">
+              <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 transform transition-all duration-500 hover:scale-[1.02]">
+                <div className="aspect-w-16 aspect-h-9 bg-gradient-to-r from-gray-500 to-emerald-500 p-8 flex items-center justify-center">
+                  <div className="text-center">
+                    <Users className="w-12 h-12 text-white mx-auto mb-4" />
+                    <h3 className="text-2xl font-bold text-white">User-Centric Design</h3>
+                    <p className="text-white/90 mt-2">Intuitive interfaces that your team will love</p>
                   </div>
-                  <p className="text-purple-800">
-                    "Our online sales tripled within 6 months of launching our new e-commerce platform. The seamless integration with our inventory system saved us countless hours."
-                  </p>
+                </div>
+                <div className="p-6 bg-white">
+                  <div className="flex justify-between items-center mb-4">
+                    <div className="text-sm font-medium text-gray-500">Implementation Success Rate</div>
+                    <div className="text-xl font-bold text-emerald-600">100%</div>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2.5">
+                    <div
+                      className="bg-gradient-to-r from-gray-500 to-emerald-500 h-2.5 rounded-full"
+                      style={{ width: '100%' }}
+                    ></div>
+                  </div>
                 </div>
               </div>
+
+              {/* Floating elements */}
+              <motion.div
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 rounded-xl -z-10"
+              />
+              <motion.div
+                animate={{ y: [0, 15, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 rounded-xl -z-10"
+              />
             </motion.div>
-          </div>
+
+            {/* Right Column - Content */}
+            <motion.div variants={slideInRight} className="space-y-8">
+              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full text-white text-sm font-semibold shadow-lg mb-6">
+                <Zap className="w-4 h-4 mr-2" />
+                Why We Stand Out
+              </div>
+
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                Why Choose Our
+                <span className="block bg-gradient-to-r from-gray-600 to-emerald-600 bg-clip-text text-transparent">
+                  E-Commerce Solutions
+                </span>
+              </h2>
+
+              <ul className="space-y-5">
+                {whyChooseUs.map((item, index) => (
+                  <motion.li
+                    key={index}
+                    variants={itemVariants}
+                    className="flex items-start bg-white/80 backdrop-blur-sm p-4 rounded-xl border border-gray-200 hover:border-emerald-300 transition-all"
+                  >
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full text-white">
+                        <CheckCircle className="w-4 h-4" />
+                      </div>
+                    </div>
+                    <div className="ml-4">
+                      <h3 className="text-lg font-semibold text-gray-900">{item}</h3>
+                      <div className="mt-1 w-16 h-1 bg-gradient-to-r from-gray-400 to-emerald-400 rounded-full"></div>
+                    </div>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
+
+
+
       {/* Features */}
-      <div className="py-16 bg-gradient-to-b from-gray-50 to-white">
+      <div className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              Essential E-commerce Features
+              Powerful CMS Capabilities
             </motion.h2>
             <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full mb-6"
+              className="w-32 h-2 bg-gradient-to-r from-gray-500 to-emerald-500 mx-auto rounded-full mb-6"
               initial={{ width: 0 }}
-              whileInView={{ width: "6rem" }}
+              whileInView={{ width: "8rem" }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             />
@@ -410,12 +640,12 @@ const EcommerceDevelopment = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              We implement all the features your online store needs to succeed
+              Engineered to streamline your content workflow and maximize productivity
             </motion.p>
           </div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
             initial="hidden"
             whileInView="visible"
             variants={containerVariants}
@@ -425,225 +655,91 @@ const EcommerceDevelopment = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:border-purple-300 transition-all"
+                whileHover={{ y: -10 }}
+                className="group"
               >
-                <div className="flex items-center mb-4">
-                  <div className="text-3xl mr-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
+                <div className="h-full bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden transition-all duration-300 group-hover:shadow-2xl">
+                  <div className="relative h-48 bg-gradient-to-r from-gray-500 to-emerald-500 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black/10"></div>
+                    <feature.icon className="w-16 h-16 text-white opacity-90" />
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-white/30 to-white/0"></div>
+                  </div>
+
+                  <div className="p-8">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                    <p className="text-gray-600 mb-6">{feature.desc}</p>
+                  </div>
                 </div>
-                <p className="text-gray-600">{feature.description}</p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </div>
 
-      {/* Platforms */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <motion.h2
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              Platforms We Specialize In
-            </motion.h2>
-            <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full mb-6"
-              initial={{ width: 0 }}
-              whileInView={{ width: "6rem" }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-            />
-            <motion.p
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              viewport={{ once: true }}
-            >
-              We work with all major e-commerce platforms
-            </motion.p>
-          </div>
 
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6"
-            initial="hidden"
-            whileInView="visible"
-            variants={containerVariants}
-            viewport={{ once: true }}
-          >
-            {platforms.map((platform, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-lg transition-shadow"
-              >
-                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mx-auto mb-4">
-                  <img src="https://technoderivation.com/assets/images/vector/ecommerce.png" alt="" />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{platform.name}</h3>
-                <p className="text-gray-600 text-sm">{platform.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Process */}
-      <div className="py-16 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <motion.h2
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              Our E-commerce Development Process
-            </motion.h2>
-            <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full mb-6"
-              initial={{ width: 0 }}
-              whileInView={{ width: "6rem" }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-            />
-          </div>
-
-          <div className="relative">
-            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 transform -translate-y-1/2"></div>
-
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 relative"
-              initial="hidden"
-              whileInView="visible"
-              variants={containerVariants}
-              viewport={{ once: true }}
-            >
-              {processSteps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 relative"
-                >
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl">
-                    {step.step}
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 mt-6 text-center">{step.title}</h3>
-                  <p className="text-gray-600 text-center">{step.description}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </div>
-
-      {/* Testimonials */}
-      {/* <div className="py-16 bg-gradient-to-r from-purple-900 to-indigo-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <motion.h2
-              className="text-3xl md:text-4xl font-bold mb-4"
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              Success Stories
-            </motion.h2>
-            <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-purple-400 to-indigo-400 mx-auto rounded-full mb-6"
-              initial={{ width: 0 }}
-              whileInView={{ width: "6rem" }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-            />
-            <motion.p
-              className="text-xl text-indigo-200 max-w-3xl mx-auto"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              viewport={{ once: true }}
-            >
-              Hear from businesses that transformed their online sales
-            </motion.p>
-          </div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            variants={containerVariants}
-            viewport={{ once: true }}
-          >
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-8"
-              >
-                <div className="flex items-center mb-6">
-                  <div className="bg-white text-purple-600 rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg">{testimonial.name}</h3>
-                    <p className="text-purple-200 text-sm">{testimonial.company}</p>
-                  </div>
-                </div>
-                <div className="flex text-yellow-300 mb-4">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                </div>
-                <p className="text-white/90">{testimonial.content}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </div> */}
 
       {/* FAQ */}
-      <div className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-20 bg-gradient-to-br from-gray-50 via-white to-emerald-50 relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-gray-500/5 to-emerald-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-60 right-20 w-60 h-60 bg-gradient-to-r from-emerald-500/8 to-gray-500/8 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-40 left-1/3 w-32 h-32 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 rounded-full blur-xl"></div>
+        </div>
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
           <div className="text-center mb-16">
-            <motion.h2
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: -20 }}
+            <motion.div
+              className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200/50 mb-8 shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              Frequently Asked Questions
-            </motion.h2>
-            <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto rounded-full mb-6"
-              initial={{ width: 0 }}
-              whileInView={{ width: "6rem" }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              <div className="w-2 h-2 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full mr-3"></div>
+              <span className="text-sm font-medium bg-gradient-to-r from-gray-600 to-emerald-600 bg-clip-text text-transparent">
+                Got Questions? We Have Answers
+              </span>
+            </motion.div>
+
+            <motion.h2
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
               viewport={{ once: true }}
-            />
+            >
+              <span className="text-gray-900">Frequently Asked </span>
+              <span className="bg-gradient-to-r from-gray-500 to-emerald-500 bg-clip-text text-transparent">
+                Questions
+              </span>
+            </motion.h2>
+
+            <motion.div
+              className="w-24 h-1.5 bg-gradient-to-r from-gray-500 to-emerald-500 mx-auto rounded-full mb-8 relative"
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: "6rem", opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-emerald-500 rounded-full blur-sm opacity-50"></div>
+            </motion.div>
+
+            <motion.p
+              className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              Find answers to common questions about our e-commerce development services and process.
+            </motion.p>
           </div>
 
+          {/* FAQ Items */}
           <motion.div
-            className="space-y-4"
+            className="space-y-6"
             initial="hidden"
             whileInView="visible"
             variants={containerVariants}
@@ -653,79 +749,104 @@ const EcommerceDevelopment = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                className="group relative"
               >
-                <button
-                  className="flex justify-between items-center w-full p-6 text-left"
-                  onClick={() => toggleFaq(index)}
-                >
-                  <span className="text-lg font-medium text-gray-900">{faq.question}</span>
-                  <svg
-                    className={`w-6 h-6 text-purple-600 transform transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                  </svg>
-                </button>
+                <div className="bg-white/90 backdrop-blur-sm border border-gray-200/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+                  {/* Top Gradient Border */}
+                  <div className="h-1 bg-gradient-to-r from-gray-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                {openFaqIndex === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="px-6 pb-6 text-gray-600"
+                  <button
+                    className="flex justify-between items-center w-full p-8 text-left group relative"
+                    onClick={() => toggleFaq(index)}
                   >
-                    {faq.answer}
-                  </motion.div>
-                )}
+                    {/* Background Hover Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-gray-50/50 to-emerald-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    <div className="flex items-start flex-1 relative z-10">
+                      {/* Question Number */}
+                      <div className="bg-gradient-to-r from-gray-500 to-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 text-sm font-bold shadow-lg">
+                        {String(index + 1).padStart(2, '0')}
+                      </div>
+
+                      <div className="flex-1">
+                        <span className="text-lg md:text-xl font-semibold text-gray-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-gray-600 group-hover:to-emerald-600 group-hover:bg-clip-text transition-all duration-300">
+                          {faq.question}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Arrow Icon */}
+                    <div className="relative z-10 ml-4">
+                      <div className="bg-gradient-to-r from-gray-100 to-emerald-100 group-hover:from-gray-500 group-hover:to-emerald-500 rounded-full p-3 transition-all duration-300">
+                        <svg
+                          className={`w-5 h-5 text-gray-600 group-hover:text-white transform transition-all duration-300 ${openFaqIndex === index ? 'rotate-180' : ''
+                            }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+
+                  {/* Answer Content */}
+                  {openFaqIndex === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="relative"
+                    >
+                      {/* Separator Line */}
+                      <div className="px-8">
+                        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+                      </div>
+
+                      <div className="px-8 pb-8 pt-6">
+                        <div className="bg-gradient-to-r from-gray-50/50 to-emerald-50/50 rounded-xl p-6 border border-gray-100/50 relative overflow-hidden">
+                          {/* Background Pattern */}
+                          <div className="absolute top-0 right-0 w-20 h-20 opacity-5">
+                            <div className="w-full h-full bg-gradient-to-br from-gray-500 to-emerald-500 rounded-full transform rotate-12"></div>
+                          </div>
+
+                          <div className="flex items-start relative z-10">
+                            {/* Answer Icon */}
+                            <div className="bg-gradient-to-r from-gray-500 to-emerald-500 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 shadow-lg">
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                              </svg>
+                            </div>
+
+                            <div className="flex-1">
+                              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+                                {faq.answer}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
+
+                {/* Floating Shadow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-500/10 to-emerald-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 -z-10 transform translate-y-4"></div>
               </motion.div>
             ))}
           </motion.div>
-        </div>
-      </div>
 
-      {/* CTA */}
-      <div className="py-16 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-3xl p-12 text-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500 rounded-full -m-24 opacity-20"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500 rounded-full -m-32 opacity-20"></div>
 
-            <div className="relative z-10">
-              <motion.h2
-                className="text-3xl md:text-4xl font-bold text-white mb-6"
-                initial={{ opacity: 0, y: -20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                Ready to Launch Your E-commerce Store?
-              </motion.h2>
-              <motion.p
-                className="text-xl text-purple-200 max-w-2xl mx-auto mb-8"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                Let's build a high-conversion online store that grows your business
-              </motion.p>
-              <motion.div
-                className="flex flex-col sm:flex-row justify-center gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                {/* <button className="px-8 py-4 bg-white text-purple-700 font-bold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
-                  Get Started
-                </button>
-                <button className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors">
-                  Schedule a Call
-                </button> */}
-              </motion.div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-emerald-100 to-gray-100 rounded-full border border-emerald-200/50">
+              <span className="text-emerald-700 font-medium mr-2">Still have questions?</span>
+              <a href="/contact"><button className="text-emerald-600 hover:text-emerald-800 font-semibold underline decoration-2 underline-offset-2 transition-colors">
+                Contact us
+              </button></a>
             </div>
           </div>
         </div>
