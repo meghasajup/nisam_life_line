@@ -18,11 +18,6 @@ export const HomePage = () => {
 
       {/* Main Content Sections */}
       <div className="mt-2 mb-6 space-y-6">
-        
-        <div >
-          {/* <HelpYouGetStarted /> */}
-        </div>
-
         <div>
           <ProfessionalMissionPage />
         </div>
@@ -34,6 +29,7 @@ export const HomePage = () => {
         <div >
           <CardPage />
         </div>
+        
         <div >
           <WhyUs />
         </div>
