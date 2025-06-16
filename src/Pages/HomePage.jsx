@@ -5,6 +5,7 @@ import { TechnologyPage } from '../Components/TechnologyPage';
 import { HelpYouGetStarted } from '../Components/Services';
 import { WebDevelopmentLanding } from '../Components/Features';
 import ProfessionalMissionPage from '../Components/Mission&vission';
+import WhyUs from '../Components/WhyUs';
 
 
 export const HomePage = () => {
@@ -19,7 +20,7 @@ export const HomePage = () => {
       <div className="mt-2 mb-6 space-y-6">
         
         <div >
-          <HelpYouGetStarted />
+          {/* <HelpYouGetStarted /> */}
         </div>
 
         <div>
@@ -33,6 +34,10 @@ export const HomePage = () => {
         <div >
           <CardPage />
         </div>
+        <div >
+          <WhyUs />
+        </div>
+
 
         <div>
           <TechnologyPage />
