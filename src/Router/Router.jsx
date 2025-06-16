@@ -14,6 +14,7 @@ import UIDesignService from '../Pages/UidesignService'
 import WebDevelopmentService from '../Pages/webisteDevelopment'
 import { HomePageLayout } from '../Layout/HomepageLayout'
 import Service from '../Pages/Service'
+import SEOServices from '../Pages/SEO_Optimization'
 
 export const router = createBrowserRouter([
      {
@@ -76,6 +77,10 @@ export const router = createBrowserRouter([
                 path: "contact",
                 element: <ContactPage />
             },
+            {
+                path: "SEOOptimization",
+                element: <SEOServices />
+            }
 
         ]
     },

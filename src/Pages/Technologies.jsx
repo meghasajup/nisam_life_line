@@ -32,14 +32,14 @@ export const Technologies = () => {
     const [showContactPage, setShowContactPage] = useState(false);
 
     const categories = [
-        { name: 'Frontend Technologies', count: 6 },
+        { name: 'Frontend Technologies', count: 7 },
         { name: 'Backend Technologies', count: 4 },
         { name: 'Mobile Development', count: 1 },
         { name: 'Software Development', count: 2 },
         { name: 'Enterprise Solutions', count: 4 },
         { name: 'eCommerce Development', count: 1 },
         { name: 'CMS Systems', count: 1 },
-        { name: 'Digital Marketing', count: 2 },
+        { name: 'Digital Marketing', count: 1 },
         { name: 'UI / UX Design', count: 3 },
         { name: 'Website Development', count: 1 }
     ];
