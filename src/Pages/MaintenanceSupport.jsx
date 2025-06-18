@@ -247,7 +247,7 @@ const MaintenanceSupport = () => {
       </Helmet>
 
       <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen font-sans antialiased">
-        {/* Enhanced Hero Section */}
+        {/* Hero Section */}
         <div className="relative overflow-hidden bg-gradient-to-br from-gray-900 to-emerald-900">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0 bg-[url('/grid.svg')] bg-[length:100px_100px]"></div>
@@ -321,7 +321,7 @@ const MaintenanceSupport = () => {
                 className="flex justify-center relative"
               >
                 <div className="relative w-full max-w-lg">
-                  {/* Enhanced floating elements */}
+                  {/* floating elements */}
                   <motion.div
                     className="absolute -top-10 -left-10 w-32 h-32 bg-emerald-500/20 rounded-full blur-xl"
                     animate={{
@@ -349,7 +349,7 @@ const MaintenanceSupport = () => {
                     }}
                   />
 
-                  {/* Enhanced main card */}
+                  {/* Main card */}
                   <motion.div
                     className="relative bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-white/20 transform hover:scale-[1.02] transition-all duration-300"
                     whileHover={{ y: -5 }}
@@ -440,7 +440,10 @@ const MaintenanceSupport = () => {
           </div>
         </div>
 
-        {/* Enhanced Introduction Section */}
+
+
+
+        {/* Introduction Section */}
         <div className="py-20 px-4 sm:px-6 lg:px-8 relative">
           <div className="absolute inset-0 bg-[url('/pattern.svg')] bg-[length:300px_300px] opacity-5"></div>
           <div className="max-w-7xl mx-auto relative">
@@ -537,7 +540,10 @@ const MaintenanceSupport = () => {
           </div>
         </div>
 
-        {/* Enhanced Features Section */}
+
+
+
+        {/* Features Section */}
         <div className="py-20 bg-gray-50 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/grid.svg')] bg-[length:100px_100px] opacity-5"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -614,7 +620,10 @@ const MaintenanceSupport = () => {
           </div>
         </div>
 
-        {/* Enhanced Why Choose Us Section */}
+
+
+
+        {/* Why Choose Us Section */}
         <div className="py-20 bg-white relative">
           <div className="absolute inset-0 bg-[url('/pattern-dots.svg')] bg-[length:30px_30px] opacity-10"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -722,7 +731,10 @@ const MaintenanceSupport = () => {
           </div>
         </div>
 
-        {/* Enhanced Services Offered Section */}
+
+
+
+        {/* Services Offered Section */}
         <div className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/grid.svg')] bg-[length:100px_100px] opacity-5"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -792,7 +804,10 @@ const MaintenanceSupport = () => {
           </div>
         </div>
 
-        {/* Enhanced Industries Section */}
+
+
+
+        {/* Industries Section */}
         <div className="py-20 bg-white relative">
           <div className="absolute inset-0 bg-[url('/pattern.svg')] bg-[length:300px_300px] opacity-5"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -860,7 +875,10 @@ const MaintenanceSupport = () => {
           </div>
         </div>
 
-        {/* Enhanced Support Process Section */}
+
+
+
+        {/* Support Process Section */}
         <div className="py-20 bg-gray-50 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/grid.svg')] bg-[length:100px_100px] opacity-5"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -927,7 +945,10 @@ const MaintenanceSupport = () => {
           </div>
         </div>
 
-        {/* Enhanced FAQ Section */}
+
+
+
+        {/* FAQ Section */}
         <div className="py-20 bg-gradient-to-br from-gray-50 via-white to-emerald-50 relative overflow-hidden">
           {/* Background Decorative Elements */}
           <div className="absolute inset-0">
