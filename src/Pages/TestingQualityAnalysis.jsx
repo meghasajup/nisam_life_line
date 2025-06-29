@@ -260,9 +260,12 @@ const TestingQualityAnalysis = () => {
     <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-r from-gray-900 to-emerald-900">
+        {/* Background noise texture */}
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Text Content */}
             <motion.div
               initial="hidden"
               animate="visible"
@@ -291,45 +294,90 @@ const TestingQualityAnalysis = () => {
               </motion.p>
             </motion.div>
 
+            {/* Right Column - Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex justify-center"
+              className="flex justify-center relative"
             >
-              <div className="relative w-full max-w-lg">
-                <div className="absolute -top-6 -left-6 w-full h-full bg-gradient-to-br from-emerald-600 to-teal-700 rounded-3xl shadow-2xl"></div>
-                <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl w-full border-4 border-white">
-                  <div className="bg-gradient-to-r from-gray-900 to-emerald-800 p-6">
-                    <div className="flex items-center">
-                      <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                      <h3 className="text-white text-xl font-bold ml-4">QualityGuard Analytics Dashboard</h3>
-                    </div>
-                  </div>
-                  <div className="p-6 bg-gradient-to-br from-gray-50 to-white">
-                    <div className="bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl border-2 border-dashed border-blue-200 w-full h-64 mb-4 flex items-center justify-center relative overflow-hidden">
-                      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
-                      <div className="text-center relative z-10">
-                        <div className="text-6xl mb-2">📊</div>
-                        <p className="text-gray-800 font-medium">Real-time Test Analytics</p>
-                        <p className="text-gray-500 text-sm mt-1">98.7% Test Coverage Achieved</p>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-gradient-to-br from-blue-100 to-blue-50 p-3 rounded-lg border border-blue-200">
-                        <div className="text-blue-800 font-bold text-xl mb-1">1,248</div>
-                        <div className="text-blue-600 text-sm">Tests Executed</div>
-                      </div>
-                      <div className="bg-gradient-to-br from-emerald-100 to-emerald-50 p-3 rounded-lg border border-emerald-200">
-                        <div className="text-emerald-800 font-bold text-xl mb-1">23</div>
-                        <div className="text-emerald-600 text-sm">Critical Issues</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* Image container with decorative elements */}
+              <motion.div
+                className="relative w-full max-w-xl"
+                whileHover={{
+                  scale: 1.02,
+                  transition: { duration: 0.5 }
+                }}
+              >
+                {/* Main image with shadow and border */}
+                <motion.div
+                  className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 transform rotate-1"
+                  whileHover={{
+                    rotate: 0,
+                    borderColor: "rgba(255,255,255,0.4)",
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
+                    transition: {
+                      duration: 0.5,
+                      ease: "easeOut"
+                    }
+                  }}
+                >
+                  <motion.img
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="Quality Assurance Testing"
+                    className="w-full h-auto object-cover"
+                    whileHover={{
+                      scale: 1.05,
+                      transition: { duration: 0.8 }
+                    }}
+                  />
+
+                  {/* Overlay gradient */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-emerald-900/30"
+                    whileHover={{
+                      opacity: 0.2,
+                      transition: { duration: 0.5 }
+                    }}
+                  />
+
+                  {/* Glow effect on hover */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-tr from-emerald-400/20 to-blue-400/20 opacity-0 pointer-events-none"
+                    whileHover={{
+                      opacity: 0.3,
+                      transition: { duration: 0.5 }
+                    }}
+                  />
+                </motion.div>
+
+                {/* Floating elements that appear on hover */}
+                <motion.div
+                  className="absolute -top-4 -left-4 w-16 h-16 bg-emerald-400 rounded-full opacity-0 blur-xl"
+                  whileHover={{
+                    opacity: 0.3,
+                    x: 10,
+                    y: 10,
+                    transition: {
+                      duration: 0.8,
+                      delay: 0.2
+                    }
+                  }}
+                />
+
+                <motion.div
+                  className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-400 rounded-full opacity-0 blur-xl"
+                  whileHover={{
+                    opacity: 0.3,
+                    x: -10,
+                    y: -10,
+                    transition: {
+                      duration: 0.8,
+                      delay: 0.3
+                    }
+                  }}
+                />
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -347,6 +395,7 @@ const TestingQualityAnalysis = () => {
             ease: "easeInOut"
           }}
         />
+
         <motion.div
           className="absolute top-1/3 right-1/4 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl"
           animate={{
