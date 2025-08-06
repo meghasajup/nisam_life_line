@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiEdit, FiTrash2, FiPlus, FiSearch, FiFilter, FiX } from 'react-icons/fi';
+import { FiEdit, FiTrash2, FiPlus, FiSearch, FiFilter, FiX, FiCheck, FiAlertCircle } from 'react-icons/fi';
 
 const HomePage = () => {
     const [users, setUsers] = useState([]);
@@ -13,6 +13,11 @@ const HomePage = () => {
     const [filters, setFilters] = useState({
         gender: '',
         goal: ''
+    });
+    const [notification, setNotification] = useState({
+        show: false,
+        message: '',
+        type: 'success' // 'success' or 'error'
     });
 
     useEffect(() => {
@@ -76,6 +81,13 @@ const HomePage = () => {
         setUsers(mockUsers);
     }, []);
 
+    const showNotification = (message, type = 'success') => {
+        setNotification({ show: true, message, type });
+        setTimeout(() => {
+            setNotification({ ...notification, show: false });
+        }, 3000);
+    };
+
     const filteredUsers = users.filter(user => {
         const matchesSearch =
             user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -99,27 +111,43 @@ const HomePage = () => {
     };
 
     const confirmDelete = () => {
-        setUsers(users.filter(user => user.id !== userToDelete.id));
-        setIsDeleteConfirmOpen(false);
-        setUserToDelete(null);
+        try {
+            setUsers(users.filter(user => user.id !== userToDelete.id));
+            setIsDeleteConfirmOpen(false);
+            setUserToDelete(null);
+            showNotification(`${userToDelete.name} has been deleted successfully.`);
+        } catch (error) {
+            showNotification(`Failed to delete ${userToDelete.name}.`, 'error');
+        }
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (currentUser.id) {
-            // Update existing user
-            setUsers(users.map(user => user.id === currentUser.id ? currentUser : user));
-        } else {
-            // Add new user
-            const newUser = {
-                ...currentUser,
-                id: users.length + 1,
-                joinDate: new Date().toISOString().split('T')[0]
-            };
-            setUsers([...users, newUser]);
+        try {
+            if (currentUser.id) {
+                // Update existing user
+                setUsers(users.map(user => user.id === currentUser.id ? currentUser : user));
+                showNotification(`${currentUser.name} has been updated successfully.`);
+            } else {
+                // Add new user
+                const newUser = {
+                    ...currentUser,
+                    id: users.length + 1,
+                    joinDate: new Date().toISOString().split('T')[0]
+                };
+                setUsers([...users, newUser]);
+                showNotification(`${newUser.name} has been added successfully.`);
+            }
+            setIsModalOpen(false);
+            setCurrentUser(null);
+        } catch (error) {
+            showNotification(
+                currentUser.id
+                    ? `Failed to update ${currentUser.name}.`
+                    : 'Failed to add new member.',
+                'error'
+            );
         }
-        setIsModalOpen(false);
-        setCurrentUser(null);
     };
 
     const handleInputChange = (e) => {
@@ -143,6 +171,29 @@ const HomePage = () => {
 
     return (
         <div className="min-h-screen bg-gray-100 p-4 md:p-8">
+            {/* Notification Toast */}
+            <AnimatePresence>
+                {notification.show && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3 }}
+                        className={`fixed top-4 right-4 z-50 flex items-center p-4 rounded-lg shadow-lg ${notification.type === 'success'
+                                ? 'bg-green-100 text-green-800'
+                                : 'bg-red-100 text-red-800'
+                            }`}
+                    >
+                        {notification.type === 'success' ? (
+                            <FiCheck className="mr-2 text-xl" />
+                        ) : (
+                            <FiAlertCircle className="mr-2 text-xl" />
+                        )}
+                        <span className="font-medium">{notification.message}</span>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -150,7 +201,17 @@ const HomePage = () => {
                 className="max-w-7xl mx-auto"
             >
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-                    <h1 className="text-3xl font-bold text-gray-800">Fitness Members</h1>
+                    <div>
+                        <h1 className="text-3xl font-bold text-gray-800">Fitness Members</h1>
+                        <p className="text-gray-600 mt-1">
+                            Total Members: <span className="font-semibold">{users.length}</span>
+                            {filteredUsers.length !== users.length && (
+                                <span className="ml-2">
+                                    (Showing <span className="font-semibold">{filteredUsers.length}</span>)
+                                </span>
+                            )}
+                        </p>
+                    </div>
 
                     <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
                         <motion.button

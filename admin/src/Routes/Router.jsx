@@ -3,8 +3,13 @@ import Recently_Deleted from '../pages/Recently_Deleted.jsx'
 import HomePage from '../pages/HomePage.jsx'
 import { HomePageLayout } from '../Layout/HomePageLayout.jsx'
 import { createBrowserRouter } from 'react-router-dom'
+import LoginPage from '../pages/LoginPage.jsx'
 
 export const router = createBrowserRouter([
+    {
+        path: "/login",
+        element: <LoginPage />
+    },
     {
         path: "/",
         element: <HomePageLayout />,
