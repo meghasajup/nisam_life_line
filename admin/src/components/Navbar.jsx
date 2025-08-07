@@ -9,6 +9,7 @@ import {
     FiUser,
 } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
+import { axiosInstance } from '../config/axiosInstance';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -37,7 +38,16 @@ const Navbar = () => {
     const handleItemClick = (itemName, path) => {
         setActiveItem(itemName);
         setIsMobileMenuOpen(false);
-        navigate(path); // Use the navigate function to change routes
+        navigate(path);
+    };
+
+    const handleLogout = async () => {
+        try {
+            await axiosInstance.post('/admin/logout', {}, { withCredentials: true });
+            navigate('/login');
+        } catch (error) {
+            console.error('Logout failed:', error);
+        }
     };
 
     const itemVariants = {
@@ -70,7 +80,7 @@ const Navbar = () => {
 
                             <div className="flex items-center">
                                 <h1 className="text-xl font-bold bg-gradient-to-br from-gray-500 via-gray-600 to-emerald-400 bg-clip-text text-transparent">
-                                    <a href="/">Nisam Life Line</a>
+                                    <a href="/">Nisam Lifeline</a>
                                 </h1>
                             </div>
                         </div>
@@ -115,10 +125,7 @@ const Navbar = () => {
                                         >
                                             <button
                                                 className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 flex items-center focus:outline-none"
-                                                onClick={() => {
-                                                    console.log('Logging out...');
-                                                    setShowProfileDropdown(false);
-                                                }}
+                                                onClick={handleLogout}
                                             >
                                                 <FiLogOut size={16} className="mr-2" />
                                                 Logout
@@ -163,7 +170,7 @@ const Navbar = () => {
                                     exit="closed"
                                     variants={itemVariants}
                                     className="w-full flex items-center p-3 rounded-lg hover:bg-gray-100 text-red-600"
-                                    onClick={() => console.log('Logging out...')}
+                                    onClick={handleLogout}
                                 >
                                     <FiLogOut size={20} className="mr-3" />
                                     <span>Logout</span>

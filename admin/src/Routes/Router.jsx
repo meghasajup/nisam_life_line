@@ -4,6 +4,7 @@ import HomePage from '../pages/HomePage.jsx'
 import { HomePageLayout } from '../Layout/HomePageLayout.jsx'
 import { createBrowserRouter } from 'react-router-dom'
 import LoginPage from '../pages/LoginPage.jsx'
+import { AdminAuth } from './protectedRoutes/AdminAuth.jsx'
 
 export const router = createBrowserRouter([
     {
@@ -12,7 +13,7 @@ export const router = createBrowserRouter([
     },
     {
         path: "/",
-        element: <HomePageLayout />,
+        element: <AdminAuth><HomePageLayout /></AdminAuth>,
         children: [
             {
                 path: "/",

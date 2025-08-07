@@ -1,15 +1,73 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Lottie from 'react-lottie';
 import animationData from '../assests/Login.json';
-import { FiMail, FiLock, FiEye, FiEyeOff } from 'react-icons/fi';
+import { FiMail, FiLock, FiEye, FiEyeOff, FiX, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
+import { axiosInstance } from '../config/axiosInstance';
+import { useNavigate } from 'react-router-dom';
+
+const Notification = ({ type, message, onClose }) => {
+  const iconMap = {
+    success: <FiCheckCircle className="text-green-500 text-xl" />,
+    error: <FiAlertCircle className="text-red-500 text-xl" />,
+    info: <FiAlertCircle className="text-blue-500 text-xl" />
+  };
+
+  const bgColorMap = {
+    success: 'bg-green-50',
+    error: 'bg-red-50',
+    info: 'bg-blue-50'
+  };
+
+  const borderColorMap = {
+    success: 'border-green-200',
+    error: 'border-red-200',
+    info: 'border-blue-200'
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      onClose();
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [onClose]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, x: 100 }}
+      transition={{ duration: 0.3 }}
+      className={`fixed top-4 right-4 z-50 w-80 p-4 rounded-lg shadow-lg ${bgColorMap[type]} ${borderColorMap[type]} border`}
+    >
+      <div className="flex items-start">
+        <div className="flex-shrink-0 mt-0.5">
+          {iconMap[type]}
+        </div>
+        <div className="ml-3 flex-1">
+          <p className="text-sm font-medium text-gray-800">
+            {message}
+          </p>
+        </div>
+        <button
+          onClick={onClose}
+          className="ml-4 flex-shrink-0 text-gray-400 hover:text-gray-500"
+        >
+          <FiX className="h-5 w-5" />
+        </button>
+      </div>
+    </motion.div>
+  );
+};
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-
+    const [notifications, setNotifications] = useState([]);
+    const navigate = useNavigate();
+    
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -19,18 +77,61 @@ const LoginPage = () => {
         }
     };
 
-    const handleSubmit = (e) => {
+    const addNotification = (type, message) => {
+        const id = Date.now();
+        setNotifications(prev => [...prev, { id, type, message }]);
+    };
+
+    const removeNotification = (id) => {
+        setNotifications(prev => prev.filter(n => n.id !== id));
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
-        // Simulate API call
-        setTimeout(() => {
+
+        try {
+            const response = await axiosInstance.post('/admin/login', {
+                email,
+                password,
+            }, { withCredentials: true });
+
             setIsLoading(false);
-            console.log('Admin login attempted with:', { email, password });
-        }, 1500);
+            addNotification('success', 'Login successful! Redirecting...');
+            
+            // Redirect after a short delay to show the notification
+            setTimeout(() => {
+                navigate('/');
+            }, 1500);
+
+        } catch (error) {
+            setIsLoading(false);
+            let errorMessage = 'An error occurred during login';
+            
+            if (error.response) {
+                errorMessage = error.response.data.message || errorMessage;
+            } else if (error.request) {
+                errorMessage = 'Network error - please check your connection';
+            }
+            
+            addNotification('error', errorMessage);
+        }
     };
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+            {/* Notifications */}
+            <AnimatePresence>
+                {notifications.map(notification => (
+                    <Notification
+                        key={notification.id}
+                        type={notification.type}
+                        message={notification.message}
+                        onClose={() => removeNotification(notification.id)}
+                    />
+                ))}
+            </AnimatePresence>
+
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

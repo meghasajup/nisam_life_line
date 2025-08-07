@@ -1,6 +1,5 @@
 import { v2 as cloudinary } from 'cloudinary';
 
-
 // Configuration
 cloudinary.config({
     cloud_name: process.env.CLOUD_NAME,
@@ -9,4 +8,3 @@ cloudinary.config({
 });
 
 export const cloudinaryInstance = cloudinary
-

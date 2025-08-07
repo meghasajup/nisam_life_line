@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
+import { axiosInstance } from './axiosInstance';
 
 // Styled Components with enhanced styling
 const FormContainer = styled(motion.div)`
@@ -258,66 +259,61 @@ const PopupButton = styled.button`
 `;
 
 const App = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
   const [formData, setFormData] = useState({
-    name: '',
+    fullName: '',
     place: '',
-    phone: '',
+    phoneNumber: '',
     age: '',
     gender: '',
     goal: '',
-    course: ''
+    duration: ''
   });
 
   const [errors, setErrors] = useState({
-    name: '',
+    fullName: '',
     place: '',
-    phone: '',
+    phoneNumber: '',
     age: '',
     gender: '',
     goal: '',
-    course: ''
+    duration: ''
   });
-
-  const [showPopup, setShowPopup] = useState(false);
 
   const validateForm = () => {
     let valid = true;
     const newErrors = {
-      name: '',
+      fullName: '',
       place: '',
-      phone: '',
+      phoneNumber: '',
       age: '',
       gender: '',
       goal: '',
-      course: ''
+      duration: ''
     };
 
-    // Name validation
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = 'Name is required';
       valid = false;
-    } else if (formData.name.trim().length < 3) {
-      newErrors.name = 'Name must be at least 3 characters';
+    } else if (formData.fullName.trim().length < 3) {
+      newErrors.fullName = 'Name must be at least 3 characters';
       valid = false;
     }
 
-    // Place validation
     if (!formData.place.trim()) {
       newErrors.place = 'Place is required';
       valid = false;
     }
 
-
-    // Phone validation
-    if (!formData.phone) {
-      newErrors.phone = 'Phone number is required';
+    if (!formData.phoneNumber) {
+      newErrors.phoneNumber = 'Phone number is required';
       valid = false;
-    } else if (!/^\d{10}$/.test(formData.phone)) {
-      newErrors.phone = 'Phone number must be 10 digits';
+    } else if (!/^\d{10}$/.test(formData.phoneNumber)) {
+      newErrors.phoneNumber = 'Phone number must be 10 digits';
       valid = false;
     }
 
-    // Age validation
     if (!formData.age) {
       newErrors.age = 'Age is required';
       valid = false;
@@ -329,20 +325,18 @@ const App = () => {
       valid = false;
     }
 
-    // Gender validation
     if (!formData.gender) {
       newErrors.gender = 'Gender is required';
       valid = false;
     }
-    // Goal validation
+
     if (!formData.goal) {
       newErrors.goal = 'Fitness goal is required';
       valid = false;
     }
 
-    // Course validation
-    if (!formData.course) {
-      newErrors.course = 'Course duration is required';
+    if (!formData.duration) {
+      newErrors.duration = 'Course duration is required';
       valid = false;
     }
 
@@ -357,7 +351,6 @@ const App = () => {
       [name]: value
     }));
 
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -366,25 +359,29 @@ const App = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
-      console.log('Form submitted:', formData);
-      setShowPopup(true);
-
-      // Reset form
-      setFormData({
-        name: '',
-        place: '',
-        phone: '',
-        age: '',
-        gender: '',
-        goal: '',
-        course: ''
-      });
+      try {
+        const response = await axiosInstance.post('/details/create', formData);
+        console.log('Server response:', response.data);
+        setShowPopup(true);
+        setFormData({
+          fullName: '',
+          place: '',
+          phoneNumber: '',
+          age: '',
+          gender: '',
+          goal: '',
+          duration: ''
+        });
+      } catch (error) {
+        console.error('Submission error:', error.response ? error.response.data : error.message);
+      }
     }
   };
+
 
   const closePopup = () => {
     setShowPopup(false);
@@ -441,27 +438,27 @@ const App = () => {
         animate="visible"
         variants={containerVariants}
       >
-        <FormTitle variants={itemVariants}>Fitness Program Registration</FormTitle>
+        <FormTitle variants={itemVariants}>NISAM LIFELINE</FormTitle>
 
         <form onSubmit={handleSubmit}>
           <FormGroup variants={itemVariants}>
-            <Label htmlFor="name">Full Name</Label>
+            <Label htmlFor="fullName">Full Name</Label>
             <Input
               type="text"
-              id="name"
-              name="name"
-              value={formData.name}
+              id="fullName"
+              name="fullName"
+              value={formData.fullName}
               onChange={handleChange}
-              placeholder="Enter your full name"
-              error={!!errors.name}
+              placeholder="Enter your full fullName"
+              error={!!errors.fullName}
             />
-            {errors.name && (
+            {errors.fullName && (
               <ErrorMessage
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                {errors.name}
+                {errors.fullName}
               </ErrorMessage>
             )}
           </FormGroup>
@@ -492,20 +489,21 @@ const App = () => {
             <Label htmlFor="phone">Phone Number</Label>
             <Input
               type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
+              id="phoneNumber"
+              name="phoneNumber"
+              value={formData.phoneNumber}
               onChange={handleChange}
               placeholder="Enter your phone number"
-              error={!!errors.phone}
+              error={!!errors.phoneNumber}
             />
-            {errors.phone && (
+
+            {errors.phoneNumber && (
               <ErrorMessage
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                {errors.phone}
+                {errors.phoneNumber}
               </ErrorMessage>
             )}
           </FormGroup>
@@ -537,35 +535,25 @@ const App = () => {
           <FormGroup variants={itemVariants}>
             <Label>Gender</Label>
             <RadioGroup>
-              <RadioLabel checked={formData.gender === 'male'} error={!!errors.gender}>
+              <RadioLabel checked={formData.gender === 'Male'} error={!!errors.gender}>
                 <input
                   type="radio"
                   name="gender"
-                  value="male"
-                  checked={formData.gender === 'male'}
+                  value="Male"
+                  checked={formData.gender === 'Male'}
                   onChange={handleChange}
                 />
                 Male
               </RadioLabel>
-              <RadioLabel checked={formData.gender === 'female'} error={!!errors.gender}>
+              <RadioLabel checked={formData.gender === 'Female'} error={!!errors.gender}>
                 <input
                   type="radio"
                   name="gender"
-                  value="female"
-                  checked={formData.gender === 'female'}
+                  value="Female"
+                  checked={formData.gender === 'Female'}
                   onChange={handleChange}
                 />
                 Female
-              </RadioLabel>
-              <RadioLabel checked={formData.gender === 'other'} error={!!errors.gender}>
-                <input
-                  type="radio"
-                  name="gender"
-                  value="other"
-                  checked={formData.gender === 'other'}
-                  onChange={handleChange}
-                />
-                Other
               </RadioLabel>
             </RadioGroup>
             {errors.gender && (
@@ -582,22 +570,22 @@ const App = () => {
           <FormGroup variants={itemVariants}>
             <Label>Fitness Goal</Label>
             <RadioGroup>
-              <RadioLabel checked={formData.goal === 'fat-loss'} error={!!errors.goal}>
+              <RadioLabel checked={formData.goal === 'fat loss'} error={!!errors.goal}>
                 <input
                   type="radio"
                   name="goal"
-                  value="fat-loss"
-                  checked={formData.goal === 'fat-loss'}
+                  value="fat loss"
+                  checked={formData.goal === 'fat loss'}
                   onChange={handleChange}
                 />
                 Fat Loss
               </RadioLabel>
-              <RadioLabel checked={formData.goal === 'weight-gain'} error={!!errors.goal}>
+              <RadioLabel checked={formData.goal === 'weight gain'} error={!!errors.goal}>
                 <input
                   type="radio"
                   name="goal"
-                  value="weight-gain"
-                  checked={formData.goal === 'weight-gain'}
+                  value="weight gain"
+                  checked={formData.goal === 'weight gain'}
                   onChange={handleChange}
                 />
                 Weight Gain
@@ -617,26 +605,27 @@ const App = () => {
           <FormGroup variants={itemVariants}>
             <Label htmlFor="course">Course Duration</Label>
             <Select
-              id="course"
-              name="course"
-              value={formData.course}
+              id="duration"
+              name="duration"
+              value={formData.duration}
               onChange={handleChange}
-              error={!!errors.course}
+              error={!!errors.duration}
             >
               <option value="">Select course duration</option>
               {Array.from({ length: 12 }, (_, i) => i + 1).map(month => (
-                <option key={month} value={`${month}-month`}>
-                  {month} Month{month > 1 ? 's' : ''}
+                <option key={month} value={`${month}`}>
+                  {month}
                 </option>
               ))}
             </Select>
-            {errors.course && (
+
+            {errors.duration && (
               <ErrorMessage
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                {errors.course}
+                {errors.duration}
               </ErrorMessage>
             )}
           </FormGroup>
@@ -670,8 +659,8 @@ const App = () => {
             >
               <PopupTitle>Registration Successful!</PopupTitle>
               <PopupMessage>
-                Thank you for registering for our fitness program. 
-                {/* We've received your details and our team will contact you shortly to discuss the next steps. */}
+                Thank you for registering for our fitness program.
+                We've received your details and our team will contact you shortly to discuss the next steps.
               </PopupMessage>
               <PopupButton onClick={closePopup}>Got It!</PopupButton>
             </PopupContent>

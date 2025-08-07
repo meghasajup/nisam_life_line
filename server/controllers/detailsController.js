@@ -2,8 +2,10 @@ import { Details } from "../models/detailsModel.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import '../utils/cronJob.js';
 
+//Create user
 export const createUserDetail = asyncHandler(async (req, res) => {
   const { fullName, place, phoneNumber, age, gender, goal, duration } = req.body;
+  console.log(req.body);
 
   // Validation
   if (!fullName || typeof fullName !== "string" || fullName.trim().length < 2) {
@@ -21,15 +23,13 @@ export const createUserDetail = asyncHandler(async (req, res) => {
     throw new Error("Phone number is required and must be 10 digits.");
   }
 
-  if (!age || typeof age !== "number" || age < 10 || age > 100) {
+  if (!gender || !["Male", "Female", "Other"]) {
     res.status(400);
-    throw new Error("Age is required and must be a number between 10 and 100.");
+    throw new Error("Gender must be 'Male', 'Female', or 'Other'.");
   }
 
-  if (!gender || !["male", "female", "other"].includes(gender.toLowerCase())) {
-    res.status(400);
-    throw new Error("Gender must be 'male', 'female', or 'other'.");
-  }
+  // Normalize casing to match enum in schema
+  req.body.gender = gender.charAt(0).toUpperCase() + gender.slice(1).toLowerCase();
 
   if (!goal || !["weight gain", "fat loss"].includes(goal.toLowerCase())) {
     res.status(400);
@@ -47,7 +47,7 @@ export const createUserDetail = asyncHandler(async (req, res) => {
     place,
     phoneNumber,
     age,
-    gender: gender.toLowerCase(),
+    gender,
     goal,
     duration
   });
@@ -59,6 +59,9 @@ export const createUserDetail = asyncHandler(async (req, res) => {
   });
 });
 
+
+
+//Get all users
 export const getAllUserDetails = asyncHandler(async (req, res) => {
   const users = await Details.find({ isDeleted: false });
 
@@ -69,6 +72,9 @@ export const getAllUserDetails = asyncHandler(async (req, res) => {
   });
 });
 
+
+
+//Delete user
 export const softDeleteUser = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
@@ -88,7 +94,9 @@ export const softDeleteUser = asyncHandler(async (req, res) => {
   res.status(200).json({ message: "Deleted successfully" });
 });
 
-// FETCH RECENTLY DELETED
+
+
+// Recently deleted
 export const getRecentlyDeleted = asyncHandler(async (req, res) => {
   const deletedDetails = await Details.find({
     isDeleted: true
@@ -96,7 +104,9 @@ export const getRecentlyDeleted = asyncHandler(async (req, res) => {
   res.status(200).json(deletedDetails);
 });
 
-// PERMANENTLY DELETE FROM RECENTLY DELETED
+
+
+// Permanently deleted 
 export const permanentlyDeleteUser = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
@@ -114,9 +124,13 @@ export const permanentlyDeleteUser = asyncHandler(async (req, res) => {
   res.status(200).json({ message: "Permanently deleted successfully" });
 });
 
+
+
+// Edit user
 export const updateUserDetail = asyncHandler(async (req, res) => {
   const { id } = req.params;
   const { fullName, place, phoneNumber, age, gender, goal, duration } = req.body;
+  console.log(req.body);
 
   const user = await Details.findById(id);
   if (!user) {
@@ -141,3 +155,14 @@ export const updateUserDetail = asyncHandler(async (req, res) => {
     data: updatedUser,
   });
 });
+
+
+
+// Check Admin
+export const checkAdmin = asyncHandler(async (req, res, next) => {
+  const user = req.admin;
+  if (!user) {
+    return res.status(401).json({ success: false, message: 'Admin not authenticated' })
+  }
+  res.json({ success: true, message: 'Admin is authenticated' })
+})

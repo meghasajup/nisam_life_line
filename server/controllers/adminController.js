@@ -11,22 +11,22 @@ export const adminLogin = asyncHandler(async (req, res) => {
 
   // Hardcoded admin credentials
   const AdminEmail = "nisamlifeline@gmail.com";
-  const AdminPassword = "1234567";
+  const AdminPassword = "nisam@1234";
 
   // Check credentials
   if (email === AdminEmail && password === AdminPassword) {
     const token = generateAdminTokenSync(); // Generate token
-    res.cookie("AdminToken", token, { httpOnly: true, sameSite: "None", secure: true });
+    res.cookie("AdminToken", token, { //httpOnly: true, sameSite: "None",
+      secure: true
+    });
     return res.status(200).json({
       message: "Login successful",
       token,
     });
   }
-
   // If credentials are wrong
   return res.status(401).json({ message: "Invalid email or password" });
 });
-
 
 export const adminLogout = asyncHandler(async (req, res) => {
   res.clearCookie("AdminToken", {

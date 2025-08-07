@@ -5,8 +5,8 @@ import Navbar from '../components/Navbar'
 export const HomePageLayout = () => {
   return (
     <div >
-    <Navbar/>
-        <div className='min-h-screen '><Outlet/></div>
-      </div>
+      <Navbar />
+      <div className='min-h-screen '><Outlet /></div>
+    </div>
   )
 }

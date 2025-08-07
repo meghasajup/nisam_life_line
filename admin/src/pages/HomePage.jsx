@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiEdit, FiTrash2, FiPlus, FiSearch, FiFilter, FiX, FiCheck, FiAlertCircle } from 'react-icons/fi';
+import { axiosInstance } from '../config/axiosInstance';
 
 const HomePage = () => {
     const [users, setUsers] = useState([]);
@@ -20,66 +21,22 @@ const HomePage = () => {
         type: 'success' // 'success' or 'error'
     });
 
+
+
+    const fetchAllUsers = async () => {
+        try {
+            const response = await axiosInstance.get("/admin/getallusers", { withCredentials: true });
+            setUsers(response.data.data);
+        } catch (error) {
+            console.error("Error fetching users:", error);
+        }
+    };
+
     useEffect(() => {
-        const mockUsers = [
-            {
-                id: 1,
-                name: 'AbhinRaj',
-                place: 'Edavannapara',
-                phone: '8592943588',
-                age: 23,
-                gender: 'Male',
-                goal: 'Weight Gain',
-                courseDuration: '12',
-                joinDate: '2023-01-15'
-            },
-            {
-                id: 2,
-                name: 'Megha',
-                place: 'Moottoli',
-                phone: '9400749917',
-                age: 23,
-                gender: 'Female',
-                goal: 'Fat Loss',
-                courseDuration: '12',
-                joinDate: '2023-02-20'
-            },
-            {
-                id: 3,
-                name: 'Akshay',
-                place: 'Faroke',
-                phone: '8078720009',
-                age: 23,
-                gender: 'Male',
-                goal: 'Weight Gain',
-                courseDuration: '12',
-                joinDate: '2023-03-10'
-            },
-            {
-                id: 4,
-                name: 'Neha',
-                place: 'Kakkodi',
-                phone: '9746895058',
-                age: 21,
-                gender: 'Female',
-                goal: 'Weight Gain',
-                courseDuration: '6',
-                joinDate: '2023-04-05'
-            },
-            {
-                id: 5,
-                name: 'Hemand',
-                place: 'Edavannapara',
-                phone: '9633799929',
-                age: 13,
-                gender: 'Male',
-                goal: 'Weight Gain',
-                courseDuration: '6',
-                joinDate: '2023-05-12'
-            }
-        ];
-        setUsers(mockUsers);
+        fetchAllUsers();
     }, []);
+
+
 
     const showNotification = (message, type = 'success') => {
         setNotification({ show: true, message, type });
@@ -88,11 +45,13 @@ const HomePage = () => {
         }, 3000);
     };
 
+
+
     const filteredUsers = users.filter(user => {
         const matchesSearch =
-            user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            user.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
             user.place.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            user.phone.includes(searchTerm);
+            user.phoneNumber.includes(searchTerm);
 
         const matchesGender = filters.gender ? user.gender === filters.gender : true;
         const matchesGoal = filters.goal ? user.goal === filters.goal : true;
@@ -100,65 +59,113 @@ const HomePage = () => {
         return matchesSearch && matchesGender && matchesGoal;
     });
 
+
+
     const handleEdit = (user) => {
-        setCurrentUser(user);
+        setCurrentUser({
+            id: user._id,
+            name: user.fullName,
+            place: user.place,
+            phone: user.phoneNumber,
+            age: user.age,
+            gender: user.gender,
+            goal: user.goal,
+            courseDuration: user.duration
+        });
         setIsModalOpen(true);
     };
+
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            if (currentUser.id) {
+                // Update existing user
+                const updatedUser = {
+                    fullName: currentUser.name,
+                    place: currentUser.place,
+                    phoneNumber: currentUser.phone,
+                    age: currentUser.age,
+                    gender: currentUser.gender,
+                    goal: currentUser.goal,
+                    duration: currentUser.courseDuration,
+                };
+
+                const response = await axiosInstance.put(`/admin/update/${currentUser.id}`, updatedUser, { withCredentials: true });
+                console.log('Update success:', response.data);
+                showNotification(`${currentUser.name} updated successfully.`);
+            } else {
+                // Add new user
+                const newUser = {
+                    fullName: currentUser.name,
+                    place: currentUser.place,
+                    phoneNumber: currentUser.phone,
+                    age: currentUser.age,
+                    gender: currentUser.gender,
+                    goal: currentUser.goal,
+                    duration: currentUser.course,
+                };
+
+                const response = await axiosInstance.post(`/details/create`, newUser, { withCredentials: true });
+                console.log('Create success:', response.data);
+                showNotification(`${currentUser.name} added successfully.`);
+            }
+
+            // Refresh user list and close modal
+            fetchAllUsers();
+            setIsModalOpen(false);
+            setCurrentUser(null);
+        } catch (error) {
+            console.error('Submit error:', error);
+            showNotification(
+                currentUser.id ? 'Failed to update user.' : 'Failed to add user.',
+                'error'
+            );
+        }
+    };
+
+
 
     const handleDelete = (user) => {
         setUserToDelete(user);
         setIsDeleteConfirmOpen(true);
     };
 
-    const confirmDelete = () => {
+
+
+    const confirmDelete = async () => {
         try {
-            setUsers(users.filter(user => user.id !== userToDelete.id));
+            const response = await axiosInstance.delete(
+                `/admin/delete/${userToDelete._id}`,
+                { withCredentials: true },
+                { isDeleted: true },
+            ); setUsers(users.filter(user => user.id !== userToDelete.id));
             setIsDeleteConfirmOpen(false);
             setUserToDelete(null);
-            showNotification(`${userToDelete.name} has been deleted successfully.`);
+            fetchAllUsers()
+            showNotification(`${userToDelete.fullName} has been deleted successfully.`);
         } catch (error) {
             showNotification(`Failed to delete ${userToDelete.name}.`, 'error');
         }
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        try {
-            if (currentUser.id) {
-                // Update existing user
-                setUsers(users.map(user => user.id === currentUser.id ? currentUser : user));
-                showNotification(`${currentUser.name} has been updated successfully.`);
-            } else {
-                // Add new user
-                const newUser = {
-                    ...currentUser,
-                    id: users.length + 1,
-                    joinDate: new Date().toISOString().split('T')[0]
-                };
-                setUsers([...users, newUser]);
-                showNotification(`${newUser.name} has been added successfully.`);
-            }
-            setIsModalOpen(false);
-            setCurrentUser(null);
-        } catch (error) {
-            showNotification(
-                currentUser.id
-                    ? `Failed to update ${currentUser.name}.`
-                    : 'Failed to add new member.',
-                'error'
-            );
-        }
-    };
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setCurrentUser({ ...currentUser, [name]: value });
     };
 
+
+
     const handleFilterChange = (e) => {
         const { name, value } = e.target;
         setFilters({ ...filters, [name]: value });
     };
+
+
 
     const resetFilters = () => {
         setFilters({
@@ -167,6 +174,8 @@ const HomePage = () => {
         });
     };
 
+
+    
     const hasActiveFilters = filters.gender || filters.goal;
 
     return (
@@ -180,8 +189,8 @@ const HomePage = () => {
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.3 }}
                         className={`fixed top-4 right-4 z-50 flex items-center p-4 rounded-lg shadow-lg ${notification.type === 'success'
-                                ? 'bg-green-100 text-green-800'
-                                : 'bg-red-100 text-red-800'
+                            ? 'bg-green-100 text-green-800'
+                            : 'bg-red-100 text-red-800'
                             }`}
                     >
                         {notification.type === 'success' ? (
@@ -235,13 +244,13 @@ const HomePage = () => {
                             onClick={() => {
                                 setCurrentUser({
                                     id: null,
-                                    name: '',
+                                    fullName: '',
                                     place: '',
-                                    phone: '',
+                                    phoneNumber: '',
                                     age: '',
                                     gender: '',
                                     goal: '',
-                                    courseDuration: '1'
+                                    course: '1'
                                 });
                                 setIsModalOpen(true);
                             }}
@@ -286,7 +295,6 @@ const HomePage = () => {
                                             <option value="">All Genders</option>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
-                                            <option value="Other">Other</option>
                                         </select>
                                     </div>
 
@@ -348,11 +356,11 @@ const HomePage = () => {
                                             className="hover:bg-gray-50"
                                         >
                                             <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="text-sm font-medium text-gray-900">{user.name}</div>
-                                                <div className="text-xs text-gray-500">Joined: {user.joinDate}</div>
+                                                <div className="text-sm font-medium text-gray-900">{user.fullName}</div>
+                                                <div className="text-xs text-gray-500">Joined: {user.createdAt}</div>
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.place}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.phone}</td>
+                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.phoneNumber}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{user.age}</td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                 <span className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full 
@@ -371,7 +379,7 @@ const HomePage = () => {
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                 <span className="px-2 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded">
-                                                    {user.courseDuration} month{user.courseDuration !== '1' ? 's' : ''}
+                                                    {user.duration} month{user.duration !== '1' ? 's' : ''}
                                                 </span>
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
@@ -501,7 +509,6 @@ const HomePage = () => {
                                                 <option value="">Select Gender</option>
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
-                                                <option value="Other">Other</option>
                                             </select>
                                         </div>
                                     </div>
