@@ -4,11 +4,16 @@ import { connectDb } from "./config/databse.js";
 import v1Router from "./routes/index.js";
 import cookieParser from 'cookie-parser';
 import cors from 'cors'
+
 const app = express()
 app.use(cors({
-  origin: ['https://nisam-lifeline-admin.vercel.app/login','https://nisam-life-line.vercel.app'],
+  origin: [
+    'https://nisam-lifeline-admin.vercel.app',
+    'https://nisam-life-line.vercel.app'
+  ],
   credentials: true
 }));
+
 
 app.use(logger('dev'));
 app.use(express.json())
