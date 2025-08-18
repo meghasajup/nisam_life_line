@@ -660,7 +660,7 @@ const App = () => {
               <PopupTitle>Registration Successful!</PopupTitle>
               <PopupMessage>
                 Thank you for registering for our fitness program.
-                We've received your details and our team will contact you shortly to discuss the next steps.
+                {/* We've received your details and our team will contact you shortly to discuss the next steps. */}
               </PopupMessage>
               <PopupButton onClick={closePopup}>Got It!</PopupButton>
             </PopupContent>
