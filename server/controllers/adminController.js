@@ -16,8 +16,11 @@ export const adminLogin = asyncHandler(async (req, res) => {
   // Check credentials
   if (email === AdminEmail && password === AdminPassword) {
     const token = generateAdminTokenSync(); // Generate token
-    res.cookie("AdminToken", token, { //httpOnly: true, sameSite: "None",
-      secure: true
+    res.cookie("AdminToken", token, {
+      httpOnly: true,   
+      secure: true,     
+      sameSite: "None", 
+      maxAge: 3600000   // 1h
     });
     return res.status(200).json({
       message: "Login successful",
