@@ -19,8 +19,8 @@ export const adminLogin = asyncHandler(async (req, res) => {
     res.cookie("AdminToken", token, {
       httpOnly: true,   
       secure: true,     
-      sameSite: "None", 
-      maxAge: 3600000   // 1h
+      sameSite: "None"
+      //maxAge: 3600000   // 1h
     });
     return res.status(200).json({
       message: "Login successful",
