@@ -4,32 +4,37 @@ import { generateAdminTokenSync } from "../utils/generateToken.js";
 export const adminLogin = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
-  // Validate email and password
   if (!email || !password) {
     return res.status(400).json({ message: "Please enter both email and password" });
   }
 
-  // Hardcoded admin credentials
   const AdminEmail = "nisamlifeline@gmail.com";
   const AdminPassword = "nisam@1234";
 
-  // Check credentials
   if (email === AdminEmail && password === AdminPassword) {
-    const token = generateAdminTokenSync(); // Generate token
+    const token = generateAdminTokenSync();
+
+    // Set headers for mobile compatibility
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Expose-Headers', 'set-cookie');
+
     res.cookie("AdminToken", token, {
-      httpOnly: true,   
-      secure: true,     
-      sameSite: "None"
-      //maxAge: 3600000   // 1h
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
+      domain: process.env.NODE_ENV === 'production' ? '.yourdomain.com' : undefined
     });
+
     return res.status(200).json({
       message: "Login successful",
       token,
     });
   }
-  // If credentials are wrong
+
   return res.status(401).json({ message: "Invalid email or password" });
 });
+
+
 
 export const adminLogout = asyncHandler(async (req, res) => {
   res.clearCookie("AdminToken", {

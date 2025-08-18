@@ -11,7 +11,8 @@ app.use(cors({
     'https://nisam-lifeline-admin.vercel.app',
     'https://nisam-life-line.vercel.app'
   ],
-  credentials: true
+  credentials: true,
+  exposedHeaders: ['set-cookie']
 }));
 
 
