@@ -9,9 +9,9 @@ import { restoreMultipleItems } from "../controllers/restoreController.js";
 const router = express.Router()
 
 
-router.post('/login',verifyAdminToken, adminLogin) //Login
+router.post('/login', adminLogin) //Login
 
-router.post('/logout',verifyAdminToken, adminLogout) //Logout
+router.post('/logout', verifyAdminToken, adminLogout) //Logout
 
 router.get("/check-admin", verifyAdminToken, checkAdmin) // Check Admin
 
