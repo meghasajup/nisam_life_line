@@ -6,7 +6,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors'
 const app = express()
 app.use(cors({
-  origin: true,
+  origin: ['https://nisam-lifeline-admin.vercel.app/login','https://nisam-life-line.vercel.app'],
   credentials: true
 }));
 
