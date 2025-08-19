@@ -14,20 +14,17 @@ export const adminLogin = asyncHandler(async (req, res) => {
   if (email === AdminEmail && password === AdminPassword) {
     const token = generateAdminTokenSync();
 
-    // Set headers for mobile compatibility
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
-    res.setHeader('Access-Control-Expose-Headers', 'set-cookie');
-
+    // Set cookie with better mobile compatibility
     res.cookie("AdminToken", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
-      domain: process.env.NODE_ENV === 'production' ? '.yourdomain.com' : undefined
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax', // lowercase
+      maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
     });
 
     return res.status(200).json({
       message: "Login successful",
-      token,
+      token, // Also return token in response as fallback
     });
   }
 

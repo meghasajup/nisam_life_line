@@ -9,10 +9,12 @@ const app = express()
 app.use(cors({
   origin: [
     'https://nisam-lifeline-admin.vercel.app',
-    'https://nisam-life-line.vercel.app'
+    'https://nisam-life-line.vercel.app',
   ],
   credentials: true,
-  exposedHeaders: ['set-cookie']
+  exposedHeaders: ['set-cookie'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 
 
