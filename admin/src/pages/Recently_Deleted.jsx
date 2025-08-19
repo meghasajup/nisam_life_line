@@ -29,26 +29,24 @@ const RecentlyDeleted = () => {
   const [error, setError] = useState(null);
 
   // Fetch deleted items
-  useEffect(() => {
-    const fetchDeletedItems = async () => {
-      try {
-        setIsLoading(true);
-        const response = await axiosInstance.get("/admin/recently-deleted", {
-          withCredentials: true
-        });
-        setDeletedItems(response.data);
-      } catch (err) {
-        console.error("Fetch error:", err);
-        setError("Failed to load deleted items. Please try again later.");
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  const fetchDeletedItems = async () => {
+    try {
+      setIsLoading(true);
+      const response = await axiosInstance.get("/admin/recently-deleted", {
+        withCredentials: true
+      });
+      setDeletedItems(response.data);
+    } catch (err) {
+      console.error("Fetch error:", err);
+      setError("Failed to load deleted items. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchDeletedItems();
   }, []);
-
-
 
   // Toggle item selection
   const toggleSelectItem = (id) => {
@@ -59,8 +57,6 @@ const RecentlyDeleted = () => {
     );
   };
 
-
-
   // Select all items
   const selectAllItems = () => {
     if (selectedItems.length === deletedItems.length) {
@@ -69,8 +65,6 @@ const RecentlyDeleted = () => {
       setSelectedItems(deletedItems.map(item => item._id));
     }
   };
-
-
 
   // Restore selected items
   const restoreItems = async () => {
@@ -86,10 +80,12 @@ const RecentlyDeleted = () => {
       );
 
       if (response.data.success) {
-        setDeletedItems(prev => prev.filter(item => !selectedItems.includes(item._id)));
-        setSelectedItems([]);
         setSuccessMessage(response.data.message || `${selectedItems.length} item(s) restored successfully!`);
         setActionSuccess(true);
+        
+        // Refresh the data
+        await fetchDeletedItems();
+        setSelectedItems([]);
       } else {
         setError(response.data.message || "Restoration failed. Please try again.");
       }
@@ -105,25 +101,29 @@ const RecentlyDeleted = () => {
     }
   };
 
-
-
-  // Permanently delete selected items
+  // Permanently delete selected items (multiple items)
   const permanentDelete = async () => {
     setShowDeleteModal(false);
     setIsProcessing(true);
     setError(null);
 
     try {
+      // Updated to handle multiple IDs
       const response = await axiosInstance.delete(
-        `/admin/permanent-delete/${selectedItems[0]}`, // Only handles one ID
-        { withCredentials: true }
+        "/admin/permanent-delete",
+        { 
+          data: { ids: selectedItems },
+          withCredentials: true 
+        }
       );
 
       if (response.data.success) {
-        setDeletedItems(prev => prev.filter(item => !selectedItems.includes(item._id)));
-        setSelectedItems([]);
         setSuccessMessage(response.data.message || `${selectedItems.length} item(s) permanently deleted!`);
         setActionSuccess(true);
+        
+        // Refresh the data
+        await fetchDeletedItems();
+        setSelectedItems([]);
       } else {
         setError(response.data.message || "Deletion failed. Please try again.");
       }
@@ -139,8 +139,6 @@ const RecentlyDeleted = () => {
     }
   };
 
-
-
   // Animation variants
   const modalVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -152,14 +150,10 @@ const RecentlyDeleted = () => {
     exit: { opacity: 0, scale: 0.95 }
   };
 
-
-
   const overlayVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 }
   };
-
-
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
