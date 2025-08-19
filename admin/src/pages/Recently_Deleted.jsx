@@ -8,8 +8,7 @@ import {
   FiPhone,
   FiCalendar,
   FiRefreshCw,
-  FiX,
-  FiMoreVertical
+  FiX
 } from 'react-icons/fi';
 import Lottie from 'lottie-react';
 import emptyTrashAnimation from '../../public/Empty Box.json';
@@ -28,27 +27,28 @@ const RecentlyDeleted = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState(null);
-  const [activeMenu, setActiveMenu] = useState(null); // For individual item menu
 
   // Fetch deleted items
-  const fetchDeletedItems = async () => {
-    try {
-      setIsLoading(true);
-      const response = await axiosInstance.get("/admin/recently-deleted", {
-        withCredentials: true
-      });
-      setDeletedItems(response.data);
-    } catch (err) {
-      console.error("Fetch error:", err);
-      setError("Failed to load deleted items. Please try again later.");
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   useEffect(() => {
+    const fetchDeletedItems = async () => {
+      try {
+        setIsLoading(true);
+        const response = await axiosInstance.get("/admin/recently-deleted", {
+          withCredentials: true
+        });
+        setDeletedItems(response.data);
+      } catch (err) {
+        console.error("Fetch error:", err);
+        setError("Failed to load deleted items. Please try again later.");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
     fetchDeletedItems();
   }, []);
+
+
 
   // Toggle item selection
   const toggleSelectItem = (id) => {
@@ -59,6 +59,8 @@ const RecentlyDeleted = () => {
     );
   };
 
+
+
   // Select all items
   const selectAllItems = () => {
     if (selectedItems.length === deletedItems.length) {
@@ -68,16 +70,7 @@ const RecentlyDeleted = () => {
     }
   };
 
-  // Handle individual item actions
-  const handleIndividualAction = (itemId, action) => {
-    setSelectedItems([itemId]);
-    if (action === 'restore') {
-      setShowRestoreModal(true);
-    } else if (action === 'delete') {
-      setShowDeleteModal(true);
-    }
-    setActiveMenu(null); // Close menu after selection
-  };
+
 
   // Restore selected items
   const restoreItems = async () => {
@@ -93,12 +86,10 @@ const RecentlyDeleted = () => {
       );
 
       if (response.data.success) {
+        setDeletedItems(prev => prev.filter(item => !selectedItems.includes(item._id)));
+        setSelectedItems([]);
         setSuccessMessage(response.data.message || `${selectedItems.length} item(s) restored successfully!`);
         setActionSuccess(true);
-        
-        // Refresh the data
-        await fetchDeletedItems();
-        setSelectedItems([]);
       } else {
         setError(response.data.message || "Restoration failed. Please try again.");
       }
@@ -114,29 +105,25 @@ const RecentlyDeleted = () => {
     }
   };
 
-  // Permanently delete selected items (multiple items)
+
+
+  // Permanently delete selected items
   const permanentDelete = async () => {
     setShowDeleteModal(false);
     setIsProcessing(true);
     setError(null);
 
     try {
-      // Updated to handle multiple IDs
       const response = await axiosInstance.delete(
-        "/admin/permanent-delete",
-        { 
-          data: { ids: selectedItems },
-          withCredentials: true 
-        }
+        `/admin/permanent-delete/${selectedItems[0]}`, // Only handles one ID
+        { withCredentials: true }
       );
 
       if (response.data.success) {
+        setDeletedItems(prev => prev.filter(item => !selectedItems.includes(item._id)));
+        setSelectedItems([]);
         setSuccessMessage(response.data.message || `${selectedItems.length} item(s) permanently deleted!`);
         setActionSuccess(true);
-        
-        // Refresh the data
-        await fetchDeletedItems();
-        setSelectedItems([]);
       } else {
         setError(response.data.message || "Deletion failed. Please try again.");
       }
@@ -152,6 +139,8 @@ const RecentlyDeleted = () => {
     }
   };
 
+
+
   // Animation variants
   const modalVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -163,10 +152,14 @@ const RecentlyDeleted = () => {
     exit: { opacity: 0, scale: 0.95 }
   };
 
+
+
   const overlayVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 }
   };
+
+
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -467,38 +460,9 @@ const RecentlyDeleted = () => {
                           )}
                         </div>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <div className="flex items-center text-sm text-gray-500">
-                          <FiClock className="mr-1" />
-                          {new Date(item.deletedAt).toLocaleDateString()}
-                        </div>
-                        {/* Individual item action menu */}
-                        <div className="relative">
-                          <button
-                            onClick={() => setActiveMenu(activeMenu === item._id ? null : item._id)}
-                            className="p-2 text-gray-500 hover:text-gray-700"
-                          >
-                            <FiMoreVertical />
-                          </button>
-                          {activeMenu === item._id && (
-                            <div className="absolute right-0 mt-1 w-40 bg-white rounded-md shadow-lg z-10 border border-gray-200">
-                              <button
-                                onClick={() => handleIndividualAction(item._id, 'restore')}
-                                className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                              >
-                                <FiRefreshCw className="mr-2" />
-                                Restore
-                              </button>
-                              <button
-                                onClick={() => handleIndividualAction(item._id, 'delete')}
-                                className="flex items-center w-full px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
-                              >
-                                <FiTrash2 className="mr-2" />
-                                Delete Permanently
-                              </button>
-                            </div>
-                          )}
-                        </div>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <FiClock className="mr-1" />
+                        {new Date(item.deletedAt).toLocaleDateString()}
                       </div>
                     </div>
 
