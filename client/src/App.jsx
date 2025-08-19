@@ -449,7 +449,7 @@ const App = () => {
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
-              placeholder="Enter your full fullName"
+              placeholder="Enter your full name"
               error={!!errors.fullName}
             />
             {errors.fullName && (
