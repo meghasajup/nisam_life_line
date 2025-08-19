@@ -490,5 +490,3 @@ const RecentlyDeleted = () => {
     </div>
   );
 };
-
-export default RecentlyDeleted;
