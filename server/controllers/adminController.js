@@ -18,15 +18,12 @@ export const adminLogin = asyncHandler(async (req, res) => {
     res.cookie("AdminToken", token, {
       httpOnly: true,
       secure: true,
-      sameSite: "None", 
-      //domain: ".vercel.app", 
+      sameSite: "Lax", 
+      domain: ".nisam-life-line.com",
       maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
     });
 
-    return res.status(200).json({
-      message: "Login successful",
-      token, 
-    });
+    return res.status(200).json({ message: "Login successful", token });
   }
 
   return res.status(401).json({ message: "Invalid email or password" });

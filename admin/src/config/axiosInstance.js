@@ -6,15 +6,22 @@ export const axiosInstance = axios.create({
   timeout: 10000,
 });
 
-axiosInstance.interceptors.request.use(
-  (config) => {
-    console.log('Making request to:', config.url);
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
+// axiosInstance.interceptors.request.use(
+//   (config) => {
+//     console.log('Making request to:', config.url);
+//     return config;
+//   },
+//   (error) => {
+//     return Promise.reject(error);
+//   }
+// );
+
+axiosInstance.interceptors.request.use((config) => {
+  const token = localStorage.getItem("AdminToken");
+  if (token) config.headers.Authorization = `Bearer ${token}`;
+  return config;
+});
+
 
 axiosInstance.interceptors.response.use(
   (response) => response,
