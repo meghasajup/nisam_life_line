@@ -91,7 +91,7 @@ const LoginPage = () => {
         setIsLoading(true);
 
         try {
-            const response = await axiosInstance.post(`${import.meta.env.VITE_API_URL}/admin/login`, { email, password, }, { withCredentials: true });
+            const response = await axiosInstance.post('/admin/login', { email, password, }, { withCredentials: true });
 
             setIsLoading(false);
             addNotification('success', 'Login successful! Redirecting...');
