@@ -7,57 +7,57 @@ import { axiosInstance } from '../config/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 
 const Notification = ({ type, message, onClose }) => {
-    const iconMap = {
-        success: <FiCheckCircle className="text-green-500 text-xl" />,
-        error: <FiAlertCircle className="text-red-500 text-xl" />,
-        info: <FiAlertCircle className="text-blue-500 text-xl" />
-    };
+  const iconMap = {
+    success: <FiCheckCircle className="text-green-500 text-xl" />,
+    error: <FiAlertCircle className="text-red-500 text-xl" />,
+    info: <FiAlertCircle className="text-blue-500 text-xl" />
+  };
 
-    const bgColorMap = {
-        success: 'bg-green-50',
-        error: 'bg-red-50',
-        info: 'bg-blue-50'
-    };
+  const bgColorMap = {
+    success: 'bg-green-50',
+    error: 'bg-red-50',
+    info: 'bg-blue-50'
+  };
 
-    const borderColorMap = {
-        success: 'border-green-200',
-        error: 'border-red-200',
-        info: 'border-blue-200'
-    };
+  const borderColorMap = {
+    success: 'border-green-200',
+    error: 'border-red-200',
+    info: 'border-blue-200'
+  };
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            onClose();
-        }, 5000);
-        return () => clearTimeout(timer);
-    }, [onClose]);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      onClose();
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [onClose]);
 
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, x: 100 }}
-            transition={{ duration: 0.3 }}
-            className={`fixed top-4 right-4 z-50 w-80 p-4 rounded-lg shadow-lg ${bgColorMap[type]} ${borderColorMap[type]} border`}
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, x: 100 }}
+      transition={{ duration: 0.3 }}
+      className={`fixed top-4 right-4 z-50 w-80 p-4 rounded-lg shadow-lg ${bgColorMap[type]} ${borderColorMap[type]} border`}
+    >
+      <div className="flex items-start">
+        <div className="flex-shrink-0 mt-0.5">
+          {iconMap[type]}
+        </div>
+        <div className="ml-3 flex-1">
+          <p className="text-sm font-medium text-gray-800">
+            {message}
+          </p>
+        </div>
+        <button
+          onClick={onClose}
+          className="ml-4 flex-shrink-0 text-gray-400 hover:text-gray-500"
         >
-            <div className="flex items-start">
-                <div className="flex-shrink-0 mt-0.5">
-                    {iconMap[type]}
-                </div>
-                <div className="ml-3 flex-1">
-                    <p className="text-sm font-medium text-gray-800">
-                        {message}
-                    </p>
-                </div>
-                <button
-                    onClick={onClose}
-                    className="ml-4 flex-shrink-0 text-gray-400 hover:text-gray-500"
-                >
-                    <FiX className="h-5 w-5" />
-                </button>
-            </div>
-        </motion.div>
-    );
+          <FiX className="h-5 w-5" />
+        </button>
+      </div>
+    </motion.div>
+  );
 };
 
 const LoginPage = () => {
@@ -67,7 +67,7 @@ const LoginPage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [notifications, setNotifications] = useState([]);
     const navigate = useNavigate();
-
+    
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -91,11 +91,11 @@ const LoginPage = () => {
         setIsLoading(true);
 
         try {
-            const response = await axiosInstance.post('/admin/login', { email, password, }, { withCredentials: true });
+            const response = await axiosInstance.post('/admin/login', {email, password }, { withCredentials: true });
 
             setIsLoading(false);
             addNotification('success', 'Login successful! Redirecting...');
-
+            
             // Redirect after a short delay to show the notification
             setTimeout(() => {
                 navigate('/');
@@ -104,13 +104,13 @@ const LoginPage = () => {
         } catch (error) {
             setIsLoading(false);
             let errorMessage = 'An error occurred during login';
-
+            
             if (error.response) {
                 errorMessage = error.response.data.message || errorMessage;
             } else if (error.request) {
                 errorMessage = 'Network error - please check your connection';
             }
-
+            
             addNotification('error', errorMessage);
         }
     };
