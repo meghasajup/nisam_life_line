@@ -19,7 +19,7 @@ export const adminLogin = asyncHandler(async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: "None", 
-      domain: ".nisam-life-line.com",
+      //domain: ".nisam-life-line.com",
       maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
     });
 
