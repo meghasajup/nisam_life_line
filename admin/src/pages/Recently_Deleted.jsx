@@ -11,9 +11,9 @@ import {
   FiX
 } from 'react-icons/fi';
 import Lottie from 'lottie-react';
-import emptyTrashAnimation from '../../public/Empty Box.json';
-import successAnimation from '../../public/successfully.json';
-import deleteAnimation from '../../public/Delete message.json';
+import emptyTrashAnimation from '../assests/Empty Box.json';
+import successAnimation from '../assests/successfully.json';
+import deleteAnimation from '../assests/Delete message.json';
 import { axiosInstance } from '../config/axiosInstance';
 
 const RecentlyDeleted = () => {
@@ -490,3 +490,5 @@ const RecentlyDeleted = () => {
     </div>
   );
 };
+
+export default RecentlyDeleted;

@@ -10,6 +10,8 @@ app.use(cors({
   origin: [
     'https://nisam-lifeline-admin.vercel.app',
     'https://nisam-life-line.vercel.app',
+    // 'http://localhost:5173',
+    // 'http://localhost:5174'
   ],
   credentials: true,
   exposedHeaders: ['set-cookie'],
