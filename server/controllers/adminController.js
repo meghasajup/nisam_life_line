@@ -18,7 +18,7 @@ export const adminLogin = asyncHandler(async (req, res) => {
     res.cookie("AdminToken", token, {
       httpOnly: true,
       secure: true,
-      sameSite: "Lax", 
+      sameSite: "None", 
       domain: ".nisam-life-line.com",
       maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
     });
