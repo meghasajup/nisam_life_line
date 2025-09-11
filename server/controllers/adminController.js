@@ -24,7 +24,7 @@ export const adminLogin = asyncHandler(async (req, res) => {
 
     return res.status(200).json({
       message: "Login successful",
-      token, // Also return token in response as fallback
+      token, 
     });
   }
 

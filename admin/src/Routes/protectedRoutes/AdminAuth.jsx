@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { axiosInstance } from "../../config/axiosInstance";
 
 export const AdminAuth = ({ children }) => {
-  const [user, setUser] = useState(null); 
-  const [loading, setLoading] = useState(true); 
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,9 +25,9 @@ export const AdminAuth = ({ children }) => {
           setUser(null);
           navigate("/login");
         } finally {
-          setLoading(false); // Set loading to false after checking
+          setLoading(false); 
         }
-      }, 1000); // 2-second delay before API call
+      }, 1000); 
     };
 
     checkAdmin();

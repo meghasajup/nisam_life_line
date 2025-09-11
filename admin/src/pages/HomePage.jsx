@@ -18,7 +18,7 @@ const HomePage = () => {
     const [notification, setNotification] = useState({
         show: false,
         message: '',
-        type: 'success' // 'success' or 'error'
+        type: 'success' 
     });
 
 
@@ -175,7 +175,7 @@ const HomePage = () => {
     };
 
 
-    
+
     const hasActiveFilters = filters.gender || filters.goal;
 
     return (

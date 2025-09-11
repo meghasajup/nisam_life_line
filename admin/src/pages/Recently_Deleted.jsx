@@ -6,7 +6,6 @@ import {
   FiUser,
   FiMapPin,
   FiPhone,
-  FiCalendar,
   FiRefreshCw,
   FiX
 } from 'react-icons/fi';
@@ -205,7 +204,7 @@ const RecentlyDeleted = () => {
         )}
       </AnimatePresence>
 
-      {/* Restore Confirmation Modal */}
+      {/* Restore Confirmation */}
       <AnimatePresence>
         {showRestoreModal && (
           <>
@@ -277,7 +276,7 @@ const RecentlyDeleted = () => {
         )}
       </AnimatePresence>
 
-      {/* Delete Confirmation Modal */}
+      {/* Delete Confirmation */}
       <AnimatePresence>
         {showDeleteModal && (
           <>

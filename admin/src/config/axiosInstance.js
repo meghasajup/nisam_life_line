@@ -2,11 +2,10 @@ import axios from "axios";
 
 export const axiosInstance = axios.create({
   baseURL: `${import.meta.env.VITE_API_URL}/api/v1`,
-  withCredentials: true, // ← This is CRITICAL for cookies to work
-  timeout: 10000, // Add timeout for mobile networks
+  withCredentials: true,
+  timeout: 10000,
 });
 
-// Add request interceptor for better error handling
 axiosInstance.interceptors.request.use(
   (config) => {
     console.log('Making request to:', config.url);
@@ -17,7 +16,6 @@ axiosInstance.interceptors.request.use(
   }
 );
 
-// Add response interceptor
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {

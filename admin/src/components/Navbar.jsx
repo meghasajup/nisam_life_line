@@ -17,7 +17,6 @@ const Navbar = () => {
     const [activeItem, setActiveItem] = useState('');
     const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
-    // Set active item based on current path when component mounts
     useEffect(() => {
         const currentPath = window.location.pathname;
         const activeMenuItem = menuItems.find(item => item.path === currentPath);

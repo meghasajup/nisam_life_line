@@ -28,7 +28,6 @@ export const createUserDetail = asyncHandler(async (req, res) => {
     throw new Error("Gender must be 'Male', 'Female', or 'Other'.");
   }
 
-  // Normalize casing to match enum in schema
   req.body.gender = gender.charAt(0).toUpperCase() + gender.slice(1).toLowerCase();
 
   if (!goal || !["weight gain", "fat loss"].includes(goal.toLowerCase())) {
@@ -137,7 +136,6 @@ export const updateUserDetail = asyncHandler(async (req, res) => {
     res.status(400).json({ success: false, message: "User not found", });
   }
 
-  // Optional: Add validation here if needed again
 
   user.fullName = fullName || user.fullName;
   user.place = place || user.place;

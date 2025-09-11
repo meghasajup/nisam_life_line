@@ -96,10 +96,11 @@ const LoginPage = () => {
             setIsLoading(false);
             addNotification('success', 'Login successful! Redirecting...');
             
-            // Redirect after a short delay to show the notification
             setTimeout(() => {
                 navigate('/');
             }, 1500);
+
+            
 
         } catch (error) {
             setIsLoading(false);
