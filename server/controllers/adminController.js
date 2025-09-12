@@ -8,7 +8,7 @@ export const adminLogin = asyncHandler(async (req, res) => {
     return res.status(400).json({ message: "Please enter both email and password" });
   }
 
-  const AdminEmail = "nisamlifeline@gmail.com";
+  const AdminEmail = "nisamlifeline@gmail.com"; 
   const AdminPassword = "nisam@1234";
 
   if (email === AdminEmail && password === AdminPassword) {
