@@ -18,8 +18,9 @@ export const adminLogin = asyncHandler(async (req, res) => {
     res.cookie("AdminToken", token, {
       httpOnly: true,
       secure: true,
-      sameSite: "None", 
-      maxAge: 7 * 24 * 60 * 60 * 1000 
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax', 
+      maxAge: 7 * 24 * 60 * 60 * 1000 ,
+      domain: process.env.NODE_ENV === 'production' ? '.yourdomain.com' : undefined
     });
 
     return res.status(200).json({ message: "Login successful", token });
