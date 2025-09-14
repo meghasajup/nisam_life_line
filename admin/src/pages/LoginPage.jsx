@@ -97,7 +97,7 @@ const LoginPage = () => {
             addNotification('success', 'Login successful! Redirecting...');
             
             setTimeout(() => {
-                navigate('/');
+                navigate('/Dashboard');
             }, 1500);
 
             
