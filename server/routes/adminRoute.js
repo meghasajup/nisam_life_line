@@ -13,7 +13,7 @@ router.post('/login', adminLogin) //Login
 
 router.post('/logout', verifyAdminToken, adminLogout) //Logout
 
-router.get("/check", verifyAdminToken, checkAdmin) // Check Admin
+router.get("/check-admin", verifyAdminToken, checkAdmin) // Check Admin
 
 //details
 router.get('/getallusers', verifyAdminToken, getAllUserDetails); // Get all users
