@@ -1,6 +1,11 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { generateAdminTokenSync } from "../utils/generateToken.js";
 
+// Hardcoded Admin credentials
+const ADMIN_EMAIL = "nisamlifeline@gmail.com";
+const ADMIN_PASSWORD = "nisam@1234";
+
+// ================= Admin Login =================
 export const adminLogin = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
@@ -8,34 +13,52 @@ export const adminLogin = asyncHandler(async (req, res) => {
     return res.status(400).json({ message: "Please enter both email and password" });
   }
 
-  const AdminEmail = "nisamlifeline@gmail.com"; 
-  const AdminPassword = "nisam@1234";
-
-  if (email === AdminEmail && password === AdminPassword) {
-    const token = generateAdminTokenSync();
-
-    // Set cookie with better mobile compatibility
-    res.cookie("AdminToken", token, {
-      httpOnly: true,
-      secure: true,
-      sameSite: "None", 
-      maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
-    });
-
-    return res.status(200).json({ message: "Login successful", token });
+  if (email !== ADMIN_EMAIL || password !== ADMIN_PASSWORD) {
+    return res.status(401).json({ message: "Invalid email or password" });
   }
 
-  return res.status(401).json({ message: "Invalid email or password" });
+  // Generate admin token
+  const token = generateAdminTokenSync(email);
+
+  // Send token in cookie
+  res.cookie("adminToken", token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
+    maxAge: 60 * 60 * 1000, // 1 hour
+  });
+
+  return res.status(200).json({
+    message: "Admin login successful",
+    token,
+  });
 });
 
 
 
+// ================= Admin Logout =================
 export const adminLogout = asyncHandler(async (req, res) => {
-  res.clearCookie("AdminToken", {
-    httpOnly: true,
-    sameSite: "None",
-    secure: true,
-  });
+  res.clearCookie("adminToken");
+  return res.status(200).json({ message: "Admin logged out successfully" });
+});
 
-  res.status(200).json({ success: true, message: "Admin logged out successfully" });
+
+
+// ================= Check Admin User =================
+export const checkAdminUser = asyncHandler(async (req, res) => {
+  const token = req.cookies?.adminToken;
+
+  if (!token) {
+    return res.status(401).json({ message: "Not authenticated" });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    return res.status(200).json({
+      message: "Admin authenticated",
+      user: decoded,
+    });
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid or expired token" });
+  }
 });

@@ -14,7 +14,6 @@ app.use(cors({
     //'http://localhost:5174'
   ],
   credentials: true,
-  //exposedHeaders: ['set-cookie'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
