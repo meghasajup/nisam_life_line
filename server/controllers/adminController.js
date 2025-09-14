@@ -23,11 +23,12 @@ export const adminLogin = asyncHandler(async (req, res) => {
 
   // Send token in cookie
   res.cookie("adminToken", token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production", // true for HTTPS (Vercel)
-    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-    maxAge: 60 * 60 * 1000, // 1 hour
-  });
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+  maxAge: 60 * 60 * 1000
+});
+
 
   return res.status(200).json({
     message: "Admin login successful",

@@ -1,43 +1,27 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { axiosInstance } from "../../config/axiosInstance";
+import { axiosInstance } from "../config/axiosInstance";
 
-export const AdminAuth = ({ children }) => {
-  const [user, setUser] = useState(null);
+const ProtectedRoute = ({ children }) => {
   const [loading, setLoading] = useState(true);
+  const [isAuth, setIsAuth] = useState(false);
 
   useEffect(() => {
-    const checkAdmin = async () => {
+    const checkAuth = async () => {
       try {
-        const response = await axiosInstance.get("/admin/check", {
-          withCredentials: true,
-        });
-        setUser(response.data.user); // backend sends { user: decoded }
+        await axiosInstance.get("/admin/check", { withCredentials: true });
+        setIsAuth(true);
       } catch (error) {
-        setUser(null);
+        setIsAuth(false);
       } finally {
         setLoading(false);
       }
     };
-
-    checkAdmin();
+    checkAuth();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <img
-          src="https://i.gifer.com/PRE4.gif"
-          alt="Loading..."
-          className="w-32 h-32"
-        />
-      </div>
-    );
-  }
-
-  if (!user) {
-    return <Navigate to="/login" replace />;
-  }
-
-  return children;
+  if (loading) return <div>Loading...</div>;
+  return isAuth ? children : <Navigate to="/" replace />;
 };
+
+export default ProtectedRoute;
