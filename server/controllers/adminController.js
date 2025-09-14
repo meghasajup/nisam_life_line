@@ -1,5 +1,6 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { generateAdminTokenSync } from "../utils/generateToken.js";
+import jwt from "jsonwebtoken";
 
 // Hardcoded Admin credentials
 const ADMIN_EMAIL = "nisamlifeline@gmail.com";
@@ -17,14 +18,14 @@ export const adminLogin = asyncHandler(async (req, res) => {
     return res.status(401).json({ message: "Invalid email or password" });
   }
 
-  // Generate admin token
-  const token = generateAdminTokenSync(email);
+  // Generate admin token (using email here as payload)
+  const token = generateAdminTokenSync({ email });
 
   // Send token in cookie
   res.cookie("adminToken", token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
+    secure: process.env.NODE_ENV === "production", // true for HTTPS (Vercel)
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
     maxAge: 60 * 60 * 1000, // 1 hour
   });
 
@@ -34,15 +35,15 @@ export const adminLogin = asyncHandler(async (req, res) => {
   });
 });
 
-
-
 // ================= Admin Logout =================
 export const adminLogout = asyncHandler(async (req, res) => {
-  res.clearCookie("adminToken");
+  res.clearCookie("adminToken", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+  });
   return res.status(200).json({ message: "Admin logged out successfully" });
 });
-
-
 
 // ================= Check Admin User =================
 export const checkAdminUser = asyncHandler(async (req, res) => {
