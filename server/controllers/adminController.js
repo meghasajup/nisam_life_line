@@ -17,7 +17,7 @@ export const adminLogin = asyncHandler(async (req, res) => {
     // Set cookie with better mobile compatibility
     res.cookie("AdminToken", token, {
       httpOnly: true,
-      // secure: true,
+      secure: true,
       sameSite: "None",
       secure: process.env.NODE_ENV === 'production',
       maxAge: 7 * 24 * 60 * 60 * 1000 

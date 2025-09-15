@@ -6,6 +6,8 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors'
 
 const app = express()
+app.use(cookieParser());
+
 app.use(cors({
   origin: [
     'https://nisam-lifeline-admin.vercel.app',
@@ -21,7 +23,6 @@ app.use(cors({
 
 app.use(logger('dev'));
 app.use(express.json())
-app.use(cookieParser());
 connectDb()
 
 app.get('/', (req, res) => {
