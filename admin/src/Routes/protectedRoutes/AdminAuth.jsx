@@ -32,7 +32,7 @@ export const AdminAuth = ({ children }) => {
 
     checkAdmin();
   }, [navigate]);
-z
+
   console.log("auth", user);
 
   if (loading) {
