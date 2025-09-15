@@ -1,7 +1,7 @@
 import express from "express"
 import { adminLogin, adminLogout } from "../controllers/adminController.js"
 import { checkAdmin, getAllUserDetails, getRecentlyDeleted, permanentlyDeleteUser, softDeleteUser, updateUserDetail } from "../controllers/detailsController.js";
-import { verifyAdminToken } from "../middleware/verifyAdminToke.js";
+// import { verifyAdminToken } from "../middleware/verifyAdminToke.js";
 import { restoreMultipleItems } from "../controllers/restoreController.js";
 
 
