@@ -15,13 +15,9 @@ export const adminLogin = asyncHandler(async (req, res) => {
     const token = generateAdminTokenSync();
 
     // Set cookie with better mobile compatibility
-   res.cookie("AdminToken", token, {
-  httpOnly: true,
-  sameSite: "Lax", 
-  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-  secure:true,
-  path: "/", 
-});
+  res.cookie('AdminToken', token, {  httpOnly: true,  sameSite: 'None',
+      // secure: true,
+       secure: process.env.NODE_ENV === 'production' });
 
 
     return res.status(200).json({ message: "Login successful", token });
