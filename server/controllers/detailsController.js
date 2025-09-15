@@ -159,6 +159,8 @@ export const updateUserDetail = asyncHandler(async (req, res) => {
 // Check Admin
 export const checkAdmin = asyncHandler(async (req, res, next) => {
   const user = req.admin;
+  console.log(user);
+  
   if (!user) {
     return res.status(401).json({ success: false, message: 'Admin not authenticated' })
   }
