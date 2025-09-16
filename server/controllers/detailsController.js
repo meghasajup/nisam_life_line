@@ -62,7 +62,7 @@ export const createUserDetail = asyncHandler(async (req, res) => {
 
 // Get all users
 export const getAllUserDetails = asyncHandler(async (req, res) => {
-  const users = await Details.find({ isDeleted: false });
+  const users = await Details.find({ isDeleted: false }).sort({ createdAt: -1 });
 
   res.status(200).json({
     success: true,

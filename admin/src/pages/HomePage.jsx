@@ -25,11 +25,12 @@ const HomePage = () => {
     const fetchAllUsers = async () => {
         try {
             const response = await axiosInstance.get("/admin/getallusers", { withCredentials: true });
-            setUsers(response.data.data);
+            setUsers(response.data.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
         } catch (error) {
             console.error("Error fetching users:", error);
         }
     };
+
 
     useEffect(() => {
         fetchAllUsers();
@@ -304,7 +305,7 @@ const HomePage = () => {
                             </div>
                         </motion.div>
                     )}
-                    
+
                 </AnimatePresence>
 
                 <div className="bg-white rounded-xl shadow-md overflow-hidden mb-6">
