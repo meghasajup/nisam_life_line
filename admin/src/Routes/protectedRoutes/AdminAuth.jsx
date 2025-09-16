@@ -15,7 +15,7 @@ export const AdminAuth = ({ children }) => {
           const response = await axiosInstance.get("admin/check-admin", {
             withCredentials: true,
           })
-          console.log(response.data);
+          console.log("Auth",response.data);
 
 
 

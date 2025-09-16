@@ -92,6 +92,8 @@ const LoginPage = () => {
 
         try {
             const response = await axiosInstance.post('/admin/login', {email, password }, { withCredentials: true });
+             sessionStorage.setItem("AdminToken", response.data.token);
+console.log(response);
 
             setIsLoading(false);
             addNotification('success', 'Login successful! Redirecting...');

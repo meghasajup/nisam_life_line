@@ -18,12 +18,10 @@ axiosInstance.interceptors.request.use(
 
 
 
-axiosInstance.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.code === 'ECONNABORTED') {
-      error.message = 'Request timeout - please check your connection';
-    }
-    return Promise.reject(error);
+axiosInstance.interceptors.request.use((config) => {
+  const token = sessionStorage.getItem("AdminToken");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
   }
-);
+  return config;
+});
