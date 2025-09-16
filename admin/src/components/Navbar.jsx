@@ -68,6 +68,7 @@ const Navbar = () => {
             <nav className="fixed top-0 left-0 right-0 bg-white text-gray-800 z-50 shadow-md">
                 <div className="container mx-auto px-4">
                     <div className="flex justify-between items-center h-16">
+
                         {/* Logo and Brand */}
                         <div className="flex items-center space-x-4">
                             <button
@@ -115,6 +116,7 @@ const Navbar = () => {
                                 </button>
 
                                 <AnimatePresence>
+
                                     {showProfileDropdown && (
                                         <motion.div
                                             initial={{ opacity: 0, y: -10 }}
@@ -131,7 +133,9 @@ const Navbar = () => {
                                             </button>
                                         </motion.div>
                                     )}
+
                                 </AnimatePresence>
+
                             </div>
                         </div>
                     </div>
@@ -179,10 +183,8 @@ const Navbar = () => {
                     )}
                 </AnimatePresence>
             </nav>
-
             <div className="pt-16"></div>
         </>
     );
 };
-
 export default Navbar;

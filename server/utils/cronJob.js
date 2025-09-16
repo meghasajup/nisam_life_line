@@ -13,7 +13,7 @@ cron.schedule('0 0 * * *', async () => {
       isDeleted: true,
       deletedAt: {
         $lte: cutoffDate,
-        $exists: true  
+        $exists: true
       }
     });
 
@@ -28,7 +28,7 @@ cron.schedule('0 0 * * *', async () => {
   }
 }, {
   scheduled: true,
-  timezone: "UTC"  
+  timezone: "UTC"
 });
 
 console.log('🔄 Scheduled automatic deletion of old soft-deleted records (runs daily at 00:00 UTC)');

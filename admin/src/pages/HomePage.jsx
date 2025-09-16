@@ -18,9 +18,8 @@ const HomePage = () => {
     const [notification, setNotification] = useState({
         show: false,
         message: '',
-        type: 'success' 
+        type: 'success'
     });
-
 
 
     const fetchAllUsers = async () => {
@@ -37,14 +36,12 @@ const HomePage = () => {
     }, []);
 
 
-
     const showNotification = (message, type = 'success') => {
         setNotification({ show: true, message, type });
         setTimeout(() => {
             setNotification({ ...notification, show: false });
         }, 3000);
     };
-
 
 
     const filteredUsers = users.filter(user => {
@@ -60,7 +57,6 @@ const HomePage = () => {
     });
 
 
-
     const handleEdit = (user) => {
         setCurrentUser({
             id: user._id,
@@ -74,7 +70,6 @@ const HomePage = () => {
         });
         setIsModalOpen(true);
     };
-
 
 
     const handleSubmit = async (e) => {
@@ -112,7 +107,6 @@ const HomePage = () => {
                 console.log('Create success:', response.data);
                 showNotification(`${currentUser.name} added successfully.`);
             }
-
             // Refresh user list and close modal
             fetchAllUsers();
             setIsModalOpen(false);
@@ -127,12 +121,10 @@ const HomePage = () => {
     };
 
 
-
     const handleDelete = (user) => {
         setUserToDelete(user);
         setIsDeleteConfirmOpen(true);
     };
-
 
 
     const confirmDelete = async () => {
@@ -152,12 +144,10 @@ const HomePage = () => {
     };
 
 
-
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setCurrentUser({ ...currentUser, [name]: value });
     };
-
 
 
     const handleFilterChange = (e) => {
@@ -166,14 +156,12 @@ const HomePage = () => {
     };
 
 
-
     const resetFilters = () => {
         setFilters({
             gender: '',
             goal: ''
         });
     };
-
 
 
     const hasActiveFilters = filters.gender || filters.goal;
@@ -201,6 +189,7 @@ const HomePage = () => {
                         <span className="font-medium">{notification.message}</span>
                     </motion.div>
                 )}
+
             </AnimatePresence>
 
             <motion.div
@@ -315,6 +304,7 @@ const HomePage = () => {
                             </div>
                         </motion.div>
                     )}
+                    
                 </AnimatePresence>
 
                 <div className="bg-white rounded-xl shadow-md overflow-hidden mb-6">

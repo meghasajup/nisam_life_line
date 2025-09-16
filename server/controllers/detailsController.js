@@ -35,7 +35,7 @@ export const createUserDetail = asyncHandler(async (req, res) => {
     throw new Error("Goal must be 'weight gain', or 'fat loss'.");
   }
 
-  if (!duration || !["1","2","3","4","5","6","7","8","9","10","11","12"].includes(duration.toString())) {
+  if (!duration || !["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"].includes(duration.toString())) {
     res.status(400);
     throw new Error("Duration must be 1 to 12.");
   }
@@ -58,6 +58,8 @@ export const createUserDetail = asyncHandler(async (req, res) => {
   });
 });
 
+
+
 // Get all users
 export const getAllUserDetails = asyncHandler(async (req, res) => {
   const users = await Details.find({ isDeleted: false });
@@ -68,6 +70,8 @@ export const getAllUserDetails = asyncHandler(async (req, res) => {
     data: users,
   });
 });
+
+
 
 // Delete user (soft delete)
 export const softDeleteUser = asyncHandler(async (req, res) => {
@@ -89,6 +93,8 @@ export const softDeleteUser = asyncHandler(async (req, res) => {
   res.status(200).json({ success: true, message: "Deleted successfully" });
 });
 
+
+
 // Recently deleted
 export const getRecentlyDeleted = asyncHandler(async (req, res) => {
   const deletedDetails = await Details.find({
@@ -96,6 +102,8 @@ export const getRecentlyDeleted = asyncHandler(async (req, res) => {
   });
   res.status(200).json({ success: true, data: deletedDetails });
 });
+
+
 
 // Permanently delete
 export const permanentlyDeleteUser = asyncHandler(async (req, res) => {
@@ -114,6 +122,8 @@ export const permanentlyDeleteUser = asyncHandler(async (req, res) => {
 
   res.status(200).json({ success: true, message: "Permanently deleted successfully" });
 });
+
+
 
 // Edit user
 export const updateUserDetail = asyncHandler(async (req, res) => {
@@ -142,6 +152,8 @@ export const updateUserDetail = asyncHandler(async (req, res) => {
     data: updatedUser,
   });
 });
+
+
 
 // Check Admin
 export const checkAdmin = asyncHandler(async (req, res) => {

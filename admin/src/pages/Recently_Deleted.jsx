@@ -81,7 +81,7 @@ const RecentlyDeleted = () => {
         setSelectedItems([]);
         setSuccessMessage(response.data.message);
         setActionSuccess(true);
-        await fetchDeletedItems(); // ✅ refresh list immediately
+        await fetchDeletedItems(); 
       } else {
         setError(response.data.message || "Restoration failed.");
       }
@@ -112,7 +112,7 @@ const RecentlyDeleted = () => {
         setSelectedItems([]);
         setSuccessMessage(response.data.message);
         setActionSuccess(true);
-        await fetchDeletedItems(); // ✅ refresh list immediately
+        await fetchDeletedItems(); 
       } else {
         setError(response.data.message || "Deletion failed.");
       }
@@ -154,7 +154,7 @@ const RecentlyDeleted = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-6 relative">
-      {/* ✅ Success Notification */}
+      {/* Success Notification */}
       <AnimatePresence>
         {actionSuccess && (
           <motion.div
@@ -171,7 +171,7 @@ const RecentlyDeleted = () => {
         )}
       </AnimatePresence>
 
-      {/* ❌ Error Notification */}
+      {/* Error Notification */}
       <AnimatePresence>
         {error && (
           <motion.div

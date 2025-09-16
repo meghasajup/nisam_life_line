@@ -18,11 +18,11 @@ router.post('/logout', verifyAdminToken, adminLogout); // Logout
 router.get("/check-admin", verifyAdminToken, checkAdmin); // Check Admin
 
 // Details routes
-router.get('/getallusers', verifyAdminToken, getAllUserDetails); 
-router.put('/update/:id', verifyAdminToken, updateUserDetail); 
-router.delete("/delete/:id", verifyAdminToken, softDeleteUser); 
-router.get("/recently-deleted", verifyAdminToken, getRecentlyDeleted); 
-router.delete("/permanent-delete/:id", verifyAdminToken, permanentlyDeleteUser); 
-router.post('/restore-items', verifyAdminToken, restoreMultipleItems); 
+router.get('/getallusers', verifyAdminToken, getAllUserDetails); // Get all users
+router.put('/update/:id', verifyAdminToken, updateUserDetail); // Update user
+router.delete("/delete/:id", verifyAdminToken, softDeleteUser); // Soft delete
+router.get("/recently-deleted", verifyAdminToken, getRecentlyDeleted); // Get recently deleted
+router.delete("/permanent-delete/:id", verifyAdminToken, permanentlyDeleteUser); // Permanent delete 
+router.post('/restore-items', verifyAdminToken, restoreMultipleItems); // Restore multiple items
 
 export default router;
