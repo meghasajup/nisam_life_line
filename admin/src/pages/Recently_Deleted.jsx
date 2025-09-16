@@ -16,7 +16,6 @@ import deleteAnimation from '../assests/Delete message.json';
 import { axiosInstance } from '../config/axiosInstance';
 
 const RecentlyDeleted = () => {
-  // State management
   const [deletedItems, setDeletedItems] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
   const [showRestoreModal, setShowRestoreModal] = useState(false);
@@ -28,28 +27,26 @@ const RecentlyDeleted = () => {
   const [error, setError] = useState(null);
 
   // Fetch deleted items
-  useEffect(() => {
-    const fetchDeletedItems = async () => {
-      try {
-        setIsLoading(true);
-        const response = await axiosInstance.get("/admin/recently-deleted", {
-          withCredentials: true
-        });
-        setDeletedItems(response.data);
-      } catch (err) {
-        console.error("Fetch error:", err);
-        setError("Failed to load deleted items. Please try again later.");
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  const fetchDeletedItems = async () => {
+    try {
+      setIsLoading(true);
+      const response = await axiosInstance.get("/admin/recently-deleted", {
+        withCredentials: true
+      });
+      setDeletedItems(response.data.data || []);
+    } catch (err) {
+      console.error("Fetch error:", err);
+      setError("Failed to load deleted items. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchDeletedItems();
   }, []);
 
-
-
-  // Toggle item selection
+  // Toggle selection
   const toggleSelectItem = (id) => {
     setSelectedItems(prev =>
       prev.includes(id)
@@ -58,9 +55,7 @@ const RecentlyDeleted = () => {
     );
   };
 
-
-
-  // Select all items
+  // Select all
   const selectAllItems = () => {
     if (selectedItems.length === deletedItems.length) {
       setSelectedItems([]);
@@ -69,9 +64,7 @@ const RecentlyDeleted = () => {
     }
   };
 
-
-
-  // Restore selected items
+  // Restore
   const restoreItems = async () => {
     setShowRestoreModal(false);
     setIsProcessing(true);
@@ -85,28 +78,25 @@ const RecentlyDeleted = () => {
       );
 
       if (response.data.success) {
-        setDeletedItems(prev => prev.filter(item => !selectedItems.includes(item._id)));
         setSelectedItems([]);
-        setSuccessMessage(response.data.message || `${selectedItems.length} item(s) restored successfully!`);
+        setSuccessMessage(response.data.message);
         setActionSuccess(true);
+        await fetchDeletedItems(); // ✅ refresh list immediately
       } else {
-        setError(response.data.message || "Restoration failed. Please try again.");
+        setError(response.data.message || "Restoration failed.");
       }
     } catch (err) {
-      console.error("Restore error:", err);
-      setError(err.response?.data?.message || "Error restoring items. Please try again.");
+      setError(err.response?.data?.message || "Error restoring items.");
     } finally {
       setIsProcessing(false);
       setTimeout(() => {
         setActionSuccess(false);
         setError(null);
-      }, 5000);
+      }, 3000);
     }
   };
 
-
-
-  // Permanently delete selected items
+  // Permanent Delete
   const permanentDelete = async () => {
     setShowDeleteModal(false);
     setIsProcessing(true);
@@ -114,31 +104,28 @@ const RecentlyDeleted = () => {
 
     try {
       const response = await axiosInstance.delete(
-        `/admin/permanent-delete/${selectedItems[0]}`, // Only handles one ID
+        `/admin/permanent-delete/${selectedItems[0]}`,
         { withCredentials: true }
       );
 
       if (response.data.success) {
-        setDeletedItems(prev => prev.filter(item => !selectedItems.includes(item._id)));
         setSelectedItems([]);
-        setSuccessMessage(response.data.message || `${selectedItems.length} item(s) permanently deleted!`);
+        setSuccessMessage(response.data.message);
         setActionSuccess(true);
+        await fetchDeletedItems(); // ✅ refresh list immediately
       } else {
-        setError(response.data.message || "Deletion failed. Please try again.");
+        setError(response.data.message || "Deletion failed.");
       }
     } catch (err) {
-      console.error("Delete error:", err);
-      setError(err.response?.data?.message || "Error deleting items. Please try again.");
+      setError(err.response?.data?.message || "Error deleting items.");
     } finally {
       setIsProcessing(false);
       setTimeout(() => {
         setActionSuccess(false);
         setError(null);
-      }, 5000);
+      }, 3000);
     }
   };
-
-
 
   // Animation variants
   const modalVariants = {
@@ -151,14 +138,10 @@ const RecentlyDeleted = () => {
     exit: { opacity: 0, scale: 0.95 }
   };
 
-
-
   const overlayVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 }
   };
-
-
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -171,7 +154,7 @@ const RecentlyDeleted = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-6 relative">
-      {/* Success Notification */}
+      {/* ✅ Success Notification */}
       <AnimatePresence>
         {actionSuccess && (
           <motion.div
@@ -188,7 +171,7 @@ const RecentlyDeleted = () => {
         )}
       </AnimatePresence>
 
-      {/* Error Notification */}
+      {/* ❌ Error Notification */}
       <AnimatePresence>
         {error && (
           <motion.div
@@ -216,7 +199,6 @@ const RecentlyDeleted = () => {
               className="fixed inset-0 bg-black bg-opacity-50 z-40"
               onClick={() => setShowRestoreModal(false)}
             />
-
             <motion.div
               variants={modalVariants}
               initial="hidden"
@@ -255,9 +237,15 @@ const RecentlyDeleted = () => {
                     >
                       {isProcessing ? (
                         <>
-                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10"
+                              stroke="currentColor" strokeWidth="4" />
+                            <path className="opacity-75" fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 
+                                  0 12h4zm2 5.291A7.962 7.962 0 
+                                  014 12H0c0 3.042 1.135 5.824 
+                                  3 7.938l3-2.647z"/>
                           </svg>
                           Restoring...
                         </>
@@ -288,7 +276,6 @@ const RecentlyDeleted = () => {
               className="fixed inset-0 bg-black bg-opacity-50 z-40"
               onClick={() => setShowDeleteModal(false)}
             />
-
             <motion.div
               variants={modalVariants}
               initial="hidden"
@@ -299,11 +286,7 @@ const RecentlyDeleted = () => {
               <div className="bg-white rounded-xl shadow-xl max-w-md w-full overflow-hidden">
                 <div className="p-6">
                   <div className="flex flex-col items-center text-center">
-                    <Lottie
-                      animationData={deleteAnimation}
-                      loop={false}
-                      className="h-24 w-24"
-                    />
+                    <Lottie animationData={deleteAnimation} loop={false} className="h-24 w-24" />
                     <h3 className="text-xl font-bold text-gray-800 mt-4">Permanent Deletion</h3>
                     <p className="text-gray-600 mt-2">
                       This action cannot be undone. {selectedItems.length} item(s) will be permanently deleted.
@@ -324,9 +307,15 @@ const RecentlyDeleted = () => {
                     >
                       {isProcessing ? (
                         <>
-                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10"
+                              stroke="currentColor" strokeWidth="4" />
+                            <path className="opacity-75" fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 
+                                  0 12h4zm2 5.291A7.962 7.962 0 
+                                  014 12H0c0 3.042 1.135 5.824 
+                                  3 7.938l3-2.647z"/>
                           </svg>
                           Deleting...
                         </>
@@ -401,22 +390,14 @@ const RecentlyDeleted = () => {
             animate={{ opacity: 1 }}
             className="flex flex-col items-center justify-center py-20 bg-white rounded-xl shadow-sm"
           >
-            <Lottie
-              animationData={emptyTrashAnimation}
-              loop={true}
-              className="h-48 w-48"
-            />
+            <Lottie animationData={emptyTrashAnimation} loop={true} className="h-48 w-48" />
             <h3 className="text-lg font-medium text-gray-700 mt-4">No deleted items</h3>
             <p className="text-gray-500 mt-2 text-center max-w-md px-4">
               Items you delete will appear here for 30 days
             </p>
           </motion.div>
         ) : (
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            className="grid gap-4"
-          >
+          <motion.div initial="hidden" animate="visible" className="grid gap-4">
             {deletedItems.map((item) => (
               <motion.div
                 key={item._id}
